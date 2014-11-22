@@ -1,0 +1,42 @@
+function [ErrorSig, Ptrans] = PDH_TRANS(R1,R2,Loss,Pinc,phiMod,deltaMod,demodPhase,phi)
+
+%Error signal on transmission, two outputs:
+%ErrorSig - demod signal
+%Ptrans   - power on transsmision
+
+r1 = sqrt(R1);
+r2 = sqrt(R2);
+t1 = sqrt(1-R1);
+t2 = sqrt(1-R2);
+
+% Finesse = 5.4597e3;
+% T = 250e-6;
+% R = (1-T);
+% 
+% Loss = 2*pi/Finesse + log(r1^2*r2^2)  %round trip loss
+
+%Vectorise the carrier and sideband components
+phi_v = [phi; phi+phiMod; phi-phiMod];
+
+%Cavity transmission response
+Ftrans = (-t1*t2*(1-Loss)^(1/4)*exp(-1i*phi_v/2))./(1-r1*r2*sqrt(1-Loss)*exp(-1i*phi_v));
+%Ftrans = (-t1*t2*sqrt(1-Loss)*exp(-1i*phi_v))./(1-r1*r2*(1-Loss)*exp(-1i*phi_v));
+
+%Power in the Carrier and the Sidebands
+Pc = Pinc*(besselj(0,deltaMod))^2;
+Ps = Pinc*(besselj(1,deltaMod))^2;
+
+Err = 2*sqrt(Pc*Ps)*(Ftrans(1,:).*conj(Ftrans(2,:))-conj(Ftrans(1,:)).*Ftrans(3,:));
+Ptrans = Pc*(abs(Ftrans(1,5001))).^2 + Ps*(abs(Ftrans(2,5001))).^2 + Ps*(abs(Ftrans(3,5001))).^2;
+
+
+% size(Ftrans)
+% figure(101)
+% plot(phi_v(1,:),abs(Ftrans(2,:)))
+% hold on
+% plot(phi_v(1,:),abs(Ftrans(3,:)),'r')
+% plot(phi_v(1,:),abs(Ftrans(1,:)),'g')
+
+ErrorSig = real(Err)*cos(demodPhase)+imag(Err)*sin(demodPhase);
+
+

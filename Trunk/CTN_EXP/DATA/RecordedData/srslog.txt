@@ -1,0 +1,188 @@
+Processing 00SN.78D ==> 00SN.asc
+Input File Type: SR785 Display file
+
+
+Processing 00SNIN.78D ==> 00SNIN.asc
+Input File Type: SR785 Display file
+
+
+Processing 00SNINB.78D ==> 00SNINB.asc
+Input File Type: SR785 Display file
+
+
+Processing 00SNINO.78D ==> 00SNINO.asc
+Input File Type: SR785 Display file
+
+
+Processing 00SNOUT.78D ==> 00SNOUT.asc
+Input File Type: SR785 Display file
+
+
+Processing 00SNOUTB.78D ==> 00SNOUTB.asc
+Input File Type: SR785 Display file
+
+
+Processing 00SNOUTO.78D ==> 00SNOUTO.asc
+Input File Type: SR785 Display file
+
+
+Processing 00STD.78D ==> 00STD.asc
+Input File Type: SR785 Display file
+
+
+Processing 00STM.78D ==> 00STM.asc
+Input File Type: SR785 Display file
+
+
+Processing 00TOLD.78D ==> 00TOLD.asc
+Input File Type: SR785 Display file
+
+
+Processing 00TOLDO.78D ==> 00TOLDO.asc
+Input File Type: SR785 Display file
+
+
+Processing 00TOLM.78D ==> 00TOLM.asc
+Input File Type: SR785 Display file
+
+
+Processing 00TOLMO.78D ==> 00TOLMO.asc
+Input File Type: SR785 Display file
+
+
+Processing 02NSIN.78D ==> 02NSIN.asc
+Input File Type: SR785 Display file
+
+
+Processing 02NSINH.78D ==> 02NSINH.asc
+Input File Type: SR785 Display file
+
+
+Processing 02NSINO.78D ==> 02NSINO.asc
+Input File Type: SR785 Display file
+
+
+Processing 02NSOUT.78D ==> 02NSOUT.asc
+Input File Type: SR785 Display file
+
+
+Processing 02NSOUTH.78D ==> 02NSOUTH.asc
+Input File Type: SR785 Display file
+
+
+Processing 02NSOUTO.78D ==> 02NSOUTO.asc
+Input File Type: SR785 Display file
+
+
+Processing 02PD.78D ==> 02PD.asc
+Input File Type: SR785 Display file
+
+
+Processing 02SN.78D ==> 02SN.asc
+Input File Type: SR785 Display file
+
+
+Processing 02TFD.78D ==> 02TFD.asc
+Input File Type: SR785 Display file
+
+
+Processing 02TFDH.78D ==> 02TFDH.asc
+Input File Type: SR785 Display file
+
+
+Processing 02TFM.78D ==> 02TFM.asc
+Input File Type: SR785 Display file
+
+
+Processing 02TFMH.78D ==> 02TFMH.asc
+Input File Type: SR785 Display file
+
+
+Processing 02TFSD.78D ==> 02TFSD.asc
+Input File Type: SR785 Display file
+
+
+Processing 02TFSM.78D ==> 02TFSM.asc
+Input File Type: SR785 Display file
+
+
+Processing 20NSIN.78D ==> 20NSIN.asc
+Input File Type: SR785 Display file
+
+
+Processing 20NSINH.78D ==> 20NSINH.asc
+Input File Type: SR785 Display file
+
+
+Processing 20NSINO.78D ==> 20NSINO.asc
+Input File Type: SR785 Display file
+
+
+Processing 20NSOUT.78D ==> 20NSOUT.asc
+Input File Type: SR785 Display file
+
+
+Processing 20NSOUTH.78D ==> 20NSOUTH.asc
+Input File Type: SR785 Display file
+
+
+Processing 20NSOUTO.78D ==> 20NSOUTO.asc
+Input File Type: SR785 Display file
+
+
+Processing 20PD.78D ==> 20PD.asc
+Input File Type: SR785 Display file
+
+
+Processing 20SN.78D ==> 20SN.asc
+Input File Type: SR785 Display file
+
+
+Processing 20SNOUTO.78D ==> 20SNOUTO.asc
+Input File Type: SR785 Display file
+
+
+Processing 20TFD.78D ==> 20TFD.asc
+Input File Type: SR785 Display file
+
+
+Processing 20TFDH.78D ==> 20TFDH.asc
+Input File Type: SR785 Display file
+
+
+Processing 20TFM.78D ==> 20TFM.asc
+Input File Type: SR785 Display file
+
+
+Processing 20TFMH.78D ==> 20TFMH.asc
+Input File Type: SR785 Display file
+
+
+Processing 20TFSD.78D ==> 20TFSD.asc
+Input File Type: SR785 Display file
+
+
+Processing 20TFSM.78D ==> 20TFSM.asc
+Input File Type: SR785 Display file
+
+
+Processing BN.78D ==> BN.asc
+Input File Type: SR785 Display file
+
+
+Processing BNH.78D ==> BNH.asc
+Input File Type: SR785 Display file
+
+
+Processing BNO.78D ==> BNO.asc
+Input File Type: SR785 Display file
+
+
+Processing OPD02.78D ==> OPD02.asc
+Input File Type: SR785 Display file
+
+
+Processing OPD20.78D ==> OPD20.asc
+Input File Type: SR785 Display file
+
+

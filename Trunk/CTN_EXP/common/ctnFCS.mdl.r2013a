@@ -1,0 +1,4296 @@
+Model {
+  Name			  "ctnFCS"
+  Version		  8.1
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    1
+    Outport {
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+      Name		      "$100k CTN"
+    }
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.341"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "ISO-8859-1"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  DataTypeOverrideAppliesTo "AllNumericTypes"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  FPTRunName		  "Run 1"
+  MaxMDLFileLineLength	  120
+  Object {
+    $PropName		    "BdWindowsInfo"
+    $ObjectID		    1
+    $ClassName		    "Simulink.BDWindowsInfo"
+    Object {
+      $PropName		      "WindowsInfo"
+      $ObjectID		      2
+      $ClassName	      "Simulink.WindowInfo"
+      IsActive		      [1]
+      Location		      [0.0, 22.0, 1920.0, 1024.0]
+      Object {
+	$PropName		"ModelBrowserInfo"
+	$ObjectID		3
+	$ClassName		"Simulink.ModelBrowserInfo"
+	Visible			[1]
+	DockPosition		"Left"
+	Width			[50]
+	Height			[50]
+	Filter			[9]
+      }
+      Object {
+	$PropName		"ExplorerBarInfo"
+	$ObjectID		4
+	$ClassName		"Simulink.ExplorerBarInfo"
+	Visible			[1]
+      }
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[1696.0, 854.0]
+	ZoomFactor		[0.8]
+	Offset			[0.0, 0.0]
+      }
+    }
+  }
+  Created		  "Thu Sep 25 23:14:40 2014"
+  Creator		  "sgras"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "yamw"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Nov 14 11:26:34 2014"
+  RTWModifiedTimeStamp	  337785404
+  ModelVersionFormat	  "1.%<AutoIncrement:341>"
+  ConfigurationManager	  "none"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "disabled"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  Object {
+    $PropName		    "DataLoggingOverride"
+    $ObjectID		    6
+    $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
+    model_		    "ctnFCS"
+    overrideMode_	    [0.0]
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      "ctnFCS"
+      PropName		      "logAsSpecifiedByModels_"
+    }
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      []
+      PropName		      "logAsSpecifiedByModelsSSIDs_"
+    }
+  }
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      7
+      Version		      "1.13.0"
+      Array {
+	Type			"Handle"
+	Dimension		9
+	Simulink.SolverCC {
+	  $ObjectID		  8
+	  Version		  "1.13.0"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  EnableConcurrentExecution off
+	  ConcurrentTasks	  off
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  9
+	  Version		  "1.13.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SignalLoggingSaveFormat "Dataset"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  10
+	  Version		  "1.13.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    8
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "UseSpecifiedMinMax"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  UseFloatMulNetSlope	  off
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	  ParallelExecutionInRapidAccelerator on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  11
+	  Version		  "1.13.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "EnableAllAsError"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "warning"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  SimStateOlderReleaseMsg "error"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnconditionalTransitionShadowingDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  12
+	  Version		  "1.13.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerLongLong	  64
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  off
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  13
+	  Version		  "1.13.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  14
+	  Version		  "1.13.0"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  15
+	  Version		  "1.13.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    15
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    Cell		    "PortableWordSizes"
+	    Cell		    "GenerateWebview"
+	    Cell		    "GenerateCodeMetricsReport"
+	    Cell		    "GenerateCodeReplacementReport"
+	    Cell		    "GenerateErtSFunction"
+	    Cell		    "CreateSILPILBlock"
+	    Cell		    "CodeExecutionProfiling"
+	    Cell		    "CodeProfilingSaveOptions"
+	    Cell		    "CodeProfilingInstrumentation"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  GenerateErtSFunction	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation off
+	  SILDebugging		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      16
+	      Version		      "1.13.0"
+	      Array {
+		Type			"Cell"
+		Dimension		22
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"InsertPolySpaceComments"
+		Cell			"SFDataObjDesc"
+		Cell			"MATLABFcnDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InternalIdentifier"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M_T"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InternalIdentifier      "Shortened"
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      17
+	      Version		      "1.13.0"
+	      Array {
+		Type			"Cell"
+		Dimension		15
+		Cell			"GeneratePreprocessorConditionals"
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"GenerateAllocFcn"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      CodeReplacementLibrary  "None"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns on
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    on
+	      AutosarCompliant	      off
+	      GRTInterface	      off
+	      GenerateAllocFcn	      off
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	hdlcoderui.hdlcc {
+	  $ObjectID		  18
+	  Version		  "1.13.0"
+	  Description		  "HDL Coder custom configuration component"
+	  Name			  "HDL Coder"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    ""
+	    PropName		    "HDLConfigFile"
+	  }
+	  HDLCActiveTab		  "0"
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 243, 69, 1123, 699 ] 
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    7
+  }
+  Object {
+    $PropName		    "DataTransfer"
+    $ObjectID		    19
+    $ClassName		    "Simulink.GlobalDataTransfer"
+    DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
+    DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
+    DefaultTransitionBetweenContTasks "Ensure deterministic transfer (minimum delay)"
+    DefaultExtrapolationMethodBetweenContTasks "None"
+    AutoInsertRateTranBlk   [0]
+  }
+  ExplicitPartitioning	  off
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  MaskDefaults {
+    SelfModifiable	    "off"
+    IconFrame		    "on"
+    IconOpaque		    "on"
+    RunInitForIconRedraw    "off"
+    IconRotate		    "none"
+    PortRotate		    "default"
+    IconUnits		    "autoscale"
+  }
+  MaskParameterDefaults {
+    Evaluate		    "on"
+    Tunable		    "on"
+    NeverSave		    "off"
+    Internal		    "off"
+    ReadOnly		    "off"
+    Enabled		    "on"
+    Visible		    "on"
+    ToolTip		    "on"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParamDataTypeStr	      "Inherit: Same as input"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      FunctionInterfaceSpec   "void_void"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      SFBlockType	      "NONE"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ZeroPole
+      Zeros		      "[1]"
+      Poles		      "[0 1]"
+      Gain		      "[1]"
+      AbsoluteTolerance	      "auto"
+      ContinuousStateAttributes	"''"
+    }
+  }
+  System {
+    Name		    "ctnFCS"
+    Location		    [0, 22, 1920, 1046]
+    Open		    on
+    ModelBrowserVisibility  on
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "80"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "554"
+    Block {
+      BlockType		      SubSystem
+      Name		      "00 FCL"
+      SID		      "143"
+      Ports		      [3, 1]
+      Position		      [545, 363, 725, 587]
+      ZOrder		      52
+      FontSize		      16
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"00 FCL"
+	Location		[-1920, 22, 0, 1076]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"112"
+	Block {
+	  BlockType		  Inport
+	  Name			  "FreqNoise"
+	  SID			  "280"
+	  Position		  [580, 565, 635, 585]
+	  ZOrder		  79
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  FontSize		  16
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "LengthNoise"
+	  SID			  "425"
+	  Position		  [815, 525, 870, 545]
+	  ZOrder		  100
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  FontSize		  16
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "CTN1"
+	  SID			  "426"
+	  Position		  [810, 575, 870, 595]
+	  ZOrder		  101
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  FontSize		  16
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Cavity00"
+	  SID			  "427"
+	  Ports			  [3, 1]
+	  Position		  [985, 459, 1215, 611]
+	  ZOrder		  102
+	  FontSize		  16
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Cavity00"
+	    Location		    [-1920, 22, 0, 1076]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "263"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "LaserIN"
+	      SID		      "428"
+	      Position		      [405, 430, 465, 450]
+	      ZOrder		      -1
+	      BackgroundColor	      "[0.909804, 0.819608, 0.321569]"
+	      FontSize		      16
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "LengthNoise"
+	      SID		      "429"
+	      Position		      [410, 510, 465, 530]
+	      ZOrder		      81
+	      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+	      FontSize		      16
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "CTN"
+	      SID		      "430"
+	      Position		      [405, 575, 465, 595]
+	      ZOrder		      83
+	      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+	      FontSize		      16
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Add1"
+	      SID		      "431"
+	      Ports		      [2, 1]
+	      Position		      [520, 488, 570, 617]
+	      ZOrder		      84
+	      FontSize		      16
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      SID		      "432"
+	      Ports		      [2, 1]
+	      Position		      [780, 530, 830, 580]
+	      ZOrder		      86
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "++|"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "m/Hz"
+	      SID		      "433"
+	      Position		      [625, 401, 730, 479]
+	      ZOrder		      89
+	      FontSize		      16
+	      Gain		      "fcsParams.OptGain.Hz2m00"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      SID		      "435"
+	      Position		      [965, 545, 1025, 565]
+	      ZOrder		      88
+	      BackgroundColor	      "yellow"
+	      FontSize		      16
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "LengthNoise"
+	      SrcPort		      1
+	      DstBlock		      "Add1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "CTN"
+	      SrcPort		      1
+	      DstBlock		      "Add1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Add1"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "LaserIN"
+	      SrcPort		      1
+	      DstBlock		      "m/Hz"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "m/Hz"
+	      SrcPort		      1
+	      Points		      [70, 0]
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Hz/V"
+	  SID			  "156"
+	  Position		  [475, 451, 580, 519]
+	  ZOrder		  3
+	  FontSize		  16
+	  Gain			  "fcsParams.OptGain.laserFast"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "PDH_00"
+	  SID			  "438"
+	  Ports			  [1, 1]
+	  Position		  [1305, 481, 1510, 589]
+	  ZOrder		  103
+	  FontSize		  16
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "PDH_00"
+	    Location		    [-1920, 22, 0, 1076]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "283"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      SID		      "439"
+	      Position		      [215, 215, 265, 245]
+	      ZOrder		      -1
+	      BackgroundColor	      "yellow"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      " W/m"
+	      SID		      "440"
+	      Position		      [320, 197, 385, 263]
+	      ZOrder		      7
+	      Gain		      "fcsParams.errSig.m2W00m"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "PDdarkNoise"
+	      SID		      "441"
+	      Tag		      "NbNoiseSource"
+	      Ports		      [0, 1]
+	      Position		      [652, 355, 668, 380]
+	      ZOrder		      14
+	      BlockRotation	      270
+	      BackgroundColor	      "orange"
+	      AttributesFormatString  "%<Tag>"
+	      LibraryVersion	      "1.26"
+	      SourceBlock	      "NbLibrary/NbNoiseSource"
+	      SourceType	      ""
+	      asd		      "fcsParams.ctnNb.n00PDOut"
+	      groupNest		      "2"
+	      group		      "'00 FCL'"
+	      subgroup		      "'PD'"
+	      subsubgroup	      "''"
+	      subsubsubgroup	      "''"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ShotNoise"
+	      SID		      "442"
+	      Tag		      "NbNoiseSource"
+	      Ports		      [0, 1]
+	      Position		      [437, 355, 453, 380]
+	      ZOrder		      15
+	      BlockRotation	      270
+	      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+	      AttributesFormatString  "%<Tag>"
+	      LibraryVersion	      "1.26"
+	      SourceBlock	      "NbLibrary/NbNoiseSource"
+	      SourceType	      ""
+	      asd		      "fcsParams.ctnNb.PDshotNoise00"
+	      groupNest		      "2"
+	      group		      "'00 FCL'"
+	      subgroup		      "'Shot'"
+	      subsubgroup	      "''"
+	      subsubsubgroup	      "''"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      SID		      "443"
+	      Ports		      [2, 1]
+	      Position		      [420, 205, 470, 255]
+	      ZOrder		      11
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      SID		      "444"
+	      Ports		      [2, 1]
+	      Position		      [635, 205, 685, 255]
+	      ZOrder		      13
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "V/W"
+	      SID		      "445"
+	      Position		      [520, 197, 590, 263]
+	      ZOrder		      12
+	      Gain		      "fcsParams.PD.PDrespTot00"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      SID		      "446"
+	      Position		      [745, 218, 805, 242]
+	      ZOrder		      -2
+	      BackgroundColor	      "yellow"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      " W/m"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "ShotNoise"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      " W/m"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "V/W"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "V/W"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "PDdarkNoise"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      2
+	    }
+	    Annotation {
+	      SID		      "447"
+	      Name		      "1811"
+	      Position		      [559, 204]
+	      ZOrder		      -1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Servo"
+	  SID			  "167"
+	  Ports			  [1, 1]
+	  Position		  [985, 236, 1215, 344]
+	  ZOrder		  53
+	  BlockMirror		  on
+	  FontSize		  16
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Servo"
+	    Location		    [-1920, 22, 0, 1076]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "254"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      SID		      "168"
+	      Position		      [195, 257, 260, 283]
+	      ZOrder		      -1
+	      BackgroundColor	      "yellow"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      ZeroPole
+	      Name		      "1/servo(int+boost off)"
+	      SID		      "526"
+	      Position		      [287, 335, 353, 425]
+	      ZOrder		      53
+	      BlockRotation	      270
+	      Zeros		      "2 * pi * fcsParams.servo00off.poles"
+	      Poles		      "2 * pi * fcsParams.servo00off.zeros"
+	      Gain		      "1/10^(fcsParams.servo00off.gain/20)"
+	    }
+	    Block {
+	      BlockType		      ZeroPole
+	      Name		      "Servo00"
+	      SID		      "169"
+	      Position		      [395, 237, 525, 303]
+	      ZOrder		      47
+	      Zeros		      "-2*pi*fcsParams.servo00.zeros"
+	      Poles		      "-2 * pi *fcsParams.servo00.poles"
+	      Gain		      "10^(fcsParams.servo00.gain/20)"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ServoNoise"
+	      SID		      "170"
+	      Tag		      "NbNoiseSource"
+	      Ports		      [0, 1]
+	      Position		      [302, 510, 338, 555]
+	      ZOrder		      52
+	      BlockRotation	      270
+	      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+	      AttributesFormatString  "%<Tag>"
+	      LibraryVersion	      "1.26"
+	      SourceBlock	      "NbLibrary/NbNoiseSource"
+	      SourceType	      ""
+	      asd		      "fcsParams.ctnNb.n00sServoOut"
+	      groupNest		      "2"
+	      group		      "'00 FCL'"
+	      subgroup		      "'Servo'"
+	      subsubgroup	      "''"
+	      subsubsubgroup	      "''"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      SID		      "171"
+	      Ports		      [2, 1]
+	      Position		      [295, 245, 345, 295]
+	      ZOrder		      48
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      SID		      "172"
+	      Position		      [745, 258, 810, 282]
+	      ZOrder		      -2
+	      BackgroundColor	      "yellow"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Servo00"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Servo00"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "ServoNoise"
+	      SrcPort		      1
+	      DstBlock		      "1/servo(int+boost off)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "1/servo(int+boost off)"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Annotation {
+	      SID		      "173"
+	      Name		      "William LabAmp"
+	      Position		      [470, 222]
+	      ZOrder		      -1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ServoOut_00 Cal V/rtHz"
+	  SID			  "450"
+	  Tag			  "NbNoiseCal"
+	  Ports			  [0, 1]
+	  Position		  [917, 650, 933, 675]
+	  ZOrder		  134
+	  BlockRotation		  270
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  AttributesFormatString  "%<Tag>"
+	  LibraryVersion	  "1.26"
+	  FontSize		  16
+	  SourceBlock		  "NbLibrary/NbNoiseCal"
+	  SourceType		  ""
+	  dof			  "'ServoOut_00'"
+	  unit			  "'V/rtHz'"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ServoOut_00 Sink"
+	  SID			  "451"
+	  Tag			  "NbNoiseSink"
+	  Ports			  [1, 1]
+	  Position		  [705, 282, 730, 298]
+	  ZOrder		  135
+	  BlockMirror		  on
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  AttributesFormatString  "%<Tag>"
+	  LibraryVersion	  "1.26"
+	  FontSize		  16
+	  SourceBlock		  "NbLibrary/NbNoiseSink"
+	  SourceType		  ""
+	  dof			  "'ServoOut_00'"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  SID			  "409"
+	  Ports			  [2, 1]
+	  Position		  [670, 465, 710, 505]
+	  ZOrder		  81
+	  ShowName		  off
+	  FontSize		  16
+	  IconShape		  "round"
+	  Inputs		  "|-+"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  SID			  "449"
+	  Ports			  [2, 1]
+	  Position		  [1395, 280, 1415, 300]
+	  ZOrder		  115
+	  BlockMirror		  on
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum2"
+	  SID			  "551"
+	  Ports			  [2, 1]
+	  Position		  [915, 575, 935, 595]
+	  ZOrder		  136
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out2HOMs"
+	  SID			  "175"
+	  Position		  [1070, 750, 1140, 780]
+	  ZOrder		  46
+	  BackgroundColor	  "yellow"
+	  FontSize		  16
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "Cavity00"
+	  SrcPort		  1
+	  DstBlock		  "PDH_00"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Servo"
+	  SrcPort		  1
+	  DstBlock		  "ServoOut_00 Sink"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Hz/V"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "FreqNoise"
+	  SrcPort		  1
+	  Points		  [50, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "LengthNoise"
+	  SrcPort		  1
+	  DstBlock		  "Cavity00"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "CTN1"
+	  SrcPort		  1
+	  DstBlock		  "Sum2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  Points		  [76, 0]
+	  Branch {
+	    DstBlock		    "Cavity00"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 280]
+	    DstBlock		    "Out2HOMs"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "Servo"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "PDH_00"
+	  SrcPort		  1
+	  Points		  [9, 0; 0, -245]
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ServoOut_00 Cal V/rtHz"
+	  SrcPort		  1
+	  DstBlock		  "Sum2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "ServoOut_00 Sink"
+	  SrcPort		  1
+	  Points		  [-264, 0; 0, 195]
+	  DstBlock		  "Hz/V"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  DstBlock		  "Cavity00"
+	  DstPort		  3
+	}
+	Annotation {
+	  SID			  "177"
+	  Name			  "rad"
+	  Position		  [1122, 600]
+	  ZOrder		  -1
+	}
+	Annotation {
+	  SID			  "176"
+	  Name			  "Laser Controller\nFast Ch."
+	  Position		  [579, 452]
+	  ZOrder		  -2
+	  FontSize		  16
+	}
+	Annotation {
+	  SID			  "277"
+	  Name			  " "
+	  Position		  [718, 479]
+	  HorizontalAlignment	  "left"
+	  VerticalAlignment	  "top"
+	  ZOrder		  -4
+	  FontSize		  36
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "02 FCL"
+      SID		      "182"
+      Ports		      [3, 1]
+      Position		      [980, 234, 1160, 466]
+      ZOrder		      55
+      FontSize		      16
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"02 FCL"
+	Location		[-1920, 22, 0, 1076]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"133"
+	Block {
+	  BlockType		  Inport
+	  Name			  "LengthNoise"
+	  SID			  "297"
+	  Position		  [425, 605, 480, 625]
+	  ZOrder		  64
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  FontSize		  16
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "CTN"
+	  SID			  "298"
+	  Position		  [425, 665, 480, 685]
+	  ZOrder		  65
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  FontSize		  16
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "00_FCL_IN"
+	  SID			  "304"
+	  Position		  [140, 670, 195, 690]
+	  ZOrder		  67
+	  BackgroundColor	  "[0.909804, 0.819608, 0.321569]"
+	  FontSize		  16
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Cavity02"
+	  SID			  "454"
+	  Ports			  [3, 1]
+	  Position		  [555, 523, 785, 707]
+	  ZOrder		  105
+	  FontSize		  16
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Cavity02"
+	    Location		    [-1609, 102, -140, 964]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "162"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "MarconiIN"
+	      SID		      "455"
+	      Position		      [270, 290, 330, 310]
+	      ZOrder		      -1
+	      BackgroundColor	      "[0.909804, 0.819608, 0.321569]"
+	      FontSize		      16
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "LengthNoise"
+	      SID		      "456"
+	      Position		      [275, 415, 330, 435]
+	      ZOrder		      81
+	      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+	      FontSize		      16
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "CTN"
+	      SID		      "457"
+	      Position		      [270, 480, 330, 500]
+	      ZOrder		      83
+	      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+	      FontSize		      16
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Add1"
+	      SID		      "458"
+	      Ports		      [2, 1]
+	      Position		      [410, 393, 460, 522]
+	      ZOrder		      84
+	      FontSize		      16
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      SID		      "459"
+	      Ports		      [2, 1]
+	      Position		      [765, 435, 815, 485]
+	      ZOrder		      86
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "++|"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      SID		      "534"
+	      Ports		      [2, 1]
+	      Position		      [630, 290, 650, 310]
+	      ZOrder		      93
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum2"
+	      SID		      "535"
+	      Ports		      [2, 1]
+	      Position		      [645, 450, 665, 470]
+	      ZOrder		      94
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "TF1 Cal"
+	      SID		      "538"
+	      Tag		      "NbNoiseCal"
+	      Ports		      [0, 1]
+	      Position		      [632, 360, 648, 385]
+	      ZOrder		      126
+	      BlockRotation	      270
+	      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+	      AttributesFormatString  "%<Tag>"
+	      LibraryVersion	      "1.26"
+	      FontSize		      16
+	      SourceBlock	      "NbLibrary/NbNoiseCal"
+	      SourceType	      ""
+	      dof		      "'TF1'"
+	      unit		      "'rad/rad'"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "TF1 Sink\n"
+	      SID		      "536"
+	      Tag		      "NbNoiseSink"
+	      Ports		      [1, 1]
+	      Position		      [715, 292, 740, 308]
+	      ZOrder		      124
+	      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+	      AttributesFormatString  "%<Tag>"
+	      LibraryVersion	      "1.26"
+	      FontSize		      16
+	      SourceBlock	      "NbLibrary/NbNoiseSink"
+	      SourceType	      ""
+	      dof		      "'TF1'"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "TF2 Cal\n"
+	      SID		      "539"
+	      Tag		      "NbNoiseCal"
+	      Ports		      [0, 1]
+	      Position		      [647, 535, 663, 560]
+	      ZOrder		      127
+	      BlockRotation	      270
+	      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+	      AttributesFormatString  "%<Tag>"
+	      LibraryVersion	      "1.26"
+	      FontSize		      16
+	      SourceBlock	      "NbLibrary/NbNoiseCal"
+	      SourceType	      ""
+	      dof		      "'TF2'"
+	      unit		      "'rad/rad'"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "TF2Sink"
+	      SID		      "537"
+	      Tag		      "NbNoiseSink"
+	      Ports		      [1, 1]
+	      Position		      [715, 452, 740, 468]
+	      ZOrder		      125
+	      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+	      AttributesFormatString  "%<Tag>"
+	      LibraryVersion	      "1.26"
+	      FontSize		      16
+	      SourceBlock	      "NbLibrary/NbNoiseSink"
+	      SourceType	      ""
+	      dof		      "'TF2'"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "m/Hz"
+	      SID		      "460"
+	      Position		      [480, 261, 585, 339]
+	      ZOrder		      89
+	      FontSize		      16
+	      Gain		      "fcsParams.OptGain.Hz2m02"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out"
+	      SID		      "462"
+	      Position		      [950, 450, 1010, 470]
+	      ZOrder		      88
+	      BackgroundColor	      "yellow"
+	      FontSize		      16
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "LengthNoise"
+	      SrcPort		      1
+	      DstBlock		      "Add1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "CTN"
+	      SrcPort		      1
+	      DstBlock		      "Add1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Add1"
+	      SrcPort		      1
+	      DstBlock		      "Sum2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "m/Hz"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "MarconiIN"
+	      SrcPort		      1
+	      DstBlock		      "m/Hz"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      DstBlock		      "TF1 Sink\n"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum2"
+	      SrcPort		      1
+	      DstBlock		      "TF2Sink"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "TF1 Sink\n"
+	      SrcPort		      1
+	      Points		      [45, 0]
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "TF2Sink"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "TF1 Cal"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "TF2 Cal\n"
+	      SrcPort		      1
+	      DstBlock		      "Sum2"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Marconi+AOM"
+	  SID			  "189"
+	  Ports			  [1, 1]
+	  Position		  [130, 521, 275, 589]
+	  ZOrder		  51
+	  BackgroundColor	  "[0.380392, 0.741176, 0.988235]"
+	  FontSize		  16
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Marconi+AOM"
+	    Location		    [61, 89, 1530, 951]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "203"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      SID		      "190"
+	      Position		      [105, 200, 150, 220]
+	      ZOrder		      -1
+	      BackgroundColor	      "yellow"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Hz/Hz\n"
+	      SID		      "228"
+	      Position		      [490, 169, 590, 251]
+	      ZOrder		      43
+	      FontSize		      16
+	      Gain		      "2"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Hz/V"
+	      SID		      "229"
+	      Position		      [250, 169, 355, 251]
+	      ZOrder		      41
+	      FontSize		      16
+	      Gain		      "fcsParams.OptGain.MarconiGain"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "MarconiNoise\nHz/rtHz"
+	      SID		      "230"
+	      Tag		      "NbNoiseSource"
+	      Ports		      [0, 1]
+	      Position		      [412, 310, 438, 345]
+	      ZOrder		      52
+	      BlockRotation	      270
+	      BackgroundColor	      "orange"
+	      AttributesFormatString  "%<Tag>"
+	      LibraryVersion	      "1.26"
+	      SourceBlock	      "NbLibrary/NbNoiseSource"
+	      SourceType	      ""
+	      asd		      "fcsParams.ctnNb.n02Marconi"
+	      groupNest		      "2"
+	      group		      "'02 FCL'"
+	      subgroup		      "'Marconi'"
+	      subsubgroup	      "''"
+	      subsubsubgroup	      "''"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      SID		      "529"
+	      Ports		      [2, 1]
+	      Position		      [405, 190, 445, 230]
+	      ZOrder		      53
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      SID		      "231"
+	      Position		      [660, 200, 705, 220]
+	      ZOrder		      -2
+	      BackgroundColor	      "yellow"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "MarconiNoise\nHz/rtHz"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Hz/Hz\n"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Hz/V"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Hz/V"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Hz/Hz\n"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      SID		      "233"
+	      Name		      "MarconiGain"
+	      Position		      [374, 164]
+	      ZOrder		      -1
+	    }
+	    Annotation {
+	      SID		      "232"
+	      Name		      "Double Pass AOM"
+	      Position		      [579, 163]
+	      ZOrder		      -2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "PDH_HOM02"
+	  SID			  "235"
+	  Ports			  [1, 1]
+	  Position		  [870, 581, 990, 649]
+	  ZOrder		  52
+	  BackgroundColor	  "[0.501961, 0.501961, 0.501961]"
+	  FontSize		  16
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "PDH_HOM02"
+	    Location		    [-1920, 22, 0, 1076]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "206"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      SID		      "236"
+	      Position		      [125, 115, 175, 145]
+	      ZOrder		      -1
+	      BackgroundColor	      "yellow"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      " W/m"
+	      SID		      "237"
+	      Position		      [225, 97, 290, 163]
+	      ZOrder		      7
+	      Gain		      "fcsParams.errSig.m2W02m"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "PDdarkNoise"
+	      SID		      "238"
+	      Tag		      "NbNoiseSource"
+	      Ports		      [0, 1]
+	      Position		      [562, 245, 578, 270]
+	      ZOrder		      14
+	      BlockRotation	      270
+	      BackgroundColor	      "orange"
+	      AttributesFormatString  "%<Tag>"
+	      LibraryVersion	      "1.26"
+	      SourceBlock	      "NbLibrary/NbNoiseSource"
+	      SourceType	      ""
+	      asd		      "fcsParams.ctnNb.n02PDOut"
+	      groupNest		      "2"
+	      group		      "'02 FCL'"
+	      subgroup		      "'PD'"
+	      subsubgroup	      "''"
+	      subsubsubgroup	      "''"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ShotNoise"
+	      SID		      "239"
+	      Tag		      "NbNoiseSource"
+	      Ports		      [0, 1]
+	      Position		      [362, 245, 378, 270]
+	      ZOrder		      15
+	      BlockRotation	      270
+	      BackgroundColor	      "orange"
+	      AttributesFormatString  "%<Tag>"
+	      LibraryVersion	      "1.26"
+	      SourceBlock	      "NbLibrary/NbNoiseSource"
+	      SourceType	      ""
+	      asd		      "fcsParams.ctnNb.PDshotNoiseHOM"
+	      groupNest		      "2"
+	      group		      "'02 FCL'"
+	      subgroup		      "'Shot'"
+	      subsubgroup	      "''"
+	      subsubsubgroup	      "''"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      SID		      "240"
+	      Ports		      [2, 1]
+	      Position		      [345, 105, 395, 155]
+	      ZOrder		      11
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      SID		      "241"
+	      Ports		      [2, 1]
+	      Position		      [545, 105, 595, 155]
+	      ZOrder		      13
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "V/W"
+	      SID		      "242"
+	      Position		      [430, 97, 500, 163]
+	      ZOrder		      12
+	      Gain		      "fcsParams.PD.PDrespTot02"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      SID		      "243"
+	      Position		      [655, 118, 715, 142]
+	      ZOrder		      -2
+	      BackgroundColor	      "yellow"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      " W/m"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "ShotNoise"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      " W/m"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "V/W"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "V/W"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "PDdarkNoise"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      2
+	    }
+	    Annotation {
+	      SID		      "247"
+	      Name		      "PDH"
+	      Position		      [266, 99]
+	      ZOrder		      -1
+	    }
+	    Annotation {
+	      SID		      "246"
+	      Name		      "W"
+	      Position		      [320, 137]
+	      ZOrder		      -2
+	    }
+	    Annotation {
+	      SID		      "245"
+	      Name		      "V"
+	      Position		      [521, 135]
+	      ZOrder		      -3
+	    }
+	    Annotation {
+	      SID		      "244"
+	      Name		      "LSC PD"
+	      Position		      [476, 99]
+	      ZOrder		      -4
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Servo"
+	  SID			  "248"
+	  Ports			  [1, 1]
+	  Position		  [585, 344, 765, 426]
+	  ZOrder		  53
+	  BlockMirror		  on
+	  BackgroundColor	  "[0.329412, 0.329412, 0.329412]"
+	  FontSize		  16
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Servo"
+	    Location		    [-1920, 22, 0, 1076]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "198"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      SID		      "249"
+	      Position		      [310, 307, 375, 333]
+	      ZOrder		      -1
+	      BackgroundColor	      "yellow"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      ZeroPole
+	      Name		      "Servo"
+	      SID		      "250"
+	      Position		      [485, 287, 615, 353]
+	      ZOrder		      47
+	      Zeros		      "-2 * pi * fcsParams.servo02.zeros"
+	      Poles		      "-2 * pi * fcsParams.servo02.poles"
+	      Gain		      "10^(fcsParams.servo02.gain/20)"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ServoNoise"
+	      SID		      "251"
+	      Tag		      "NbNoiseSource"
+	      Ports		      [0, 1]
+	      Position		      [722, 410, 758, 455]
+	      ZOrder		      52
+	      BlockRotation	      270
+	      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+	      AttributesFormatString  "%<Tag>"
+	      LibraryVersion	      "1.26"
+	      SourceBlock	      "NbLibrary/NbNoiseSource"
+	      SourceType	      ""
+	      asd		      "fcsParams.ctnNb.n02sServoOut"
+	      groupNest		      "2"
+	      group		      "'02 FCL'"
+	      subgroup		      "'Servo'"
+	      subsubgroup	      "''"
+	      subsubsubgroup	      "''"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      SID		      "252"
+	      Ports		      [2, 1]
+	      Position		      [715, 295, 765, 345]
+	      ZOrder		      48
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      SID		      "253"
+	      Position		      [860, 308, 925, 332]
+	      ZOrder		      -2
+	      BackgroundColor	      "yellow"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Servo"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "ServoNoise"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Servo"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      SID		      "254"
+	      Name		      "SR560 (at the moment)"
+	      Position		      [552, 267]
+	      ZOrder		      -1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ServoOut_02 Cal V/rtHz"
+	  SID			  "552"
+	  Tag			  "NbNoiseCal"
+	  Ports			  [0, 1]
+	  Position		  [502, 450, 518, 475]
+	  ZOrder		  128
+	  BlockRotation		  270
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  AttributesFormatString  "%<Tag>"
+	  LibraryVersion	  "1.26"
+	  FontSize		  16
+	  SourceBlock		  "NbLibrary/NbNoiseCal"
+	  SourceType		  ""
+	  dof			  "'ServoOut_02'"
+	  unit			  "'V/rtHz'"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ServoOut_02 Sink"
+	  SID			  "521"
+	  Tag			  "NbNoiseSink"
+	  Ports			  [1, 1]
+	  Position		  [410, 377, 435, 393]
+	  ZOrder		  127
+	  BlockMirror		  on
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  AttributesFormatString  "%<Tag>"
+	  LibraryVersion	  "1.26"
+	  FontSize		  16
+	  SourceBlock		  "NbLibrary/NbNoiseSink"
+	  SourceType		  ""
+	  dof			  "'ServoOut_02'"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  SID			  "519"
+	  Ports			  [2, 1]
+	  Position		  [815, 375, 835, 395]
+	  ZOrder		  107
+	  BlockMirror		  on
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  SID			  "533"
+	  Ports			  [2, 1]
+	  Position		  [325, 530, 375, 580]
+	  ZOrder		  124
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|-+"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum2"
+	  SID			  "544"
+	  Ports			  [2, 1]
+	  Position		  [515, 665, 535, 685]
+	  ZOrder		  125
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum3"
+	  SID			  "554"
+	  Ports			  [2, 1]
+	  Position		  [500, 375, 520, 395]
+	  ZOrder		  130
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "BeatNote"
+	  SID			  "469"
+	  Position		  [435, 805, 495, 825]
+	  ZOrder		  106
+	  BackgroundColor	  "yellow"
+	  FontSize		  16
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "Servo"
+	  SrcPort		  1
+	  DstBlock		  "Sum3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Cavity02"
+	  SrcPort		  1
+	  DstBlock		  "PDH_HOM02"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "CTN"
+	  SrcPort		  1
+	  DstBlock		  "Sum2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "LengthNoise"
+	  SrcPort		  1
+	  DstBlock		  "Cavity02"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Servo"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "PDH_HOM02"
+	  SrcPort		  1
+	  Points		  [13, 0; 0, -230]
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Marconi+AOM"
+	  SrcPort		  1
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "00_FCL_IN"
+	  SrcPort		  1
+	  Points		  [150, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  Points		  [21, 0]
+	  Branch {
+	    Points		    [0, 260]
+	    DstBlock		    "BeatNote"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Cavity02"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  DstBlock		  "Cavity02"
+	  DstPort		  3
+	}
+	Line {
+	  Points		  [525, 730; 0, -5; 0, 5; 0, -23]
+	}
+	Line {
+	  SrcBlock		  "ServoOut_02 Sink"
+	  SrcPort		  1
+	  Points		  [-306, 0; 0, 170]
+	  DstBlock		  "Marconi+AOM"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum3"
+	  SrcPort		  1
+	  DstBlock		  "ServoOut_02 Sink"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ServoOut_02 Cal V/rtHz"
+	  SrcPort		  1
+	  DstBlock		  "Sum3"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "20 FCL"
+      SID		      "470"
+      Ports		      [3, 1]
+      Position		      [980, 506, 1160, 744]
+      ZOrder		      119
+      FontSize		      16
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"20 FCL"
+	Location		[-1920, 22, 0, 1080]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"160"
+	Block {
+	  BlockType		  Inport
+	  Name			  "00_FCL_IN"
+	  SID			  "473"
+	  Position		  [205, 660, 260, 680]
+	  ZOrder		  67
+	  BackgroundColor	  "[0.909804, 0.819608, 0.321569]"
+	  FontSize		  16
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "CTN"
+	  SID			  "472"
+	  Position		  [420, 665, 475, 685]
+	  ZOrder		  65
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  FontSize		  16
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "LengthNoise"
+	  SID			  "471"
+	  Position		  [420, 605, 475, 625]
+	  ZOrder		  64
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  FontSize		  16
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Cavity20"
+	  SID			  "474"
+	  Ports			  [3, 1]
+	  Position		  [560, 523, 790, 707]
+	  ZOrder		  105
+	  FontSize		  16
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Cavity20"
+	    Location		    [-1609, 102, -140, 964]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "192"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "MarconiIN"
+	      SID		      "475"
+	      Position		      [425, 385, 485, 405]
+	      ZOrder		      -1
+	      BackgroundColor	      "[0.909804, 0.819608, 0.321569]"
+	      FontSize		      16
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "LengthNoise"
+	      SID		      "477"
+	      Position		      [410, 510, 465, 530]
+	      ZOrder		      81
+	      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+	      FontSize		      16
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "CTN"
+	      SID		      "478"
+	      Position		      [405, 575, 465, 595]
+	      ZOrder		      83
+	      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+	      FontSize		      16
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Add1"
+	      SID		      "479"
+	      Ports		      [2, 1]
+	      Position		      [520, 488, 570, 617]
+	      ZOrder		      84
+	      FontSize		      16
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      SID		      "481"
+	      Ports		      [2, 1]
+	      Position		      [780, 530, 830, 580]
+	      ZOrder		      86
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "++|"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "m/Hz"
+	      SID		      "482"
+	      Position		      [630, 356, 735, 434]
+	      ZOrder		      89
+	      FontSize		      16
+	      Gain		      "fcsParams.OptGain.Hz2m20"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out"
+	      SID		      "484"
+	      Position		      [965, 545, 1025, 565]
+	      ZOrder		      88
+	      BackgroundColor	      "yellow"
+	      FontSize		      16
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "LengthNoise"
+	      SrcPort		      1
+	      DstBlock		      "Add1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "CTN"
+	      SrcPort		      1
+	      DstBlock		      "Add1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Add1"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "m/Hz"
+	      SrcPort		      1
+	      Points		      [65, 0]
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "MarconiIN"
+	      SrcPort		      1
+	      DstBlock		      "m/Hz"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Marconi+AOM"
+	  SID			  "486"
+	  Ports			  [1, 1]
+	  Position		  [170, 521, 315, 589]
+	  ZOrder		  51
+	  BackgroundColor	  "[0.380392, 0.741176, 0.988235]"
+	  FontSize		  16
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Marconi+AOM"
+	    Location		    [61, 89, 1530, 951]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "212"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      SID		      "487"
+	      Position		      [130, 200, 175, 220]
+	      ZOrder		      -1
+	      BackgroundColor	      "yellow"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Hz/Hz\n"
+	      SID		      "489"
+	      Position		      [490, 169, 590, 251]
+	      ZOrder		      43
+	      FontSize		      16
+	      Gain		      "2"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Hz/V"
+	      SID		      "490"
+	      Position		      [240, 169, 345, 251]
+	      ZOrder		      41
+	      FontSize		      16
+	      Gain		      "fcsParams.OptGain.MarconiGain"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "MarconiNoise\nHz/rtHz"
+	      SID		      "491"
+	      Tag		      "NbNoiseSource"
+	      Ports		      [0, 1]
+	      Position		      [377, 300, 403, 335]
+	      ZOrder		      52
+	      BlockRotation	      270
+	      BackgroundColor	      "orange"
+	      AttributesFormatString  "%<Tag>"
+	      LibraryVersion	      "1.26"
+	      SourceBlock	      "NbLibrary/NbNoiseSource"
+	      SourceType	      ""
+	      asd		      "fcsParams.ctnNb.n20Marconi"
+	      groupNest		      "2"
+	      group		      "'20 FCL'"
+	      subgroup		      "'Marconi'"
+	      subsubgroup	      "''"
+	      subsubsubgroup	      "''"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      SID		      "531"
+	      Ports		      [2, 1]
+	      Position		      [370, 190, 410, 230]
+	      ZOrder		      55
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      SID		      "492"
+	      Position		      [660, 200, 705, 220]
+	      ZOrder		      -2
+	      BackgroundColor	      "yellow"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Hz/Hz\n"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Hz/V"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Hz/V"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "MarconiNoise\nHz/rtHz"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Hz/Hz\n"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      SID		      "494"
+	      Name		      "MarconiGain"
+	      Position		      [374, 164]
+	      ZOrder		      -1
+	    }
+	    Annotation {
+	      SID		      "493"
+	      Name		      "Double Pass AOM"
+	      Position		      [579, 163]
+	      ZOrder		      -2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "PDH_HOM20"
+	  SID			  "495"
+	  Ports			  [1, 1]
+	  Position		  [870, 581, 990, 649]
+	  ZOrder		  52
+	  BackgroundColor	  "[0.501961, 0.501961, 0.501961]"
+	  FontSize		  16
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "PDH_HOM20"
+	    Location		    [-1609, 102, -140, 964]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "206"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      SID		      "496"
+	      Position		      [125, 115, 175, 145]
+	      ZOrder		      -1
+	      BackgroundColor	      "yellow"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      " W/m"
+	      SID		      "497"
+	      Position		      [225, 97, 290, 163]
+	      ZOrder		      7
+	      Gain		      "fcsParams.errSig.m2W20m"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "PDdarkNoise"
+	      SID		      "498"
+	      Tag		      "NbNoiseSource"
+	      Ports		      [0, 1]
+	      Position		      [562, 245, 578, 270]
+	      ZOrder		      14
+	      BlockRotation	      270
+	      BackgroundColor	      "orange"
+	      AttributesFormatString  "%<Tag>"
+	      LibraryVersion	      "1.26"
+	      SourceBlock	      "NbLibrary/NbNoiseSource"
+	      SourceType	      ""
+	      asd		      "fcsParams.ctnNb.n02PDOut"
+	      groupNest		      "2"
+	      group		      "'20 FCL'"
+	      subgroup		      "'PD'"
+	      subsubgroup	      "''"
+	      subsubsubgroup	      "''"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ShotNoise"
+	      SID		      "499"
+	      Tag		      "NbNoiseSource"
+	      Ports		      [0, 1]
+	      Position		      [362, 245, 378, 270]
+	      ZOrder		      15
+	      BlockRotation	      270
+	      BackgroundColor	      "orange"
+	      AttributesFormatString  "%<Tag>"
+	      LibraryVersion	      "1.26"
+	      SourceBlock	      "NbLibrary/NbNoiseSource"
+	      SourceType	      ""
+	      asd		      "fcsParams.ctnNb.PDshotNoiseHOM"
+	      groupNest		      "2"
+	      group		      "'20 FCL'"
+	      subgroup		      "'Shot'"
+	      subsubgroup	      "''"
+	      subsubsubgroup	      "''"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      SID		      "500"
+	      Ports		      [2, 1]
+	      Position		      [345, 105, 395, 155]
+	      ZOrder		      11
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      SID		      "501"
+	      Ports		      [2, 1]
+	      Position		      [545, 105, 595, 155]
+	      ZOrder		      13
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "V/W"
+	      SID		      "502"
+	      Position		      [430, 97, 500, 163]
+	      ZOrder		      12
+	      Gain		      "fcsParams.PD.PDrespTot20"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      SID		      "503"
+	      Position		      [655, 118, 715, 142]
+	      ZOrder		      -2
+	      BackgroundColor	      "yellow"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      " W/m"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "ShotNoise"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      " W/m"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "V/W"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "V/W"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "PDdarkNoise"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      2
+	    }
+	    Annotation {
+	      SID		      "507"
+	      Name		      "PDH"
+	      Position		      [266, 99]
+	      ZOrder		      -1
+	    }
+	    Annotation {
+	      SID		      "506"
+	      Name		      "W"
+	      Position		      [320, 137]
+	      ZOrder		      -2
+	    }
+	    Annotation {
+	      SID		      "505"
+	      Name		      "V"
+	      Position		      [521, 135]
+	      ZOrder		      -3
+	    }
+	    Annotation {
+	      SID		      "504"
+	      Name		      "LSC PD"
+	      Position		      [476, 99]
+	      ZOrder		      -4
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Servo"
+	  SID			  "508"
+	  Ports			  [1, 1]
+	  Position		  [585, 344, 765, 426]
+	  ZOrder		  53
+	  BlockMirror		  on
+	  BackgroundColor	  "[0.329412, 0.329412, 0.329412]"
+	  FontSize		  16
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Servo"
+	    Location		    [61, 89, 1530, 951]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "198"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      SID		      "509"
+	      Position		      [310, 307, 375, 333]
+	      ZOrder		      -1
+	      BackgroundColor	      "yellow"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      ZeroPole
+	      Name		      "Servo"
+	      SID		      "510"
+	      Position		      [485, 287, 615, 353]
+	      ZOrder		      47
+	      Zeros		      "-2 * pi * fcsParams.servo20.zeros"
+	      Poles		      "-2 * pi * fcsParams.servo20.poles"
+	      Gain		      "10^(fcsParams.servo20.gain/20)"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "ServoNoise"
+	      SID		      "511"
+	      Tag		      "NbNoiseSource"
+	      Ports		      [0, 1]
+	      Position		      [722, 410, 758, 455]
+	      ZOrder		      52
+	      BlockRotation	      270
+	      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+	      AttributesFormatString  "%<Tag>"
+	      LibraryVersion	      "1.26"
+	      SourceBlock	      "NbLibrary/NbNoiseSource"
+	      SourceType	      ""
+	      asd		      "fcsParams.ctnNb.n02sServoOut"
+	      groupNest		      "2"
+	      group		      "'20 FCL'"
+	      subgroup		      "'Servo'"
+	      subsubgroup	      "''"
+	      subsubsubgroup	      "''"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      SID		      "512"
+	      Ports		      [2, 1]
+	      Position		      [715, 295, 765, 345]
+	      ZOrder		      48
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      SID		      "513"
+	      Position		      [860, 308, 925, 332]
+	      ZOrder		      -2
+	      BackgroundColor	      "yellow"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Servo"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "ServoNoise"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Servo"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      SID		      "514"
+	      Name		      "SR560 (at the moment)"
+	      Position		      [552, 267]
+	      ZOrder		      -1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ServoOut_20 Cal m/rtHz"
+	  SID			  "523"
+	  Tag			  "NbNoiseCal"
+	  Ports			  [0, 1]
+	  Position		  [517, 730, 533, 755]
+	  ZOrder		  131
+	  BlockRotation		  270
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  AttributesFormatString  "%<Tag>"
+	  LibraryVersion	  "1.26"
+	  FontSize		  16
+	  SourceBlock		  "NbLibrary/NbNoiseCal"
+	  SourceType		  ""
+	  dof			  "'ServoOut_20'"
+	  unit			  "'m/rtHz'"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ServoOut_20 Sink"
+	  SID			  "524"
+	  Tag			  "NbNoiseSink"
+	  Ports			  [1, 1]
+	  Position		  [375, 377, 400, 393]
+	  ZOrder		  129
+	  BlockMirror		  on
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  AttributesFormatString  "%<Tag>"
+	  LibraryVersion	  "1.26"
+	  FontSize		  16
+	  SourceBlock		  "NbLibrary/NbNoiseSink"
+	  SourceType		  ""
+	  dof			  "'ServoOut_20'"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  SID			  "525"
+	  Ports			  [2, 1]
+	  Position		  [870, 375, 890, 395]
+	  ZOrder		  123
+	  BlockMirror		  on
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Array {
+	      Type		      "Struct"
+	      Dimension		      1
+	      MATStruct {
+		Type			"outin"
+		OpenLoop		"on"
+		BusElementName		""
+	      }
+	      PropName		      "LinearAnalysisIO"
+	    }
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  SID			  "541"
+	  Ports			  [2, 1]
+	  Position		  [340, 545, 360, 565]
+	  ZOrder		  127
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|-+"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum2"
+	  SID			  "545"
+	  Ports			  [2, 1]
+	  Position		  [515, 665, 535, 685]
+	  ZOrder		  130
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "BeatNote"
+	  SID			  "515"
+	  Position		  [445, 840, 505, 860]
+	  ZOrder		  106
+	  BackgroundColor	  "yellow"
+	  FontSize		  16
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "Servo"
+	  SrcPort		  1
+	  DstBlock		  "ServoOut_20 Sink"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Cavity20"
+	  SrcPort		  1
+	  DstBlock		  "PDH_HOM20"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "CTN"
+	  SrcPort		  1
+	  DstBlock		  "Sum2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "00_FCL_IN"
+	  SrcPort		  1
+	  Points		  [85, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "LengthNoise"
+	  SrcPort		  1
+	  DstBlock		  "Cavity20"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Servo"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "PDH_HOM20"
+	  SrcPort		  1
+	  Points		  [9, 0; 0, -230]
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  Points		  [31, 0]
+	  Branch {
+	    Points		    [0, 295]
+	    DstBlock		    "BeatNote"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Cavity20"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Marconi+AOM"
+	  SrcPort		  1
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ServoOut_20 Sink"
+	  SrcPort		  1
+	  Points		  [-271, 0; 0, 170]
+	  DstBlock		  "Marconi+AOM"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  DstBlock		  "Cavity20"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "ServoOut_20 Cal m/rtHz"
+	  SrcPort		  1
+	  DstBlock		  "Sum2"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "BeatNote"
+      SID		      "390"
+      Ports		      [2, 1]
+      Position		      [1095, 819, 1135, 926]
+      ZOrder		      80
+      BlockMirror	      on
+      BackgroundColor	      "cyan"
+      FontSize		      16
+      Inputs		      "+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "BeatNote_Cal"
+      SID		      "543"
+      Tag		      "NbNoiseCal"
+      Ports		      [0, 1]
+      Position		      [877, 560, 893, 585]
+      ZOrder		      134
+      BlockRotation	      270
+      BlockMirror	      on
+      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+      NamePlacement	      "alternate"
+      AttributesFormatString  "%<Tag>"
+      LibraryVersion	      "1.26"
+      FontSize		      16
+      SourceBlock	      "NbLibrary/NbNoiseCal"
+      SourceType	      ""
+      dof		      "'BeatNote'"
+      unit		      "'m/rtHz'"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "BeatNote_Sink"
+      SID		      "395"
+      Tag		      "NbNoiseSink"
+      Ports		      [1, 1]
+      Position		      [945, 867, 970, 883]
+      ZOrder		      132
+      BlockMirror	      on
+      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+      AttributesFormatString  "%<Tag>"
+      LibraryVersion	      "1.26"
+      FontSize		      16
+      SourceBlock	      "NbLibrary/NbNoiseSink"
+      SourceType	      ""
+      dof		      "'BeatNote'"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "CTN_00 m/rtHz"
+      SID		      "268"
+      Tag		      "NbNoiseSource"
+      Ports		      [0, 1]
+      Position		      [455, 542, 480, 558]
+      ZOrder		      60
+      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+      AttributesFormatString  "%<Tag>"
+      LibraryVersion	      "1.26"
+      FontSize		      16
+      SourceBlock	      "NbLibrary/NbNoiseSource"
+      SourceType	      ""
+      asd		      "fcsParams.ctnNb.CTN"
+      groupNest		      "2"
+      group		      "'00 FCL'"
+      subgroup		      "'Coating'"
+      subsubgroup	      "''"
+      subsubsubgroup	      "''"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "CTN_02 m/rtHz"
+      SID		      "303"
+      Tag		      "NbNoiseSource"
+      Ports		      [0, 1]
+      Position		      [895, 342, 920, 358]
+      ZOrder		      73
+      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+      AttributesFormatString  "%<Tag>"
+      LibraryVersion	      "1.26"
+      FontSize		      16
+      SourceBlock	      "NbLibrary/NbNoiseSource"
+      SourceType	      ""
+      asd		      "fcsParams.ctnNb.CTN"
+      groupNest		      "2"
+      group		      "'02 FCL'"
+      subgroup		      "'Coating'"
+      subsubgroup	      "''"
+      subsubsubgroup	      "''"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "CTN_20  m/rtHz"
+      SID		      "385"
+      Tag		      "NbNoiseSource"
+      Ports		      [0, 1]
+      Position		      [775, 617, 800, 633]
+      ZOrder		      75
+      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+      AttributesFormatString  "%<Tag>"
+      LibraryVersion	      "1.26"
+      FontSize		      16
+      SourceBlock	      "NbLibrary/NbNoiseSource"
+      SourceType	      ""
+      asd		      "fcsParams.ctnNb.CTN"
+      groupNest		      "2"
+      group		      "'20 FCL'"
+      subgroup		      "'Coating'"
+      subsubgroup	      "''"
+      subsubsubgroup	      "''"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DelayLineNoise"
+      SID		      "397"
+      Tag		      "NbNoiseSource"
+      Ports		      [0, 1]
+      Position		      [402, 790, 418, 815]
+      ZOrder		      87
+      BlockRotation	      270
+      BlockMirror	      on
+      BackgroundColor	      "orange"
+      AttributesFormatString  "%<Tag>"
+      LibraryVersion	      "1.26"
+      FontSize		      16
+      SourceBlock	      "NbLibrary/NbNoiseSource"
+      SourceType	      ""
+      asd		      "0"
+      groupNest		      "1"
+      group		      "''"
+      subgroup		      "''"
+      subsubgroup	      "''"
+      subsubsubgroup	      "''"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "FreqNoise Hz/rtHz"
+      SID		      "155"
+      Tag		      "NbNoiseSource"
+      Ports		      [0, 1]
+      Position		      [455, 392, 480, 408]
+      ZOrder		      58
+      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+      AttributesFormatString  "%<Tag>"
+      LibraryVersion	      "1.26"
+      FontSize		      16
+      SourceBlock	      "NbLibrary/NbNoiseSource"
+      SourceType	      ""
+      asd		      "fcsParams.ctnNb.LaserFreqNoise * (100 ./ fcsParams.freq)"
+      groupNest		      "2"
+      group		      "'00 FCL'"
+      subgroup		      "'Freq'"
+      subsubgroup	      "''"
+      subsubsubgroup	      "''"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Hz/V"
+      SID		      "392"
+      Position		      [215, 840, 325, 910]
+      ZOrder		      82
+      BlockMirror	      on
+      FontSize		      16
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "LengthNoise  m/rtHz"
+      SID		      "259"
+      Tag		      "NbNoiseSource"
+      Ports		      [0, 1]
+      Position		      [50, 432, 75, 448]
+      ZOrder		      57
+      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+      AttributesFormatString  "%<Tag>"
+      LibraryVersion	      "1.26"
+      FontSize		      16
+      SourceBlock	      "NbLibrary/NbNoiseSource"
+      SourceType	      ""
+      asd		      "fcsParams.ctnNb.noiseLength"
+      groupNest		      "2"
+      group		      "'00 FCL'"
+      subgroup		      "'Length'"
+      subsubgroup	      "''"
+      subsubsubgroup	      "''"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "NbNoiseCal00 m/rtHz"
+      SID		      "424"
+      Tag		      "NbNoiseCal"
+      Ports		      [0, 1]
+      Position		      [50, 502, 75, 518]
+      ZOrder		      96
+      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+      AttributesFormatString  "%<Tag>"
+      LibraryVersion	      "1.26"
+      FontSize		      16
+      SourceBlock	      "NbLibrary/NbNoiseCal"
+      SourceType	      ""
+      dof		      "'00'"
+      unit		      "'m/rtHz'"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "NbNoiseSink00"
+      SID		      "423"
+      Tag		      "NbNoiseSink"
+      Ports		      [1, 1]
+      Position		      [775, 467, 800, 483]
+      ZOrder		      118
+      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+      AttributesFormatString  "%<Tag>"
+      LibraryVersion	      "1.26"
+      FontSize		      16
+      SourceBlock	      "NbLibrary/NbNoiseSink"
+      SourceType	      ""
+      dof		      "'00'"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "PDNoise"
+      SID		      "256"
+      Tag		      "NbNoiseSource"
+      Ports		      [0, 1]
+      Position		      [507, 980, 523, 1005]
+      ZOrder		      56
+      BlockRotation	      270
+      BackgroundColor	      "orange"
+      AttributesFormatString  "%<Tag>"
+      LibraryVersion	      "1.26"
+      FontSize		      16
+      SourceBlock	      "NbLibrary/NbNoiseSource"
+      SourceType	      ""
+      asd		      "0"
+      groupNest		      "1"
+      group		      "''"
+      subgroup		      "''"
+      subsubgroup	      "''"
+      subsubsubgroup	      "''"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum"
+      SID		      "391"
+      Ports		      [2, 1]
+      Position		      [490, 850, 540, 900]
+      ZOrder		      81
+      BlockMirror	      on
+      BackgroundColor	      "green"
+      ShowName		      off
+      FontSize		      16
+      IconShape		      "round"
+      Inputs		      "|++"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum1"
+      SID		      "393"
+      Ports		      [3, 1]
+      Position		      [385, 850, 435, 900]
+      ZOrder		      83
+      BlockMirror	      on
+      BackgroundColor	      "green"
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "+++"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum2"
+      SID		      "401"
+      Ports		      [2, 1]
+      Position		      [845, 680, 895, 730]
+      ZOrder		      88
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|++"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum3"
+      SID		      "403"
+      Ports		      [2, 1]
+      Position		      [845, 250, 895, 300]
+      ZOrder		      90
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "++|"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum4"
+      SID		      "407"
+      Ports		      [2, 1]
+      Position		      [720, 850, 770, 900]
+      ZOrder		      94
+      BlockMirror	      on
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|++"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum6"
+      SID		      "542"
+      Ports		      [2, 1]
+      Position		      [875, 615, 895, 635]
+      ZOrder		      133
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "++|"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "SystemNoise"
+      SID		      "293"
+      Ports		      [2, 1]
+      Position		      [215, 406, 355, 544]
+      ZOrder		      72
+      FontSize		      16
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"SystemNoise"
+	Location		[-1719, 93, -250, 955]
+	Open			off
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"268"
+	Block {
+	  BlockType		  Inport
+	  Name			  "LengthNoise"
+	  SID			  "279"
+	  Position		  [385, 250, 440, 270]
+	  ZOrder		  73
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  FontSize		  16
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Calibration"
+	  SID			  "292"
+	  Position		  [385, 185, 440, 205]
+	  ZOrder		  77
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  FontSize		  16
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  SID			  "291"
+	  Ports			  [2, 1]
+	  Position		  [480, 240, 520, 280]
+	  ZOrder		  76
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "++|"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out2Loops"
+	  SID			  "296"
+	  Position		  [745, 248, 815, 272]
+	  ZOrder		  78
+	  BackgroundColor	  "orange"
+	  FontSize		  16
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "LengthNoise"
+	  SrcPort		  1
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "Out2Loops"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Calibration"
+	  SrcPort		  1
+	  Points		  [55, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "V/W"
+      SID		      "389"
+      Position		      [575, 840, 685, 910]
+      ZOrder		      79
+      BlockMirror	      on
+      FontSize		      16
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "beat02 Cal m/rtHz"
+      SID		      "404"
+      Tag		      "NbNoiseCal"
+      Ports		      [0, 1]
+      Position		      [862, 195, 878, 220]
+      ZOrder		      91
+      BlockRotation	      270
+      BlockMirror	      on
+      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+      NamePlacement	      "alternate"
+      AttributesFormatString  "%<Tag>"
+      LibraryVersion	      "1.26"
+      FontSize		      16
+      SourceBlock	      "NbLibrary/NbNoiseCal"
+      SourceType	      ""
+      dof		      "'beat02'"
+      unit		      "'m/rtHz'"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "beat02 Sink"
+      SID		      "387"
+      Tag		      "NbNoiseSink"
+      Ports		      [1, 1]
+      Position		      [1210, 342, 1235, 358]
+      ZOrder		      77
+      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+      AttributesFormatString  "%<Tag>"
+      LibraryVersion	      "1.26"
+      FontSize		      16
+      SourceBlock	      "NbLibrary/NbNoiseSink"
+      SourceType	      ""
+      dof		      "'beat02'"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "beat20 Cal m/rtHz"
+      SID		      "402"
+      Tag		      "NbNoiseCal"
+      Ports		      [0, 1]
+      Position		      [862, 765, 878, 790]
+      ZOrder		      89
+      BlockRotation	      270
+      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+      AttributesFormatString  "%<Tag>"
+      LibraryVersion	      "1.26"
+      FontSize		      16
+      SourceBlock	      "NbLibrary/NbNoiseCal"
+      SourceType	      ""
+      dof		      "'beat20'"
+      unit		      "'m/rtHz'"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "beat20 Sink"
+      SID		      "388"
+      Tag		      "NbNoiseSink"
+      Ports		      [1, 1]
+      Position		      [1200, 617, 1225, 633]
+      ZOrder		      127
+      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+      AttributesFormatString  "%<Tag>"
+      LibraryVersion	      "1.26"
+      FontSize		      16
+      SourceBlock	      "NbLibrary/NbNoiseSink"
+      SourceType	      ""
+      dof		      "'beat20'"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "$100k CTN"
+      SID		      "396"
+      Position		      [20, 858, 105, 892]
+      ZOrder		      86
+      BlockMirror	      on
+      BackgroundColor	      "yellow"
+      FontSize		      16
+      IconDisplay	      "Port number"
+    }
+    Line {
+      SrcBlock		      "NbNoiseCal00 m/rtHz"
+      SrcPort		      1
+      DstBlock		      "SystemNoise"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "LengthNoise  m/rtHz"
+      SrcPort		      1
+      DstBlock		      "SystemNoise"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "CTN_02 m/rtHz"
+      SrcPort		      1
+      DstBlock		      "02 FCL"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "CTN_20  m/rtHz"
+      SrcPort		      1
+      DstBlock		      "Sum6"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "00 FCL"
+      SrcPort		      1
+      DstBlock		      "NbNoiseSink00"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "NbNoiseSink00"
+      SrcPort		      1
+      Points		      [40, 0]
+      Branch {
+	Points			[0, -50]
+	DstBlock		"02 FCL"
+	DstPort			3
+      }
+      Branch {
+	Points			[0, 70]
+	DstBlock		"20 FCL"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "02 FCL"
+      SrcPort		      1
+      DstBlock		      "beat02 Sink"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "beat02 Sink"
+      SrcPort		      1
+      Points		      [79, 0; 0, 550]
+      DstBlock		      "BeatNote"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "20 FCL"
+      SrcPort		      1
+      DstBlock		      "beat20 Sink"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "V/W"
+      SrcPort		      1
+      DstBlock		      "Sum"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "PDNoise"
+      SrcPort		      1
+      DstBlock		      "Sum"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Sum1"
+      SrcPort		      1
+      DstBlock		      "Hz/V"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Hz/V"
+      SrcPort		      1
+      DstBlock		      "$100k CTN"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      DstBlock		      "Sum1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "DelayLineNoise"
+      SrcPort		      1
+      DstBlock		      "Sum1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "SystemNoise"
+      SrcPort		      1
+      Points		      [33, 0]
+      Branch {
+	Points			[0, 230]
+	DstBlock		"Sum2"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"00 FCL"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, -200]
+	DstBlock		"Sum3"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Sum2"
+      SrcPort		      1
+      DstBlock		      "20 FCL"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "beat20 Cal m/rtHz"
+      SrcPort		      1
+      DstBlock		      "Sum2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Sum3"
+      SrcPort		      1
+      DstBlock		      "02 FCL"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "beat02 Cal m/rtHz"
+      SrcPort		      1
+      DstBlock		      "Sum3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "BeatNote"
+      SrcPort		      1
+      DstBlock		      "BeatNote_Sink"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sum4"
+      SrcPort		      1
+      DstBlock		      "V/W"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "FreqNoise Hz/rtHz"
+      SrcPort		      1
+      DstBlock		      "00 FCL"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "beat20 Sink"
+      SrcPort		      1
+      Points		      [34, 0; 0, 220]
+      DstBlock		      "BeatNote"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "CTN_00 m/rtHz"
+      SrcPort		      1
+      DstBlock		      "00 FCL"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "BeatNote_Sink"
+      SrcPort		      1
+      DstBlock		      "Sum4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sum6"
+      SrcPort		      1
+      DstBlock		      "20 FCL"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "BeatNote_Cal"
+      SrcPort		      1
+      DstBlock		      "Sum6"
+      DstPort		      1
+    }
+    Annotation {
+      SID		      "399"
+      Name		      "PD"
+      Position		      [623, 821]
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -1
+      FontSize		      16
+    }
+    Annotation {
+      SID		      "398"
+      Name		      "PhaseDetector"
+      Position		      [218, 816]
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -2
+      FontSize		      16
+    }
+    Annotation {
+      SID		      "38"
+      Name		      "CTN FCL"
+      Position		      [554, 206]
+      ZOrder		      -1
+      FontSize		      36
+      FontWeight	      "bold"
+    }
+  }
+}
