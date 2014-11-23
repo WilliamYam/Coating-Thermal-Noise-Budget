@@ -51,8 +51,8 @@ fcsParams.cavity.FSR              = fcsParams.common.c /...
 % fcsParams.cavity.Finesse = Fin(fcsParams.cavity.R1,fcsParams.cavity.R2);       % expected cavity finesse
 % 
 %   
-fcsParams.cavity.FWHM02    =  (225.389e6-225.284e6)*4;                                              % [Hz] measured value of FWHM
-fcsParams.cavity.FWHM20    =  (226.496e6-226.424e6)*4;                                              % [Hz] measured value of FWHM
+fcsParams.cavity.FWHM02    =  (225.355e6-225.256e6)*4;                                              % [Hz] measured value of FWHM
+fcsParams.cavity.FWHM20    =  (226.455e6-226.385e6)*4;                                              % [Hz] measured value of FWHM
 fcsParams.cavity.Finesse02 =  fcsParams.cavity.FSR/fcsParams.cavity.FWHM02;   
 fcsParams.cavity.Finesse20 =  fcsParams.cavity.FSR/fcsParams.cavity.FWHM20;   
 %%%%%%%
@@ -87,11 +87,11 @@ powerFactor = 1;                                                % Ideally scales
 fcsParams.beam.PwrInc00   =    0.355e-3;                        % [W] incident Gaussian on input coupler
 %fcsParams.beam.PwrInc02   =    .508/1135 * powerFactor;          % [W] incident HOM02 on input coupler
 %fcsParams.beam.PwrInc20   =    .824/1135 * powerFactor;          % [W] incident HOM20 on input coupler
-fcsParams.beam.PwrInc02   =    .7e-3 * powerFactor;
-fcsParams.beam.PwrInc20   =    .7e-3 * powerFactor;
+fcsParams.beam.PwrInc02   =    0.7e-3 * powerFactor;
+fcsParams.beam.PwrInc20   =    0.7e-3 * powerFactor;
 fcsParams.beam.Coupling00   =   0.20;                           % cavity couppling of 00 
-fcsParams.beam.Coupling02   =   1*0.182/4.12;                         % cavity couppling of 02
-fcsParams.beam.Coupling20   =   1*0.28/4.72;                         % cavity couppling of 20
+fcsParams.beam.Coupling02   =   0.182/4.12;                         % cavity couppling of 02
+fcsParams.beam.Coupling20   =   0.28/4.72;                         % cavity couppling of 20
 
 
 PwrCpl00 = fcsParams.beam.PwrInc00 * fcsParams.beam.Coupling00;    % [W]  power coupled to cavity 00
@@ -170,7 +170,7 @@ Err00 = PDH_REFL(fcsParams.cavity.R1,fcsParams.cavity.R2,...
 %                  fcsParams.cavity.Loss,PwrCpl20,phi_mod20,...
 %                  fcsParams.errSig.beta20,pi/2,phi_cav);                      %PDH error signal for 20 used for plot
 % 
-errSig00_pk2pk = 2*max(Err00);        % [W] ppk-pk error signal for 00
+% errSig00_pk2pk = 2*max(Err00);        % [W] ppk-pk error signal for 00
 % errSig02_pk2pk = 2*max(Err02);        % [W] ppk-pk error signal for 02
 % errSig20_pk2pk = 2*max(Err20);        % [W] ppk-pk error signal for 20
 % 
@@ -320,6 +320,3 @@ fcsParams.TF.TFmag20 = interp1(h20OLMag(:,1),h20OLMag(:,2),fcsParams.freq);
 fcsParams.TF.TFph20 = interp1(h20OLPh(:,1),h20OLPh(:,2),fcsParams.freq);
 assignin('base', 'fcsParams', fcsParams);
 
-
-fcsParams.errSig.Ptrans02m/fcsParams.errSig.Ptrans20m
-fcsParams.errSig.Ptrans02e/fcsParams.errSig.Ptrans20e
