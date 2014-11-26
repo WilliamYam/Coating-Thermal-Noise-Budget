@@ -5,10 +5,13 @@ r2 = sqrt(R2);
 
 %Vectorise the carrier and sideband components
 phi_v = [phi; phi+phiMod; phi-phiMod];
+% 
+% 
+% %Cavity reflectivity response
+% Frefl = (r1-r2*sqrt(1-Loss)*exp(-1i*phi_v))./(1-r1*r2*sqrt(1-Loss)*exp(-1i*phi_v));
 
-
-%Cavity reflectivity response
-Frefl = (r1-r2*sqrt(1-Loss)*exp(-1i*phi_v))./(1-r1*r2*sqrt(1-Loss)*exp(-1i*phi_v));
+%Transmission coefficient
+Frefl = cavityRefl(R1,R2,Loss,phi_v);
 
 %Power in the Carrier and the Sidebands
 Pc = Pinc*(besselj(0,deltaMod))^2;

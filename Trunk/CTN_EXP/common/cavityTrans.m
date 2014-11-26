@@ -10,7 +10,7 @@ t1 = sqrt(1-R1);
 t2 = sqrt(1-R2);
 
 %Cavity transmission response
-trans = (-t1*t2*(1-Loss)^(1/4)*exp(-1i*phi))./(1-r1*r2*sqrt(1-Loss)*exp(-1i*phi));
+trans = (-t1*t2*(1-Loss)^(1/4)*exp(-1i*phi/2))./(1-r1*r2*sqrt(1-Loss)*exp(-1i*phi));
 
 
 

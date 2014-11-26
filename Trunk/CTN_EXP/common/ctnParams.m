@@ -61,8 +61,23 @@ fcsParams.cavity.Loss02    = 2 * pi/ fcsParams.cavity.Finesse02 +...            
 %%%%%%%
 fcsParams.cavity.Loss20    = 2 * pi/ fcsParams.cavity.Finesse20 +...                % cavity loss per round trip         
                          log(fcsParams.cavity.R1*fcsParams.cavity.R2);                       
-fcsParams.cavity.Pole    = fcsParams.cavity.FWHM02/2;                             % [Hz] cavity pole
+% fcsParams.cavity.Pole    = fcsParams.cavity.FWHM02/2;                             % [Hz] cavity pole
 
+fcsParams.cavity.fRefl02 = cavityRefl(fcsParams.cavity.R1,fcsParams.cavity.R2,...
+    fcsParams.cavity.Loss02,0);                                                             %Amplitude reflection coefficient at resonance
+fcsParams.cavity.fRefl20 = cavityRefl(fcsParams.cavity.R1,fcsParams.cavity.R2,...
+    fcsParams.cavity.Loss20,0); 
+
+fcsParams.cavity.Refl02 = abs(fcsParams.cavity.fRefl02)^2;
+fcsParams.cavity.Refl20 = abs(fcsParams.cavity.fRefl20)^2;
+
+fcsParams.cavity.fTrans02 = cavityTrans(fcsParams.cavity.R1,fcsParams.cavity.R2,...
+    fcsParams.cavity.Loss02,0);                                                            %Amplitude transmission coefficient at resonance
+fcsParams.cavity.fTrans20 = cavityTrans(fcsParams.cavity.R1,fcsParams.cavity.R2,...
+    fcsParams.cavity.Loss20,0); 
+
+fcsParams.cavity.Trans02 = abs(fcsParams.cavity.fTrans02)^2;
+fcsParams.cavity.Trans20 = abs(fcsParams.cavity.fTrans20)^2;
 
 % %%%% Gouy Phase
 % 
@@ -95,8 +110,10 @@ fcsParams.beam.Coupling20   =   0.28/4.72;                         % cavity coup
 
 
 PwrCpl00 = fcsParams.beam.PwrInc00 * fcsParams.beam.Coupling00;    % [W]  power coupled to cavity 00
-PwrCpl02 = fcsParams.beam.PwrInc02 * fcsParams.beam.Coupling02;    % [W]  power coupled to cavity 02
-PwrCpl20 = fcsParams.beam.PwrInc20 * fcsParams.beam.Coupling20;    % [W]  power coupled to cavity 20
+PwrCpl02 = fcsParams.beam.PwrInc02 * fcsParams.beam.Coupling02 / ...
+    (1 - fcsParams.cavity.Refl02);    % [W]  power coupled to cavity 02
+PwrCpl20 = fcsParams.beam.PwrInc20 * fcsParams.beam.Coupling20 / ...
+    (1 - fcsParams.cavity.Refl20);    % [W]  power coupled to cavity 20
 
 % fcsParams.beam.PwrCir00 = fcsParams.beam.PwrInc00 * ...
 %                           fcsParams.beam.Coupling00 *...
@@ -139,6 +156,26 @@ fcsParams.OptGain.Hz2m20 = fcsParams.cavity.Length / fcsParams.common.laserFreq2
 %                                    fcsParams.common.c;   
 % fcsParams.OptGain.GouyContr20 = fcsParams.cavity.Gouy20 /...                     % [rad/Hz] Gouyphase contribution to 02
 % 
+
+%% PD and Mixer parameters
+
+%%%Mixer gain
+fcsParams.PD.G_Mixer00 = 1;
+fcsParams.PD.G_Mixer02 = 50;            % mixer gain Vdc/Vref + SR560 gain of 50
+fcsParams.PD.G_Mixer20 = 50;            % mixer gain Vdc/Vref + SR560 gain of 50
+%%% 1811
+PDtranimp00 = 0.8 * 4e4;             % [A / W * Vrf / A]   PDgain for 00
+% %%% LSC RF PD 
+% PDtranimp02 = 4.0e4;                 % [V/W] transimpedance at 17.23MHz 
+% PDtranimp20 = 2.0e4;                 % [V/W] transimpedance at 27.61MHz 
+%%% QPD Trans 
+PDtranimp02 = 6.882e3;                 % [V/W]  
+PDtranimp20 = 6.882e3;                 % [V/W] 
+
+%transimpedance after mixer
+fcsParams.PD.PDrespTot00 = PDtranimp00 * fcsParams.PD.G_Mixer00;    % [V/W]
+fcsParams.PD.PDrespTot02 = PDtranimp02 * fcsParams.PD.G_Mixer02;    % [V/W]
+fcsParams.PD.PDrespTot20 = PDtranimp20 * fcsParams.PD.G_Mixer20;    % [V/W]
 
 %% PDH on REFLECTION
 
@@ -222,8 +259,10 @@ grad_Err20 = fcsParams.OptGain.m2rad*abs(gradient(Err20)./gradient(phi_cav));
 fcsParams.errSig.m2W02e = max(grad_Err02);                                %[W/m]  (estimated)
 fcsParams.errSig.m2W20e = max(grad_Err20);                                %[W/m]  (estimated)
 
-fcsParams.errSig.m2W02m = (0.02/4e4)/fcsParams.OptGain.Hz2m02/(0.8 * 10.0e3)/50 * powerFactor;                   % [W/m]
-fcsParams.errSig.m2W20m = (0.0472/4e4)/fcsParams.OptGain.Hz2m20/(0.8 * 10.0e3)/50 * powerFactor;                   % [W/m]
+fcsParams.errSig.m2W02m = (0.02/4e4) / fcsParams.OptGain.Hz2m02 / ...
+    fcsParams.PD.PDrespTot02 / 50 * powerFactor;                            % [W/m]
+fcsParams.errSig.m2W20m = (0.0472/4e4) / fcsParams.OptGain.Hz2m20 / ...
+    fcsParams.PD.PDrespTot20 / 50 * powerFactor;                   % [W/m]
 
 fcsParams.errSig.Ptrans02e = Ptrans02 * powerFactor;                                      %[W] Power on transmission (esimated)
 fcsParams.errSig.Ptrans20e = Ptrans20 * powerFactor;                                      %[W] Power on transmission (esimated)
@@ -231,29 +270,8 @@ fcsParams.errSig.Ptrans20e = Ptrans20 * powerFactor;                            
 %fcsParams.errSig.Ptrans02m = 13.7e-3/6882 * powerFactor;                                        %[W] Power on transmission (measured)
 
 %%%%%%%%%%%
-fcsParams.errSig.Ptrans02m = 25.2e-3/6882 * powerFactor; 
-fcsParams.errSig.Ptrans20m = 45.5e-3/6882 * powerFactor;                                       %[W] Power on transmission (measured)
-
-
-%% PD and Mixer parameters
-
-%%%Mixer gain
-fcsParams.PD.G_Mixer00 = 1;
-fcsParams.PD.G_Mixer02 = 50;            % mixer gain Vdc/Vref + SR560 gain of 50
-fcsParams.PD.G_Mixer20 = 50;            % mixer gain Vdc/Vref + SR560 gain of 50
-%%% 1811
-PDtranimp00 = 0.8 * 4e4;             % [A / W * Vrf / A]   PDgain for 00
-% %%% LSC RF PD 
-% PDtranimp02 = 4.0e4;                 % [V/W] transimpedance at 17.23MHz 
-% PDtranimp20 = 2.0e4;                 % [V/W] transimpedance at 27.61MHz 
-%%% QPD Trans 
-PDtranimp02 = 0.8 * 10.0e3;                 % [V/W]  
-PDtranimp20 = 0.8 * 10.0e3;                 % [V/W] 
-
-%transimpedance after mixer
-fcsParams.PD.PDrespTot00 = PDtranimp00 * fcsParams.PD.G_Mixer00;    % [V/W]
-fcsParams.PD.PDrespTot02 = PDtranimp02 * fcsParams.PD.G_Mixer02;    % [V/W]
-fcsParams.PD.PDrespTot20 = PDtranimp20 * fcsParams.PD.G_Mixer20;    % [V/W]
+fcsParams.errSig.Ptrans02m = 25.2e-3 / PDtranimp02 * powerFactor; 
+fcsParams.errSig.Ptrans20m = 45.5e-3 / PDtranimp20 * powerFactor;                                       %[W] Power on transmission (measured)
 
 
 
