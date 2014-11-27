@@ -11,7 +11,7 @@ Model {
       Name		      "$100k CTN"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.353"
+    ComputedModelVersion    "1.355"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -35,7 +35,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [357.0, 22.0, 1292.0, 1024.0]
+      Location		      [357.0, 52.0, 1292.0, 1024.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -58,10 +58,10 @@ Model {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"248"
+	LoadSaveID		"470"
 	Extents			[1068.0, 854.0]
-	ZoomFactor		[1.6910569105691056]
-	Offset			[301.72115384615387, 113.99519230769232]
+	ZoomFactor		[1.1491712707182322]
+	Offset			[86.8173076923077, 240.42788461538464]
       }
     }
   }
@@ -71,9 +71,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "yamw"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Nov 20 02:03:21 2014"
-  RTWModifiedTimeStamp	  338380233
-  ModelVersionFormat	  "1.%<AutoIncrement:353>"
+  LastModifiedDate	  "Thu Nov 27 00:17:39 2014"
+  RTWModifiedTimeStamp	  338949144
+  ModelVersionFormat	  "1.%<AutoIncrement:355>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -878,7 +878,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "77"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "555"
+    SIDHighWatermark	    "556"
     Block {
       BlockType		      SubSystem
       Name		      "00 FCL"
@@ -1649,7 +1649,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"02 FCL"
-	Location		[357, 22, 1649, 1046]
+	Location		[357, 52, 1649, 1076]
 	Open			off
 	ModelBrowserVisibility	on
 	ModelBrowserWidth	200
@@ -1711,7 +1711,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Cavity02"
-	    Location		    [397, 22, 1689, 1046]
+	    Location		    [357, 52, 1649, 1076]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -1723,7 +1723,7 @@ Model {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "162"
+	    ZoomFactor		    "138"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "MarconiIN"
@@ -1993,7 +1993,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Marconi+AOM"
-	    Location		    [61, 89, 1530, 951]
+	    Location		    [357, 52, 1649, 1076]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -2145,7 +2145,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "PDH_HOM02"
-	    Location		    [357, 22, 1649, 1046]
+	    Location		    [357, 52, 1649, 1076]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -2355,8 +2355,8 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Servo"
-	    Location		    [357, 22, 1649, 1046]
-	    Open		    on
+	    Location		    [357, 52, 1649, 1076]
+	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -2632,9 +2632,6 @@ Model {
 	  DstPort		  3
 	}
 	Line {
-	  Points		  [525, 730; 0, -5; 0, 5; 0, -23]
-	}
-	Line {
 	  SrcBlock		  "ServoOut_02 Sink"
 	  SrcPort		  1
 	  Points		  [-306, 0; 0, 170]
@@ -2672,8 +2669,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"20 FCL"
-	Location		[357, 22, 1649, 1046]
-	Open			off
+	Location		[357, 52, 1649, 1076]
+	Open			on
 	ModelBrowserVisibility	on
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -3354,7 +3351,7 @@ Model {
 	  SID			  "523"
 	  Tag			  "NbNoiseCal"
 	  Ports			  [0, 1]
-	  Position		  [517, 730, 533, 755]
+	  Position		  [497, 440, 513, 465]
 	  ZOrder		  131
 	  BlockRotation		  270
 	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
@@ -3442,6 +3439,21 @@ Model {
 	  SaturateOnIntegerOverflow off
 	}
 	Block {
+	  BlockType		  Sum
+	  Name			  "Sum3"
+	  SID			  "556"
+	  Ports			  [2, 1]
+	  Position		  [495, 375, 515, 395]
+	  ZOrder		  132
+	  BlockMirror		  on
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
 	  BlockType		  Outport
 	  Name			  "BeatNote"
 	  SID			  "515"
@@ -3454,7 +3466,7 @@ Model {
 	Line {
 	  SrcBlock		  "Servo"
 	  SrcPort		  1
-	  DstBlock		  "ServoOut_20 Sink"
+	  DstBlock		  "Sum3"
 	  DstPort		  1
 	}
 	Line {
@@ -3531,8 +3543,14 @@ Model {
 	Line {
 	  SrcBlock		  "ServoOut_20 Cal m/rtHz"
 	  SrcPort		  1
-	  DstBlock		  "Sum2"
+	  DstBlock		  "Sum3"
 	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum3"
+	  SrcPort		  1
+	  DstBlock		  "ServoOut_20 Sink"
+	  DstPort		  1
 	}
       }
     }

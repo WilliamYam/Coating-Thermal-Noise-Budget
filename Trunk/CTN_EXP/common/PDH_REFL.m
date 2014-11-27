@@ -1,7 +1,8 @@
 function out = PDH_REFL(R1,R2,Loss,Pinc,phiMod,deltaMod,demodPhase,phi)
 
-r1 = sqrt(R1);
-r2 = sqrt(R2);
+%PDH_TRANS: calculates error signal in transmission and transmitted power
+%
+%[ErrorSig, Ptrans] = PDH_TRANS(R1,R2,Loss,Pinc,phiMod,deltaMod,demodPhase,phi)
 
 %Vectorise the carrier and sideband components
 phi_v = [phi; phi+phiMod; phi-phiMod];

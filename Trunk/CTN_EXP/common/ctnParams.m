@@ -102,8 +102,8 @@ powerFactor = 1;                                                % Ideally scales
 fcsParams.beam.PwrInc00   =    0.355e-3;                        % [W] incident Gaussian on input coupler
 %fcsParams.beam.PwrInc02   =    .508/1135 * powerFactor;          % [W] incident HOM02 on input coupler
 %fcsParams.beam.PwrInc20   =    .824/1135 * powerFactor;          % [W] incident HOM20 on input coupler
-fcsParams.beam.PwrInc02   =    0.7e-3 * powerFactor;
-fcsParams.beam.PwrInc20   =    0.7e-3 * powerFactor;
+fcsParams.beam.PwrInc02   =    (0.910 - 0.0242) / 1135 * powerFactor;
+fcsParams.beam.PwrInc20   =    (1.19 - 0.0242) / 1135 * powerFactor;
 fcsParams.beam.Coupling00   =   0.20;                           % cavity couppling of 00 
 fcsParams.beam.Coupling02   =   0.182/4.12;                         % cavity couppling of 02
 fcsParams.beam.Coupling20   =   0.28/4.72;                         % cavity couppling of 20
@@ -136,7 +136,7 @@ fcsParams.OptGain.laserFast      = 5e6;                                         
 fcsParams.OptGain.PhaseDetectorGain02  =  4e-7;                                    % [V/Hz] ???????? (for the Marconi noise measurement)
 fcsParams.OptGain.PhaseDetectorGain20  =  4e-7;  
 fcsParams.OptGain.MarconiGain        = 10e3 / sqrt(2);                             % [Hz/V], note: Marconi external modulation per Vrms
-fcsParams.OptGain.PhaseDetectorGainBN = 0.412/(2e5);                                    % [V/Hz]
+fcsParams.OptGain.PhaseDetectorGainBN = (0.233 + 0.256) / (2e5);                                    % [V/Hz]
 fcsParams.OptGain.PhaseDetectorGainBN_refl = 9.4e-7;                                % [V/Hz] From 11/6/2014
 
 % %%%Frequency 2 roundtripPhase
@@ -161,8 +161,8 @@ fcsParams.OptGain.Hz2m20 = fcsParams.cavity.Length / fcsParams.common.laserFreq2
 
 %%%Mixer gain
 fcsParams.PD.G_Mixer00 = 1;
-fcsParams.PD.G_Mixer02 = 50;            % mixer gain Vdc/Vref + SR560 gain of 50
-fcsParams.PD.G_Mixer20 = 50;            % mixer gain Vdc/Vref + SR560 gain of 50
+fcsParams.PD.G_Mixer02 = 100;            % mixer gain Vdc/Vref + SR560 gain
+fcsParams.PD.G_Mixer20 = 100;            % mixer gain Vdc/Vref + SR560 gain
 %%% 1811
 PDtranimp00 = 0.8 * 4e4;             % [A / W * Vrf / A]   PDgain for 00
 % %%% LSC RF PD 
@@ -230,8 +230,8 @@ fcsParams.errSig.m2W00m = 6.1913e+06 * fcsParams.beam.Coupling00;   % [W/m] (mea
 %% PDH on TRANSMISSION [W] (demod phase = 90deg, sidebands outside linewidth, want I)
 
 %%% Phase Modulation Properties
-fcsParams.errSig.beta02 = (75/250)*pi;                  % Modulation depth for 02
-fcsParams.errSig.beta20 = (80/250)*pi;                  % Modulation depth for 20
+fcsParams.errSig.beta02 = (78/250)*pi;                  % Modulation depth for 02
+fcsParams.errSig.beta20 = (83/250)*pi;                  % Modulation depth for 20
 %%% Modulation Frequency
 fcsParams.errSig.modFreq02 = 5.7e4;            % Modulation frequency for 02
 fcsParams.errSig.modFreq20 = 5.7e4;            % Modulation frequency for 20
@@ -256,13 +256,13 @@ grad_Err02 = fcsParams.OptGain.m2rad*abs(gradient(Err02)./gradient(phi_cav));
 grad_Err20 = fcsParams.OptGain.m2rad*abs(gradient(Err20)./gradient(phi_cav));   
 
 %%% Cavity Response (Error Signal slope) 
-fcsParams.errSig.m2W02e = max(grad_Err02);                                %[W/m]  (estimated)
-fcsParams.errSig.m2W20e = max(grad_Err20);                                %[W/m]  (estimated)
+fcsParams.errSig.m2W02e = max(grad_Err02);                                  %[W/m]  (estimated)
+fcsParams.errSig.m2W20e = max(grad_Err20);                                  %[W/m]  (estimated)
 
-fcsParams.errSig.m2W02m = (0.02/4e4) / fcsParams.OptGain.Hz2m02 / ...
-    fcsParams.PD.PDrespTot02 / 50 * powerFactor;                            % [W/m]
-fcsParams.errSig.m2W20m = (0.0472/4e4) / fcsParams.OptGain.Hz2m20 / ...
-    fcsParams.PD.PDrespTot20 / 50 * powerFactor;                   % [W/m]
+fcsParams.errSig.m2W02m = (0.110 / 4e4) / fcsParams.OptGain.Hz2m02 / ...
+    fcsParams.PD.PDrespTot02 * powerFactor;                                 % [W/m]
+fcsParams.errSig.m2W20m = (0.350 / 4e4) / fcsParams.OptGain.Hz2m20 / ...
+    fcsParams.PD.PDrespTot20 * powerFactor;                                 % [W/m]
 
 fcsParams.errSig.Ptrans02e = Ptrans02 * powerFactor;                                      %[W] Power on transmission (esimated)
 fcsParams.errSig.Ptrans20e = Ptrans20 * powerFactor;                                      %[W] Power on transmission (esimated)
@@ -270,8 +270,8 @@ fcsParams.errSig.Ptrans20e = Ptrans20 * powerFactor;                            
 %fcsParams.errSig.Ptrans02m = 13.7e-3/6882 * powerFactor;                                        %[W] Power on transmission (measured)
 
 %%%%%%%%%%%
-fcsParams.errSig.Ptrans02m = 25.2e-3 / PDtranimp02 * powerFactor; 
-fcsParams.errSig.Ptrans20m = 45.5e-3 / PDtranimp20 * powerFactor;                                       %[W] Power on transmission (measured)
+fcsParams.errSig.Ptrans02m = 27.0e-3 / PDtranimp02 * powerFactor; 
+fcsParams.errSig.Ptrans20m = 65.5e-3 / PDtranimp20 * powerFactor;                                       %[W] Power on transmission (measured)
 
 
 
@@ -294,15 +294,15 @@ fcsParams.servo00.gain        = find_K(fcsParams.servo00.zeros,...
                                        fcsParams.servo00.poles,...
                                        gain00, freq00);         % dB
 %%%HOM02
-gain02        = 93 - mag2db(powerFactor);  % dB measured gain at 
+gain02        = 106 - mag2db(powerFactor);  % dB measured gain at 
 freq02        = 30;                              % Hz this frequency
-fcsParams.servo02.zeros       = [];             % Hz
-fcsParams.servo02.poles       = [8e5,8e5,1e6,0];    % Hz Boost On
+fcsParams.servo02.zeros       = [];             % Hz Boost On
+fcsParams.servo02.poles       = [8e5,8e5,1e6,0];    % Hz
 fcsParams.servo02.gain        = find_K(fcsParams.servo02.zeros,...
                                        fcsParams.servo02.poles,...
                                        gain02, freq02);         % dB
 %%%HOM20
-gain20        = 94 - mag2db(powerFactor);    % dB measured gain at 
+gain20        = 97 - mag2db(powerFactor);    % dB measured gain at 
 freq20        = 30;                              % Hz this frequency
 fcsParams.servo20.zeros       = [];             % Hz Boost On
 fcsParams.servo20.poles       = [8e5,8e5,1e6,0];    % Hz

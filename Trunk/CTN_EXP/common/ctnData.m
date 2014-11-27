@@ -85,27 +85,16 @@ n20Marconi = n20Marconi.data;
 %%% 00
 n00totServoIn = importdata([rowDataDir, '00snin.asc'], ' ', 14);    
 n00totServoOut = importdata([rowDataDir, '00snout.asc'], ' ', 14);
-n00totServoInO  = importdata([rowDataDir, '00snino.asc'], ' ', 14);    
-n00totServoOutO = importdata([rowDataDir, '00snouto.asc'], ' ', 14);
 %%% 02
 n02totServoIn = importdata([rowDataDir, '02nsin.asc'], ' ', 14);
 n02totServoOut = importdata([rowDataDir, '02nsout.asc'], ' ', 14);
-n02totServoInO  = importdata([rowDataDir, '02nsino.asc'], ' ', 14);
-n02totServoOutO = importdata([rowDataDir, '02nsouto.asc'], ' ', 14);
-n02totServoInH  = importdata([rowDataDir, '02nsinh.asc'], ' ', 14);
-n02totServoOutH = importdata([rowDataDir, '02nsouth.asc'], ' ', 14);
 %%% 20
 n20totServoIn = importdata([rowDataDir, '20nsin.asc'], ' ', 14);
 n20totServoOut = importdata([rowDataDir, '20nsout.asc'], ' ', 14);
-n20totServoInO = importdata([rowDataDir, '20nsino.asc'], ' ', 14);
-n20totServoOutO = importdata([rowDataDir, '20nsouto.asc'], ' ', 14);
-n20totServoInH = importdata([rowDataDir, '20nsinh.asc'], ' ', 14);
-n20totServoOutH = importdata([rowDataDir, '20nsouth.asc'], ' ', 14);
 %%% Beat Note
 nHOMBeatNote = importdata([rowDataDir, 'bn.asc'], ' ', 14);
+nHOMBeatNoteI = importdata([rowDataDir, 'bni.asc'], ' ', 14);
 nHOMBeatNote_refl = importdata([rowDataDir, 'bn_refl.asc'], ' ', 14);
-nHOMBeatNoteO = importdata([rowDataDir, 'bno.asc'], ' ', 14);
-nHOMBeatNoteH = importdata([rowDataDir, 'bnh.asc'], ' ', 14);
 
 
 n00totServoIn  = n00totServoIn.data;
@@ -115,21 +104,9 @@ n02totServoOut = n02totServoOut.data;
 n20totServoIn  = n20totServoIn.data;
 n20totServoOut = n20totServoOut.data;
 nHOMBeatNote  = nHOMBeatNote.data;
+nHOMBeatNoteI  = nHOMBeatNoteI.data;
 nHOMBeatNote_refl  = nHOMBeatNote_refl.data;
 
-n00totServoInO  = n00totServoInO.data;
-n00totServoOutO = n00totServoOutO.data;
-n02totServoInO  = n02totServoInO.data;
-n02totServoOutO = n02totServoOutO.data;
-n20totServoInO  = n20totServoInO.data;
-n20totServoOutO = n20totServoOutO.data;
-nHOMBeatNoteO  = nHOMBeatNoteO.data;
-
-n02totServoInH  = n02totServoInH.data;
-n02totServoOutH = n02totServoOutH.data;
-n20totServoInH  = n20totServoInH.data;
-n20totServoOutH = n20totServoOutH.data;
-nHOMBeatNoteH  = nHOMBeatNoteH.data;
 
 f = n00PDServoIn(:, 1);
 
