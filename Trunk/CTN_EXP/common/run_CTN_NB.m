@@ -1,5 +1,5 @@
 
-%RUN_CTN_NB  Script to run the CTN NoiseBudget demo
+%RUN_CTN_NB  Script to run the CTN Noise Budget
 
 %% Path setup
 
@@ -16,37 +16,37 @@ ctnNbParams;
 
 %%                  %%%%%Beat Note readout%%%%%
 
-% [noises, sys] = nbFromSimulink('ctnFCS', fcsParams.freq, 'dof', 'BeatNote');
-% 
-% %%%appending measured noises
-% noiseCal = bode(sys(1), 2 * pi * fcsParams.freq);    %freq vector in rad/s
-% noiseCal = squeeze(noiseCal)';
-% 
-% totalNoiseBN.asd = fcsParams.ctnNb.beatNote ./ noiseCal;
-% totalNoiseBN.f = fcsParams.freq;
-% totalNoiseBN.name = 'Measured Total';
-% 
-% totalNoiseBNI.asd = fcsParams.ctnNb.beatNoteI ./ noiseCal;
-% totalNoiseBNI.f = fcsParams.freq;
-% totalNoiseBNI.name = 'Measured Total with Intensity Servo';
-% 
-% %%% From 11/6/2014, 0.105e-3 W power on each HOM in reflection
-% totalNoiseBN_refl.asd = fcsParams.ctnNb.beatNote_refl ./ noiseCal;
-% totalNoiseBN_refl.f = fcsParams.freq;
-% totalNoiseBN_refl.name = 'Measured Total Refl (11/6/2014)';
-% 
-% %%%coating thermal noise
-% coatingNoise.asd = fcsParams.ctnNb.CTN * sqrt(2);
-% coatingNoise.f = fcsParams.freq;
-% coatingNoise.name = 'Coating';
-% 
-% measuredNoiseBN = Noise(totalNoiseBN);
-% measuredNoiseBNI = Noise(totalNoiseBNI);
-% measuredNoiseBN_refl = Noise(totalNoiseBN_refl);
-% coatingNoise = Noise(coatingNoise);
-% 
-% nb = nbGroupNoises('ctnFCS', noises, sys);
-% nb.referenceNoises = {measuredNoiseBN, measuredNoiseBNI, measuredNoiseBN_refl, coatingNoise};
+[noises, sys] = nbFromSimulink('ctnFCS', fcsParams.freq, 'dof', 'BeatNote');
+
+%%%appending measured noises
+noiseCal = bode(sys(1), 2 * pi * fcsParams.freq);    %freq vector in rad/s
+noiseCal = squeeze(noiseCal)';
+
+totalNoiseBN.asd = fcsParams.ctnNb.beatNote ./ noiseCal;
+totalNoiseBN.f = fcsParams.freq;
+totalNoiseBN.name = 'Measured Total';
+
+totalNoiseBNI.asd = fcsParams.ctnNb.beatNoteI ./ noiseCal;
+totalNoiseBNI.f = fcsParams.freq;
+totalNoiseBNI.name = 'Measured Total with Intensity Servo';
+
+%%% From 11/6/2014, 0.105e-3 W power on each HOM in reflection
+totalNoiseBN_refl.asd = fcsParams.ctnNb.beatNote_refl ./ noiseCal;
+totalNoiseBN_refl.f = fcsParams.freq;
+totalNoiseBN_refl.name = 'Measured Total Refl (11/6/2014)';
+
+%%%coating thermal noise
+coatingNoise.asd = fcsParams.ctnNb.CTN * sqrt(2);
+coatingNoise.f = fcsParams.freq;
+coatingNoise.name = 'Coating';
+
+measuredNoiseBN = Noise(totalNoiseBN);
+measuredNoiseBNI = Noise(totalNoiseBNI);
+measuredNoiseBN_refl = Noise(totalNoiseBN_refl);
+coatingNoise = Noise(coatingNoise);
+
+nb = nbGroupNoises('ctnFCS', noises, sys);
+nb.referenceNoises = {measuredNoiseBN, measuredNoiseBNI, measuredNoiseBN_refl, coatingNoise};
 
 %%                  %%%%%Control signal readout 02%%%%%
 
@@ -70,23 +70,23 @@ ctnNbParams;
 
 %%                  %%%%%Control signal readout 20%%%%%
 
-[noises, sys] = nbFromSimulink('ctnFCS', fcsParams.freq, 'dof', 'ServoOut_20');
-
-%%%appending measured noises
-io=linio('ctnFCS/20 FCL/Sum',1,'sensitivity');
-setlinio('ctnFCS',io);
-sysmodel = linearize('ctnFCS',io);
-noiseCal = bode(sysmodel, 2 * pi * fcsParams.freq);    %freq vector in rad/s
-noiseCal = squeeze(noiseCal)';
-
-totalNoise20.asd = fcsParams.ctnNb.nTotServoOut20 ./ noiseCal;
-totalNoise20.f = fcsParams.freq;
-totalNoise20.name = 'Measured Total';
-
-measuredNoise20 = Noise(totalNoise20);
-
-nb = nbGroupNoises('ctnFCS', noises, sys);
-nb.referenceNoises = {measuredNoise20};
+% [noises, sys] = nbFromSimulink('ctnFCS', fcsParams.freq, 'dof', 'ServoOut_20');
+% 
+% %%%appending measured noises
+% io=linio('ctnFCS/20 FCL/Sum',1,'sensitivity');
+% setlinio('ctnFCS',io);
+% sysmodel = linearize('ctnFCS',io);
+% noiseCal = bode(sysmodel, 2 * pi * fcsParams.freq);    %freq vector in rad/s
+% noiseCal = squeeze(noiseCal)';
+% 
+% totalNoise20.asd = fcsParams.ctnNb.nTotServoOut20 ./ noiseCal;
+% totalNoise20.f = fcsParams.freq;
+% totalNoise20.name = 'Measured Total';
+% 
+% measuredNoise20 = Noise(totalNoise20);
+% 
+% nb = nbGroupNoises('ctnFCS', noises, sys);
+% nb.referenceNoises = {measuredNoise20};
 
 %%                  %%%%%Other%%%%%
 

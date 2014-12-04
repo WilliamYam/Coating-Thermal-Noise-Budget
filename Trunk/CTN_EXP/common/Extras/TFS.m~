@@ -4,14 +4,16 @@ ctnParams;
 ctnNbParams;
 load_system('ctnFCS')
 
+omega = 2 * pi * fcsParams.freq;
+
 %%% 00 servo
 
 %linearize model
-io(1)=linio('ctnFCS/00 FCL/Servo/Sum',1,'openinput');
-io(2)=linio('ctnFCS/00 FCL/Servo/Servo00',1,'openoutput');
+io(1)=linio('ctnFCS/00 FCL/Servo/Sum', 1, 'openinput');
+io(2)=linio('ctnFCS/00 FCL/Servo/Servo00', 1, 'openoutput');
 setlinio('ctnFCS',io);
-sysmodel = linearize('ctnFCS',io);
-[magS00, phS00]=bode(sysmodel,2*pi*fcsParams.freq);%bode freq vector in radians/sec
+sysmodel = linearize('ctnFCS', io);
+[magS00, phS00]=bode(sysmodel, omega);%bode freq vector in radians/sec
 dbS00 = mag2db(squeeze(magS00));
 phS00 = squeeze(phS00);
 
@@ -24,7 +26,7 @@ semilogx(fcsParams.freq, [dbS00, fcsParams.TF.TFmagS00']);
 grid on
 xlabel('Frequency (Hz)')
 ylabel('Magnitude (dB)')
-xlim([1e3,100e3])
+xlim([1e3, 100e3])
 legend('Model', 'Data')
 title('00 Servo')
 
@@ -35,16 +37,18 @@ semilogx(fcsParams.freq, [phS00, fcsParams.TF.TFphS00'])
 grid on
 xlabel('Frequency (Hz)')
 ylabel('Phase (deg)')
-xlim([1e3,100e3])
+xlim([1e3, 100e3])
 
 %%% 02 servo
 
 %linearize model
-io(1)=linio('ctnFCS/02 FCL/Servo/In1',1,'openinput');
-io(2)=linio('ctnFCS/02 FCL/Servo/Servo',1,'openoutput');
+% io(1)=linio('ctnFCS/02 FCL/Servo/In1', 1, 'openinput');
+% io(2)=linio('ctnFCS/02 FCL/Servo/Servo', 1, 'openoutput');
+io(1)=linio('ctnFCS/02 FCL/Servo/In1', 1, 'openinput');
+io(2)=linio('ctnFCS/02 FCL/Servo/Sum', 1, 'openoutput');
 setlinio('ctnFCS',io);
-sysmodel = linearize('ctnFCS',io);
-[magS02, phS02]=bode(sysmodel,2*pi*fcsParams.freq);%bode freq vector in radians/sec
+sysmodel = linearize('ctnFCS', io);
+[magS02, phS02]=bode(sysmodel, omega);%bode freq vector in radians/sec
 dbS02 = mag2db(squeeze(magS02));
 phS02 = squeeze(phS02);
 
@@ -57,7 +61,7 @@ semilogx(fcsParams.freq, [dbS02, fcsParams.TF.TFmagS02']);
 grid on
 xlabel('Frequency (Hz)')
 ylabel('Magnitude (dB)')
-xlim([1e3,100e3])
+xlim([1e3, 100e3])
 legend('Model', 'Data')
 title('02 Servo')
 
@@ -68,16 +72,49 @@ semilogx(fcsParams.freq, [phS02, fcsParams.TF.TFphS02'])
 grid on
 xlabel('Frequency (Hz)')
 ylabel('Phase (deg)')
-xlim([1e3,100e3])
+xlim([1e3, 100e3])
+
+%%% 20 servo
+
+%linearize model
+io(1)=linio('ctnFCS/20 FCL/Servo/In1', 1, 'openinput');
+io(2)=linio('ctnFCS/20 FCL/Servo/Servo', 1, 'openoutput');
+setlinio('ctnFCS',io);
+sysmodel = linearize('ctnFCS', io);
+[magS20, phS20]=bode(sysmodel, omega);%bode freq vector in radians/sec
+dbS20 = mag2db(squeeze(magS20));
+phS20 = squeeze(phS20);
+
+figure(202)
+
+subplot(2, 1, 1)
+
+semilogx(fcsParams.freq, [dbS20, fcsParams.TF.TFmagS20']);
+
+grid on
+xlabel('Frequency (Hz)')
+ylabel('Magnitude (dB)')
+xlim([1e3, 100e3])
+legend('Model', 'Data')
+title('20 Servo')
+
+subplot(2, 1, 2)
+
+semilogx(fcsParams.freq, [phS20, fcsParams.TF.TFphS20'])
+
+grid on
+xlabel('Frequency (Hz)')
+ylabel('Phase (deg)')
+xlim([1e3, 100e3])
 
 
 %%% 00 loop
 
 %linearize model
-io=linio('ctnFCS/00 FCL/Sum1',1,'looptransfer');
+io=linio('ctnFCS/00 FCL/Sum1', 1, 'looptransfer');
 setlinio('ctnFCS',io);
-sysmodel = linearize('ctnFCS',io);
-[magOL00, phOL00]=bode(sysmodel,2*pi*fcsParams.freq);
+sysmodel = linearize('ctnFCS', io);
+[magOL00, phOL00]=bode(sysmodel, omega);
 dbOL00 = mag2db(squeeze(magOL00));
 phOL00 = squeeze(phOL00);
 
@@ -91,7 +128,7 @@ semilogx(fcsParams.freq, [dbOL00, fcsParams.TF.TFmag00' + 6]); %6dB needed for t
 grid on
 xlabel('Frequency (Hz)')
 ylabel('Magnitude (dB)')
-xlim([1e3,100e3])
+xlim([1e3, 100e3])
 
 legend('Model', 'Data')
 title('00 OL')
@@ -103,15 +140,15 @@ semilogx(fcsParams.freq, [phOL00, fcsParams.TF.TFph00'])
 grid on
 xlabel('Frequency (Hz)')
 ylabel('Phase (deg)')
-xlim([1e3,100e3])
+xlim([1e3, 100e3])
 
 %%% 02 loop
 
 %linearize model
-io=linio('ctnFCS/02 FCL/Sum',1,'looptransfer');
-setlinio('ctnFCS',io);
-sysmodel = linearize('ctnFCS',io);
-[magOL02, phOL02]=bode(sysmodel,2*pi*fcsParams.freq);
+io=linio('ctnFCS/02 FCL/Servo/Sum', 1, 'looptransfer');
+setlinio('ctnFCS', io);
+sysmodel = linearize('ctnFCS', io);
+[magOL02, phOL02]=bode(sysmodel, omega);
 dbOL02 = mag2db(squeeze(magOL02));
 phOL02 = squeeze(phOL02);
 
@@ -125,7 +162,7 @@ semilogx(fcsParams.freq, [dbOL02, fcsParams.TF.TFmag02']);
 grid on
 xlabel('Frequency (Hz)')
 ylabel('Magnitude (dB)')
-xlim([1e3,100e3])
+xlim([1e3, 100e3])
 
 legend('Model', 'Data')
 title('02 OL')
@@ -137,15 +174,15 @@ semilogx(fcsParams.freq, [phOL02, fcsParams.TF.TFph02'])
 grid on
 xlabel('Frequency (Hz)')
 ylabel('Phase (deg)')
-xlim([1e3,100e3])
+xlim([1e3, 100e3])
 
 %%% 20 loop
 
 %linearize model
-io=linio('ctnFCS/20 FCL/Sum',1,'looptransfer');
+io=linio('ctnFCS/20 FCL/Sum', 1, 'looptransfer');
 setlinio('ctnFCS',io);
-sysmodel = linearize('ctnFCS',io);
-[magOL20, phOL20]=bode(sysmodel,2*pi*fcsParams.freq);
+sysmodel = linearize('ctnFCS', io);
+[magOL20, phOL20]=bode(sysmodel, omega);
 dbOL20 = mag2db(squeeze(magOL20));
 phOL20 = squeeze(phOL20);
 
@@ -159,7 +196,7 @@ semilogx(fcsParams.freq, [dbOL20, fcsParams.TF.TFmag20']);
 grid on
 xlabel('Frequency (Hz)')
 ylabel('Magnitude (dB)')
-xlim([1e3,100e3])
+xlim([1e3, 100e3])
 
 legend('Model', 'Data')
 title('20 OL')
@@ -171,7 +208,7 @@ semilogx(fcsParams.freq, [phOL20, fcsParams.TF.TFph20'])
 grid on
 xlabel('Frequency (Hz)')
 ylabel('Phase (deg)')
-xlim([1e3,100e3])
+xlim([1e3, 100e3])
 
 
 

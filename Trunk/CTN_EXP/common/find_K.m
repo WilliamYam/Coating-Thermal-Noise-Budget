@@ -1,16 +1,16 @@
 
-
-
 %
 % k = findGain(z, p, g, f)
-% returns correct k-param in dB for known gain g at the frequency f----
+% returns correct k-param in for known gain g at the frequency f----
 % 
 
 function k = find_K(z, p, g, f)
     
 gain0 = 20*log10(abs(evalfr(zpk(-2 * pi * z, -2 * pi * p, 1),2*pi*1i*f)));    %[dB]
 
-k = g-gain0;              % [dB]
+kDB = g-gain0;              % [dB]
+
+k = db2mag(kDB);
 
 % %abs(evalfr(zpk(2 * pi * z, 2 * pi * p, k),2*pi*1i*100))
 % 
