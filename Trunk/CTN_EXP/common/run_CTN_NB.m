@@ -15,7 +15,7 @@ ctnParams;
 ctnNbParams;
 
 %%                  %%%%%Beat Note readout%%%%%
-
+% 
 [noises, sys] = nbFromSimulink('ctnFCS', fcsParams.freq, 'dof', 'BeatNote');
 
 %%%appending measured noises
@@ -26,30 +26,70 @@ totalNoiseBN.asd = fcsParams.ctnNb.beatNote ./ noiseCal;
 totalNoiseBN.f = fcsParams.freq;
 totalNoiseBN.name = 'Measured Total';
 
-totalNoiseBNI.asd = fcsParams.ctnNb.beatNoteI ./ noiseCal;
-totalNoiseBNI.f = fcsParams.freq;
-totalNoiseBNI.name = 'Measured Total with Intensity Servo';
+% totalNoiseBNI.asd = fcsParams.ctnNb.beatNoteI ./ noiseCal;
+% totalNoiseBNI.f = fcsParams.freq;
+% totalNoiseBNI.name = 'Measured Total with Intensity Servo';
 
 %%% From 11/6/2014, 0.105e-3 W power on each HOM in reflection
 totalNoiseBN_refl.asd = fcsParams.ctnNb.beatNote_refl ./ noiseCal;
 totalNoiseBN_refl.f = fcsParams.freq;
 totalNoiseBN_refl.name = 'Measured Total Refl (11/6/2014)';
 
-%%%coating thermal noise
-coatingNoise.asd = fcsParams.ctnNb.CTN * sqrt(2);
-coatingNoise.f = fcsParams.freq;
-coatingNoise.name = 'Coating';
+% %%%coating thermal noise
+% coatingNoise.asd = fcsParams.ctnNb.CTN * sqrt(2);
+% coatingNoise.f = fcsParams.freq;
+% coatingNoise.name = 'Coating';
 
 measuredNoiseBN = Noise(totalNoiseBN);
-measuredNoiseBNI = Noise(totalNoiseBNI);
+% measuredNoiseBNI = Noise(totalNoiseBNI);
 measuredNoiseBN_refl = Noise(totalNoiseBN_refl);
-coatingNoise = Noise(coatingNoise);
+% coatingNoise = Noise(coatingNoise);
 
 nb = nbGroupNoises('ctnFCS', noises, sys);
-nb.referenceNoises = {measuredNoiseBN, measuredNoiseBNI, measuredNoiseBN_refl, coatingNoise};
+nb.referenceNoises = {measuredNoiseBN, measuredNoiseBN_refl};
+
+%%                  %%%%%Error signal readout 02%%%%%
+
+% [noises, sys] = nbFromSimulink('ctnFCS', fcsParams.freq, 'dof', 'ServoIn_02');
+% 
+% %%%appending measured noises
+% io=linio('ctnFCS/02 FCL/Sum',1,'sensitivity');
+% setlinio('ctnFCS',io);
+% sysmodel = linearize('ctnFCS',io);
+% noiseCal = bode(sysmodel, 2 * pi * fcsParams.freq);    %freq vector in rad/s
+% noiseCal = squeeze(noiseCal)';
+% 
+% totalNoise02.asd = fcsParams.ctnNb.nTotServoIn02 ./ noiseCal;
+% totalNoise02.f = fcsParams.freq;
+% totalNoise02.name = 'Measured Total';
+% 
+% measuredNoise02 = Noise(totalNoise02);
+% 
+% nb = nbGroupNoises('ctnFCS', noises, sys);
+% nb.referenceNoises = {measuredNoise02};
+
+%%                  %%%%%Error signal readout 20%%%%%
+
+% [noises, sys] = nbFromSimulink('ctnFCS', fcsParams.freq, 'dof', 'ServoIn_20');
+% 
+% %%%appending measured noises
+% io=linio('ctnFCS/20 FCL/Sum',1,'sensitivity');
+% setlinio('ctnFCS',io);
+% sysmodel = linearize('ctnFCS',io);
+% noiseCal = bode(sysmodel, 2 * pi * fcsParams.freq);    %freq vector in rad/s
+% noiseCal = squeeze(noiseCal)';
+% 
+% totalNoise20.asd = fcsParams.ctnNb.nTotServoIn20 ./ noiseCal;
+% totalNoise20.f = fcsParams.freq;
+% totalNoise20.name = 'Measured Total';
+% 
+% measuredNoise20 = Noise(totalNoise20);
+% 
+% nb = nbGroupNoises('ctnFCS', noises, sys);
+% nb.referenceNoises = {measuredNoise20};
 
 %%                  %%%%%Control signal readout 02%%%%%
-
+% 
 % [noises, sys] = nbFromSimulink('ctnFCS', fcsParams.freq, 'dof', 'ServoOut_02');
 % 
 % %%%appending measured noises
@@ -69,7 +109,7 @@ nb.referenceNoises = {measuredNoiseBN, measuredNoiseBNI, measuredNoiseBN_refl, c
 % nb.referenceNoises = {measuredNoise02};
 
 %%                  %%%%%Control signal readout 20%%%%%
-
+% 
 % [noises, sys] = nbFromSimulink('ctnFCS', fcsParams.freq, 'dof', 'ServoOut_20');
 % 
 % %%%appending measured noises

@@ -42,10 +42,8 @@ xlim([1e3, 100e3])
 %%% 02 servo
 
 %linearize model
-% io(1)=linio('ctnFCS/02 FCL/Servo/In1', 1, 'openinput');
-% io(2)=linio('ctnFCS/02 FCL/Servo/Servo', 1, 'openoutput');
 io(1)=linio('ctnFCS/02 FCL/Servo/In1', 1, 'openinput');
-io(2)=linio('ctnFCS/02 FCL/Servo/Sum', 1, 'openoutput');
+io(2)=linio('ctnFCS/02 FCL/Servo/Servo', 1, 'openoutput');
 setlinio('ctnFCS',io);
 sysmodel = linearize('ctnFCS', io);
 [magS02, phS02]=bode(sysmodel, omega);%bode freq vector in radians/sec
@@ -101,6 +99,72 @@ title('20 Servo')
 subplot(2, 1, 2)
 
 semilogx(fcsParams.freq, [phS20, fcsParams.TF.TFphS20'])
+
+grid on
+xlabel('Frequency (Hz)')
+ylabel('Phase (deg)')
+xlim([1e3, 100e3])
+
+%%% 02 m2m
+
+%linearize model
+io(1)=linio('ctnFCS/20 FCL/Sum3', 1, 'openinput');
+io(2)=linio('ctnFCS/20 FCL/Sum', 1, 'openoutput');
+setlinio('ctnFCS',io);
+sysmodel = linearize('ctnFCS', io);
+[magS02, phS02]=bode(sysmodel, omega);%bode freq vector in radians/sec
+dbS02 = mag2db(squeeze(magS02));
+phS02 = squeeze(phS02);
+
+figure(202)
+
+subplot(2, 1, 1)
+
+semilogx(fcsParams.freq, [dbS02, fcsParams.TF.TFmagM2M02']);
+
+grid on
+xlabel('Frequency (Hz)')
+ylabel('Magnitude (dB)')
+xlim([1e3, 100e3])
+legend('Model', 'Data')
+title('02 M2M')
+
+subplot(2, 1, 2)
+
+semilogx(fcsParams.freq, [phS02, fcsParams.TF.TFphM2M02'])
+
+grid on
+xlabel('Frequency (Hz)')
+ylabel('Phase (deg)')
+xlim([1e3, 100e3])
+
+%%% 20 m2m
+
+%linearize model
+io(1)=linio('ctnFCS/20 FCL/Sum3', 1, 'openinput');
+io(2)=linio('ctnFCS/20 FCL/Sum', 1, 'openoutput');
+setlinio('ctnFCS',io);
+sysmodel = linearize('ctnFCS', io);
+[magS20, phS20]=bode(sysmodel, omega);%bode freq vector in radians/sec
+dbS20 = mag2db(squeeze(magS20));
+phS20 = squeeze(phS20);
+
+figure(202)
+
+subplot(2, 1, 1)
+
+semilogx(fcsParams.freq, [dbS20, fcsParams.TF.TFmagM2M20']);
+
+grid on
+xlabel('Frequency (Hz)')
+ylabel('Magnitude (dB)')
+xlim([1e3, 100e3])
+legend('Model', 'Data')
+title('20 M2M')
+
+subplot(2, 1, 2)
+
+semilogx(fcsParams.freq, [phS20, fcsParams.TF.TFphM2M20'])
 
 grid on
 xlabel('Frequency (Hz)')

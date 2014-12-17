@@ -11,7 +11,7 @@ Model {
       Name		      "$100k CTN"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.368"
+    ComputedModelVersion    "1.379"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -35,7 +35,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [42.0, 52.0, 1607.0, 1024.0]
+      Location		      [-1920.0, 52.0, 1607.0, 1024.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -71,9 +71,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "yamw"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Dec 03 22:42:29 2014"
-  RTWModifiedTimeStamp	  339547330
-  ModelVersionFormat	  "1.%<AutoIncrement:368>"
+  LastModifiedDate	  "Wed Dec 17 11:54:47 2014"
+  RTWModifiedTimeStamp	  340718085
+  ModelVersionFormat	  "1.%<AutoIncrement:379>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -864,7 +864,7 @@ Model {
   }
   System {
     Name		    "ctnFCS"
-    Location		    [42, 52, 1649, 1076]
+    Location		    [-1920, 52, -313, 1076]
     Open		    off
     ModelBrowserVisibility  on
     ModelBrowserWidth	    200
@@ -878,7 +878,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "93"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "570"
+    SIDHighWatermark	    "574"
     Block {
       BlockType		      SubSystem
       Name		      "00 FCL"
@@ -970,7 +970,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Cavity00"
-	    Location		    [-1920, 22, 0, 1076]
+	    Location		    [42, 52, 1649, 1076]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -1201,8 +1201,8 @@ Model {
 	      SourceType	      ""
 	      asd		      "fcsParams.ctnNb.n00PDOut"
 	      groupNest		      "2"
-	      group		      "'00 FCL'"
-	      subgroup		      "'PD'"
+	      group		      "'PD'"
+	      subgroup		      "'00'"
 	      subsubgroup	      "''"
 	      subsubsubgroup	      "''"
 	    }
@@ -1222,8 +1222,8 @@ Model {
 	      SourceType	      ""
 	      asd		      "fcsParams.ctnNb.PDshotNoise00"
 	      groupNest		      "2"
-	      group		      "'00 FCL'"
-	      subgroup		      "'Shot'"
+	      group		      "'Shot'"
+	      subgroup		      "'00'"
 	      subsubgroup	      "''"
 	      subsubsubgroup	      "''"
 	    }
@@ -1368,7 +1368,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Servo"
-	    Location		    [357, 22, 1649, 1046]
+	    Location		    [42, 22, 1649, 1046]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -1427,8 +1427,8 @@ Model {
 	      SourceType	      ""
 	      asd		      "fcsParams.ctnNb.n00sServoOut"
 	      groupNest		      "2"
-	      group		      "'00 FCL'"
-	      subgroup		      "'Servo'"
+	      group		      "'Servo'"
+	      subgroup		      "'00'"
 	      subsubgroup	      "''"
 	      subsubsubgroup	      "''"
 	    }
@@ -1586,7 +1586,6 @@ Model {
 	Line {
 	  SrcBlock		  "Cavity00"
 	  SrcPort		  1
-	  Points		  [70, 0]
 	  DstBlock		  "PDH_00"
 	  DstPort		  1
 	}
@@ -1709,7 +1708,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"02 FCL"
-	Location		[42, 52, 1649, 1076]
+	Location		[-1920, 52, -313, 1076]
 	Open			off
 	ModelBrowserVisibility	on
 	ModelBrowserWidth	200
@@ -1721,7 +1720,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"149"
+	ZoomFactor		"137"
 	Block {
 	  BlockType		  Inport
 	  Name			  "LengthNoise"
@@ -1783,7 +1782,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Cavity02"
-	    Location		    [357, 52, 1649, 1076]
+	    Location		    [-1798, 22, -191, 1046]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -2065,7 +2064,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Marconi+AOM"
-	    Location		    [42, 22, 1649, 1046]
+	    Location		    [-1920, 52, -313, 1076]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -2127,8 +2126,8 @@ Model {
 	      SourceType	      ""
 	      asd		      "fcsParams.ctnNb.n02Marconi"
 	      groupNest		      "2"
-	      group		      "'02 FCL'"
-	      subgroup		      "'Marconi'"
+	      group		      "'Marconi'"
+	      subgroup		      "'02'"
 	      subsubgroup	      "''"
 	      subsubsubgroup	      "''"
 	    }
@@ -2217,7 +2216,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "PDH_HOM02"
-	    Location		    [42, 52, 1649, 1076]
+	    Location		    [-1920, 52, -313, 1076]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -2285,10 +2284,10 @@ Model {
 	      LibraryVersion	      "1.26"
 	      SourceBlock	      "NbLibrary/NbNoiseSource"
 	      SourceType	      ""
-	      asd		      "fcsParams.ctnNb.n02PDOut"
+	      asd		      "fcsParams.ctnNb.n02PDOut * 2"
 	      groupNest		      "2"
-	      group		      "'02 FCL'"
-	      subgroup		      "'PD'"
+	      group		      "'PD'"
+	      subgroup		      "'02'"
 	      subsubgroup	      "''"
 	      subsubsubgroup	      "''"
 	    }
@@ -2308,8 +2307,8 @@ Model {
 	      SourceType	      ""
 	      asd		      "fcsParams.ctnNb.PDshotNoise02"
 	      groupNest		      "2"
-	      group		      "'02 FCL'"
-	      subgroup		      "'Shot'"
+	      group		      "'Shot'"
+	      subgroup		      "'02'"
 	      subsubgroup	      "''"
 	      subsubsubgroup	      "''"
 	    }
@@ -2455,7 +2454,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Servo"
-	    Location		    [42, 52, 1649, 1076]
+	    Location		    [-1920, 52, -313, 1076]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -2467,7 +2466,7 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "169"
+	    ZoomFactor		    "220"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In1"
@@ -2503,8 +2502,8 @@ Model {
 	      SourceType	      ""
 	      asd		      "fcsParams.ctnNb.n02sServoOut"
 	      groupNest		      "2"
-	      group		      "'02 FCL'"
-	      subgroup		      "'Servo'"
+	      group		      "'Servo'"
+	      subgroup		      "'02'"
 	      subsubgroup	      "''"
 	      subsubsubgroup	      "''"
 	    }
@@ -2559,6 +2558,41 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
+	  Name			  "ServoIn_02 Cal V/rtHz"
+	  SID			  "571"
+	  Tag			  "NbNoiseCal"
+	  Ports			  [0, 1]
+	  Position		  [912, 450, 928, 475]
+	  ZOrder		  133
+	  BlockRotation		  270
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  AttributesFormatString  "%<Tag>"
+	  LibraryVersion	  "1.26"
+	  FontSize		  16
+	  SourceBlock		  "NbLibrary/NbNoiseCal"
+	  SourceType		  ""
+	  dof			  "'ServoIn_02'"
+	  unit			  "'V/rtHz'"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ServoIn_02 Sink"
+	  SID			  "572"
+	  Tag			  "NbNoiseSink"
+	  Ports			  [1, 1]
+	  Position		  [835, 377, 860, 393]
+	  ZOrder		  132
+	  BlockMirror		  on
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  AttributesFormatString  "%<Tag>"
+	  LibraryVersion	  "1.26"
+	  FontSize		  16
+	  SourceBlock		  "NbLibrary/NbNoiseSink"
+	  SourceType		  ""
+	  dof			  "'ServoIn_02'"
+	}
+	Block {
+	  BlockType		  Reference
 	  Name			  "ServoOut_02 Cal V/rtHz"
 	  SID			  "552"
 	  Tag			  "NbNoiseCal"
@@ -2597,7 +2631,7 @@ Model {
 	  Name			  "Sum"
 	  SID			  "519"
 	  Ports			  [2, 1]
-	  Position		  [815, 375, 835, 395]
+	  Position		  [910, 375, 930, 395]
 	  ZOrder		  107
 	  BlockMirror		  on
 	  ShowName		  off
@@ -2606,6 +2640,21 @@ Model {
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Array {
+	      Type		      "Struct"
+	      Dimension		      1
+	      MATStruct {
+		Type			"inout"
+		OpenLoop		"off"
+		BusElementName		""
+	      }
+	      PropName		      "LinearAnalysisIO"
+	    }
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
 	}
 	Block {
 	  BlockType		  Sum
@@ -2670,7 +2719,6 @@ Model {
 	Line {
 	  SrcBlock		  "Cavity02"
 	  SrcPort		  1
-	  Points		  [65, 0]
 	  DstBlock		  "PDH_HOM02"
 	  DstPort		  1
 	}
@@ -2689,13 +2737,13 @@ Model {
 	Line {
 	  SrcBlock		  "Sum"
 	  SrcPort		  1
-	  DstBlock		  "Servo"
+	  DstBlock		  "ServoIn_02 Sink"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "PDH_HOM02"
 	  SrcPort		  1
-	  Points		  [13, 0; 0, -250]
+	  Points		  [6, 0; 0, -250]
 	  DstBlock		  "Sum"
 	  DstPort		  1
 	}
@@ -2758,6 +2806,18 @@ Model {
 	  DstBlock		  "PDH_HOM02"
 	  DstPort		  2
 	}
+	Line {
+	  SrcBlock		  "ServoIn_02 Cal V/rtHz"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "ServoIn_02 Sink"
+	  SrcPort		  1
+	  DstBlock		  "Servo"
+	  DstPort		  1
+	}
       }
     }
     Block {
@@ -2777,7 +2837,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"20 FCL"
-	Location		[42, 52, 1649, 1076]
+	Location		[-1920, 52, -313, 1076]
 	Open			off
 	ModelBrowserVisibility	on
 	ModelBrowserWidth	200
@@ -2789,7 +2849,7 @@ Model {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"150"
+	ZoomFactor		"130"
 	Block {
 	  BlockType		  Inport
 	  Name			  "00_FCL_IN"
@@ -3001,7 +3061,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Marconi+AOM"
-	    Location		    [357, 22, 1649, 1046]
+	    Location		    [-1920, 52, -313, 1076]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -3063,8 +3123,8 @@ Model {
 	      SourceType	      ""
 	      asd		      "fcsParams.ctnNb.n20Marconi"
 	      groupNest		      "2"
-	      group		      "'20 FCL'"
-	      subgroup		      "'Marconi'"
+	      group		      "'Marconi'"
+	      subgroup		      "'20'"
 	      subsubgroup	      "''"
 	      subsubsubgroup	      "''"
 	    }
@@ -3153,7 +3213,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "PDH_HOM20"
-	    Location		    [42, 52, 1649, 1076]
+	    Location		    [-1920, 52, -313, 1076]
 	    Open		    on
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -3221,10 +3281,10 @@ Model {
 	      LibraryVersion	      "1.26"
 	      SourceBlock	      "NbLibrary/NbNoiseSource"
 	      SourceType	      ""
-	      asd		      "fcsParams.ctnNb.n20PDOut"
+	      asd		      "fcsParams.ctnNb.n20PDOut * 5"
 	      groupNest		      "2"
-	      group		      "'20 FCL'"
-	      subgroup		      "'PD'"
+	      group		      "'PD'"
+	      subgroup		      "'20'"
 	      subsubgroup	      "''"
 	      subsubsubgroup	      "''"
 	    }
@@ -3244,8 +3304,8 @@ Model {
 	      SourceType	      ""
 	      asd		      "fcsParams.ctnNb.PDshotNoise20"
 	      groupNest		      "2"
-	      group		      "'20 FCL'"
-	      subgroup		      "'Shot'"
+	      group		      "'Shot'"
+	      subgroup		      "'20'"
 	      subsubgroup	      "''"
 	      subsubsubgroup	      "''"
 	    }
@@ -3397,7 +3457,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Servo"
-	    Location		    [42, 52, 1649, 1076]
+	    Location		    [-1920, 52, -313, 1076]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -3445,8 +3505,8 @@ Model {
 	      SourceType	      ""
 	      asd		      "fcsParams.ctnNb.n02sServoOut"
 	      groupNest		      "2"
-	      group		      "'20 FCL'"
-	      subgroup		      "'Servo'"
+	      group		      "'Servo'"
+	      subgroup		      "'20'"
 	      subsubgroup	      "''"
 	      subsubsubgroup	      "''"
 	    }
@@ -3501,6 +3561,41 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
+	  Name			  "ServoIn_20 Cal m/rtHz"
+	  SID			  "573"
+	  Tag			  "NbNoiseCal"
+	  Ports			  [0, 1]
+	  Position		  [937, 440, 953, 465]
+	  ZOrder		  135
+	  BlockRotation		  270
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  AttributesFormatString  "%<Tag>"
+	  LibraryVersion	  "1.26"
+	  FontSize		  16
+	  SourceBlock		  "NbLibrary/NbNoiseCal"
+	  SourceType		  ""
+	  dof			  "'ServoIn_20'"
+	  unit			  "'m/rtHz'"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ServoIn_20 Sink"
+	  SID			  "574"
+	  Tag			  "NbNoiseSink"
+	  Ports			  [1, 1]
+	  Position		  [850, 377, 875, 393]
+	  ZOrder		  134
+	  BlockMirror		  on
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  AttributesFormatString  "%<Tag>"
+	  LibraryVersion	  "1.26"
+	  FontSize		  16
+	  SourceBlock		  "NbLibrary/NbNoiseSink"
+	  SourceType		  ""
+	  dof			  "'ServoIn_20'"
+	}
+	Block {
+	  BlockType		  Reference
 	  Name			  "ServoOut_20 Cal m/rtHz"
 	  SID			  "523"
 	  Tag			  "NbNoiseCal"
@@ -3539,7 +3634,7 @@ Model {
 	  Name			  "Sum"
 	  SID			  "525"
 	  Ports			  [2, 1]
-	  Position		  [870, 375, 890, 395]
+	  Position		  [935, 375, 955, 395]
 	  ZOrder		  123
 	  BlockMirror		  on
 	  ShowName		  off
@@ -3548,21 +3643,6 @@ Model {
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
-	  Port {
-	    PortNumber		    1
-	    Array {
-	      Type		      "Struct"
-	      Dimension		      1
-	      MATStruct {
-		Type			"outin"
-		OpenLoop		"on"
-		BusElementName		""
-	      }
-	      PropName		      "LinearAnalysisIO"
-	    }
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
 	}
 	Block {
 	  BlockType		  Sum
@@ -3626,7 +3706,6 @@ Model {
 	Line {
 	  SrcBlock		  "Cavity20"
 	  SrcPort		  1
-	  Points		  [60, 0]
 	  DstBlock		  "PDH_HOM20"
 	  DstPort		  1
 	}
@@ -3652,7 +3731,7 @@ Model {
 	Line {
 	  SrcBlock		  "Sum"
 	  SrcPort		  1
-	  DstBlock		  "Servo"
+	  DstBlock		  "ServoIn_20 Sink"
 	  DstPort		  1
 	}
 	Line {
@@ -3713,6 +3792,18 @@ Model {
 	  Points		  [0, -80]
 	  DstBlock		  "PDH_HOM20"
 	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "ServoIn_20 Cal m/rtHz"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "ServoIn_20 Sink"
+	  SrcPort		  1
+	  DstBlock		  "Servo"
+	  DstPort		  1
 	}
       }
     }
@@ -3784,8 +3875,8 @@ Model {
       SourceType	      ""
       asd		      "fcsParams.ctnNb.CTN"
       groupNest		      "2"
-      group		      "'00 FCL'"
-      subgroup		      "'Coating'"
+      group		      "'Coating'"
+      subgroup		      "'00'"
       subsubgroup	      "''"
       subsubsubgroup	      "''"
     }
@@ -3805,8 +3896,8 @@ Model {
       SourceType	      ""
       asd		      "fcsParams.ctnNb.CTN"
       groupNest		      "2"
-      group		      "'02 FCL'"
-      subgroup		      "'Coating'"
+      group		      "'Coating'"
+      subgroup		      "'02'"
       subsubgroup	      "''"
       subsubsubgroup	      "''"
     }
@@ -3826,8 +3917,8 @@ Model {
       SourceType	      ""
       asd		      "fcsParams.ctnNb.CTN"
       groupNest		      "2"
-      group		      "'20 FCL'"
-      subgroup		      "'Coating'"
+      group		      "'Coating'"
+      subgroup		      "'20'"
       subsubgroup	      "''"
       subsubsubgroup	      "''"
     }
@@ -4322,7 +4413,6 @@ Model {
     Line {
       SrcBlock		      "Sum3"
       SrcPort		      1
-      Points		      [65, 0]
       DstBlock		      "02 FCL"
       DstPort		      1
     }

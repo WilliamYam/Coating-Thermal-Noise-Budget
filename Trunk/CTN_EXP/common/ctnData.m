@@ -6,10 +6,10 @@ root = fileparts(fileparts(mfilename('fullpath')));
 
 rowDataDir = [root filesep 'DATA' filesep 'RecordedData' filesep];          %dir of recorded data (asd & tf)
 saveDataDir = [root filesep 'DATA' filesep];                                %dir where ctnData.mat is saved
-%% Transfer Function- SERVO
+%% Transfer Functions
 
 % units: [dB]
-% measured at servo output
+% open loop
 %%% mode00 (William servo)
 h00OLMag = importdata([rowDataDir, '00tolm.asc'], ' ', 17);                 % [dB] Mag   
 h00OLPh  = importdata([rowDataDir, '00told.asc'], ' ', 17);                 % [deg] Phase
@@ -21,7 +21,7 @@ h20OLMag = importdata([rowDataDir, '20tfm.asc'], ' ', 17);
 h20OLPh  = importdata([rowDataDir, '20tfd.asc'], ' ', 17);
 
 % units: [dB]
-% source: servo output
+% servo
 %%% 00
 h00ServoMag = importdata([rowDataDir, '00stm.asc'], ' ', 17);
 h00ServoPh  = importdata([rowDataDir, '00std.asc'], ' ', 17);
@@ -31,6 +31,15 @@ h02ServoPh  = importdata([rowDataDir, '02tfsd.asc'], ' ', 17);
 %%% 20
 h20ServoMag = importdata([rowDataDir, '20tfsm.asc'], ' ', 17);
 h20ServoPh  = importdata([rowDataDir, '20tfsd.asc'], ' ', 17);
+
+% units: [dB]
+% marconi in to mixer out
+%%% 02
+h02M2MMag = importdata([rowDataDir, '02m2mm.asc'], ' ', 17);
+h02M2MPh  = importdata([rowDataDir, '02m2md.asc'], ' ', 17);
+%%% 20
+h20M2MMag = importdata([rowDataDir, '20m2mm.asc'], ' ', 17);
+h20M2MPh  = importdata([rowDataDir, '20m2md.asc'], ' ', 17);
 
 
 h00OLMag = h00OLMag.data;
@@ -45,6 +54,11 @@ h02ServoMag = h02ServoMag.data;
 h02ServoPh = h02ServoPh.data;
 h20ServoMag = h20ServoMag.data;
 h20ServoPh = h20ServoPh.data;
+h02M2MMag = h02M2MMag.data;
+h02M2MPh = h02M2MPh.data;
+h20M2MMag = h20M2MMag.data;
+h20M2MPh = h20M2MPh.data;
+
 
 %% Servo Noise
 
@@ -95,6 +109,7 @@ n20totServoOut = importdata([rowDataDir, '20nsout.asc'], ' ', 14);
 nHOMBeatNote = importdata([rowDataDir, 'bn.asc'], ' ', 14);
 nHOMBeatNoteI = importdata([rowDataDir, 'bni.asc'], ' ', 14);
 nHOMBeatNote_refl = importdata([rowDataDir, 'bn_refl.asc'], ' ', 14);
+nHOMBeatNoteC = importdata([rowDataDir, 'bnc.asc'], ' ', 14);
 
 
 n00totServoIn  = n00totServoIn.data;
@@ -106,6 +121,7 @@ n20totServoOut = n20totServoOut.data;
 nHOMBeatNote  = nHOMBeatNote.data;
 nHOMBeatNoteI  = nHOMBeatNoteI.data;
 nHOMBeatNote_refl  = nHOMBeatNote_refl.data;
+nHOMBeatNoteC  = nHOMBeatNoteC.data;
 
 
 f = n00PDServoIn(:, 1);
