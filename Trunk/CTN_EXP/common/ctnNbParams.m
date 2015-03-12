@@ -77,10 +77,22 @@ fcsParams.ctnNb.n20Marconi = interp1(n02Marconi(:,1), n02Marconi(:,2), fcsParams
                          
 %% Length Noise (model)
 
-fcsParams.ctnNb.noiseLength = 1e-11 ./ (1 + (fcsParams.freq / 100).^2);                   % m / rtHz cavity length noise
+fcsParams.ctnNb.noiseLength = 1e-11 ./ (1 + (fcsParams.freq / 100).^2);     % m / rtHz cavity length noise
 
 %%CTN
-fcsParams.ctnNb.CTN = 7.2e-18 .* sqrt(100 ./ fcsParams.freq) * 100 / 61;      % [m/rtHz] predicted coating thermal noise
+fcsParams.ctnNb.CTN = 7.2e-18 .* sqrt(100 ./ fcsParams.freq) * 100 /...
+    (fcsParams.beam.waist * 1e6);                                              % [m/rtHz] predicted coating thermal noise
+
+%% Gas Phase Noise
+
+%phase noise due to forward scattering under the assumption that the mean
+%free path of the gas is much smaller than the beam waist. Based on a
+%document written by Weiss, "Considerations in operating an
+%interferometric..."
+
+fcsParams.ctnNb.noiseGas = 8 * pi * fcsParams.common.alpha / fcsParams.common.wavelength *...
+    sqrt(2 * fcsParams.cavity.Length * fcsParams.common.nDensity / fcsParams.common.diffusion) ./ ...
+    sqrt(1 + fcsParams.beam.waist^4 * fcsParams.freq.^2 / fcsParams.common.diffusion);  % [rad / rtHz]
                          
 %% Total Noise
 % deatils in ctnData.m
@@ -97,7 +109,7 @@ fcsParams.ctnNb.nTotServoOut20 = interp1(n20totServoOut(:,1), n20totServoOut(:,2
 %%%BeatNote
 fcsParams.ctnNb.beatNote = interp1(nHOMBeatNoteC(:,1), nHOMBeatNoteC(:,2), fcsParams.freq) *...
     2 * fcsParams.OptGain.MarconiGain02;
-% fcsParams.ctnNb.beatNoteI = interp1(nHOMBeatNoteI(:,1), nHOMBeatNoteI(:,2), fcsParams.freq) /...
+% fcsParams.ctnNb.beatNote = interp1(nHOMBeatNote(:,1), nHOMBeatNote(:,2), fcsParams.freq) /...
 %     fcsParams.OptGain.PhaseDetectorGainBN;
 fcsParams.ctnNb.beatNote_refl = interp1(nHOMBeatNote_refl(:,1), nHOMBeatNote_refl(:,2), fcsParams.freq) /...
     fcsParams.OptGain.PhaseDetectorGainBN_refl;

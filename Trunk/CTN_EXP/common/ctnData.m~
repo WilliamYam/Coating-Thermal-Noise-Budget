@@ -75,8 +75,8 @@ n20sServoOut = n20sServoOut.data;
 %% PD dark noise
 % units: V/rtHz
 % measured after Mixer
-n00PDServoIn = importdata([rowDataDir, '00pd.asc'], ' ', 14);               % 00 
-n02PDServoIn = importdata([rowDataDir, '02pd.asc'], ' ', 14);               % 02
+n00PDServoIn = importdata([rowDataDir, '00pd.asc'], ' ', 14)               % 00 
+n02PDServoIn = importdata([rowDataDir, '02pd.asc'], ' ', 14)               % 02
 n20PDServoIn = importdata([rowDataDir, '20pd.asc'], ' ', 14);               % 20
 
 n00PDServoIn = n00PDServoIn.data;

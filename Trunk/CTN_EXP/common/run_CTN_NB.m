@@ -24,29 +24,23 @@ noiseCal = squeeze(noiseCal)';
 
 totalNoiseBN.asd = fcsParams.ctnNb.beatNote ./ noiseCal;
 totalNoiseBN.f = fcsParams.freq;
-totalNoiseBN.name = 'Measured Total';
+totalNoiseBN.name = '~4W Cavity Power 02/20';
 
 % totalNoiseBNI.asd = fcsParams.ctnNb.beatNoteI ./ noiseCal;
 % totalNoiseBNI.f = fcsParams.freq;
 % totalNoiseBNI.name = 'Measured Total with Intensity Servo';
 
-%%% From 11/6/2014, 0.105e-3 W power on each HOM in reflection
-totalNoiseBN_refl.asd = fcsParams.ctnNb.beatNote_refl ./ noiseCal;
-totalNoiseBN_refl.f = fcsParams.freq;
-totalNoiseBN_refl.name = 'Measured Total Refl (11/6/2014)';
-
-% %%%coating thermal noise
-% coatingNoise.asd = fcsParams.ctnNb.CTN * sqrt(2);
-% coatingNoise.f = fcsParams.freq;
-% coatingNoise.name = 'Coating';
+% %%% From 11/6/2014, 0.105e-3 W power on each HOM in reflection
+% totalNoiseBN_refl.asd = fcsParams.ctnNb.beatNote_refl ./ noiseCal;
+% totalNoiseBN_refl.f = fcsParams.freq;
+% totalNoiseBN_refl.name = 'Measured Total Refl (11/6/2014)';
 
 measuredNoiseBN = Noise(totalNoiseBN);
 % measuredNoiseBNI = Noise(totalNoiseBNI);
-measuredNoiseBN_refl = Noise(totalNoiseBN_refl);
-% coatingNoise = Noise(coatingNoise);
+% measuredNoiseBN_refl = Noise(totalNoiseBN_refl);
 
 nb = nbGroupNoises('ctnFCS', noises, sys);
-nb.referenceNoises = {measuredNoiseBN, measuredNoiseBN_refl};
+nb.referenceNoises = {measuredNoiseBN};
 
 %%                  %%%%%Error signal readout 02%%%%%
 
@@ -138,7 +132,6 @@ nb.referenceNoises = {measuredNoiseBN, measuredNoiseBN_refl};
 %% Make NB plot
 
 close all
-
 disp('Plotting noises')
 nb.sortModel();
 matlabNoisePlot(nb);

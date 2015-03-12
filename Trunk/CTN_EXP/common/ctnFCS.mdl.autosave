@@ -1,22 +1,21 @@
 Model {
   Name			  "ctnFCS"
-  Version		  8.1
+  Version		  8.4
   MdlSubVersion		  0
+  SavedCharacterEncoding  "ISO-8859-1"
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    1
     Outport {
+      Name		      "$100k CTN"
       BusObject		      ""
       BusOutputAsStruct	      "off"
-      Name		      "$100k CTN"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.379"
+    ComputedModelVersion    "1.387"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
-  SavedCharacterEncoding  "ISO-8859-1"
-  SaveDefaultBlockParams  on
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
   DisableAllScopes	  off
@@ -35,7 +34,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-1920.0, 52.0, 1607.0, 1024.0]
+      Location		      [10.0, 23.0, 1607.0, 1023.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -58,10 +57,10 @@ Model {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"495"
-	Extents			[1383.0, 854.0]
-	ZoomFactor		[2.2396694214876032]
-	Offset			[73.749077490774908, -5.4031365313653055]
+	LoadSaveID		"427"
+	Extents			[1383.0, 853.0]
+	ZoomFactor		[2.1393065508862379]
+	Offset			[385.0730108394834, 390.63633244926194]
       }
     }
   }
@@ -71,9 +70,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "yamw"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Dec 17 11:54:47 2014"
-  RTWModifiedTimeStamp	  340718351
-  ModelVersionFormat	  "1.%<AutoIncrement:379>"
+  LastModifiedDate	  "Tue Mar 10 01:08:42 2015"
+  RTWModifiedTimeStamp	  348069495
+  ModelVersionFormat	  "1.%<AutoIncrement:387>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -91,6 +90,7 @@ Model {
   SortedOrder		  off
   ExecutionContextIcon	  off
   ShowLinearizationAnnotations on
+  ShowMarkup		  on
   BlockNameDataTip	  off
   BlockParametersDataTip  off
   BlockDescriptionStringDataTip	off
@@ -99,6 +99,11 @@ Model {
   BrowserShowLibraryLinks off
   BrowserLookUnderMasks	  off
   SimulationMode	  "normal"
+  PauseTimes		  "5"
+  NumberOfSteps		  1
+  SnapshotBufferSize	  10
+  SnapshotInterval	  10
+  NumberOfLastSnapshots	  0
   LinearizationMsg	  "none"
   Profile		  off
   ParamWorkspaceSource	  "MATLABWorkspace"
@@ -132,6 +137,7 @@ Model {
   CovNameIncrementing	  off
   CovHtmlReporting	  on
   CovForceBlockReductionOff on
+  CovEnableCumulative	  on
   covSaveCumulativeToWorkspaceVar on
   CovSaveSingleToWorkspaceVar on
   CovCumulativeVarName	  "covCumulativeData"
@@ -139,6 +145,12 @@ Model {
   CovReportOnPause	  on
   CovModelRefEnable	  "Off"
   CovExternalEMLEnable	  off
+  CovSFcnEnable		  off
+  CovBoundaryAbsTol	  0.000010
+  CovBoundaryRelTol	  0.010000
+  CovUseTimeInterval	  off
+  CovStartTime		  0
+  CovStopTime		  0
   ExtModeBatchMode	  off
   ExtModeEnableFloating	  on
   ExtModeTrigType	  "manual"
@@ -168,13 +180,13 @@ Model {
     Dimension		    1
     Simulink.ConfigSet {
       $ObjectID		      7
-      Version		      "1.13.0"
+      Version		      "1.14.3"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
 	  $ObjectID		  8
-	  Version		  "1.13.0"
+	  Version		  "1.14.3"
 	  StartTime		  "0.0"
 	  StopTime		  "10.0"
 	  AbsTol		  "auto"
@@ -209,7 +221,7 @@ Model {
 	}
 	Simulink.DataIOCC {
 	  $ObjectID		  9
-	  Version		  "1.13.0"
+	  Version		  "1.14.3"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
@@ -227,6 +239,7 @@ Model {
 	  SignalLogging		  on
 	  DSMLogging		  on
 	  InspectSignalLogs	  off
+	  VisualizeSimOutput	  on
 	  SaveTime		  on
 	  ReturnWorkspaceOutputs  off
 	  StateSaveName		  "xout"
@@ -241,7 +254,7 @@ Model {
 	}
 	Simulink.OptimizationCC {
 	  $ObjectID		  10
-	  Version		  "1.13.0"
+	  Version		  "1.14.3"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -259,13 +272,16 @@ Model {
 	  BooleanDataType	  on
 	  ConditionallyExecuteInputs on
 	  InlineParams		  off
-	  UseIntDivNetSlope	  off
+	  UseDivisionForNetSlopeComputation "Off"
 	  UseFloatMulNetSlope	  off
+	  DefaultUnderspecifiedDataType	"double"
 	  UseSpecifiedMinMax	  off
 	  InlineInvariantSignals  off
 	  OptimizeBlockIOStorage  on
 	  BufferReuse		  on
 	  EnhancedBackFolding	  off
+	  CachingGlobalReferences off
+	  GlobalBufferReuse	  on
 	  StrengthReduction	  off
 	  ExpressionFolding	  on
 	  BooleansAsBitfields	  off
@@ -280,6 +296,7 @@ Model {
 	  SystemCodeInlineAuto	  off
 	  StateBitsets		  off
 	  DataBitsets		  off
+	  ActiveStateOutputEnumStorageType "Native Integer"
 	  UseTempVars		  off
 	  ZeroExternalMemoryAtStartup on
 	  ZeroInternalMemoryAtStartup on
@@ -297,7 +314,7 @@ Model {
 	}
 	Simulink.DebuggingCC {
 	  $ObjectID		  11
-	  Version		  "1.13.0"
+	  Version		  "1.14.3"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
@@ -384,10 +401,11 @@ Model {
 	  SFUnconditionalTransitionShadowingDiag "warning"
 	  SFUndirectedBroadcastEventsDiag "warning"
 	  SFTransitionActionBeforeConditionDiag	"warning"
+	  IntegerSaturationMsg	  "warning"
 	}
 	Simulink.HardwareCC {
 	  $ObjectID		  12
-	  Version		  "1.13.0"
+	  Version		  "1.14.3"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  32
@@ -428,7 +446,7 @@ Model {
 	}
 	Simulink.ModelReferenceCC {
 	  $ObjectID		  13
-	  Version		  "1.13.0"
+	  Version		  "1.14.3"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
 	  EnableParallelModelReferenceBuilds off
@@ -443,7 +461,7 @@ Model {
 	}
 	Simulink.SFSimCC {
 	  $ObjectID		  14
-	  Version		  "1.13.0"
+	  Version		  "1.14.3"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
 	  SFSimEcho		  on
@@ -454,11 +472,12 @@ Model {
 	  SimUseLocalCustomCode	  off
 	  SimParseCustomCode	  on
 	  SimBuildMode		  "sf_incremental_build"
+	  SimGenImportedTypeDefs  off
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
 	  $ObjectID		  15
-	  Version		  "1.13.0"
+	  Version		  "1.14.3"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    15
@@ -480,11 +499,15 @@ Model {
 	    PropName		    "DisabledProps"
 	  }
 	  SystemTargetFile	  "grt.tlc"
+	  TLCOptions		  ""
 	  GenCodeOnly		  off
 	  MakeCommand		  "make_rtw"
 	  GenerateMakefile	  on
 	  PackageGeneratedCodeAndArtifacts off
+	  PackageName		  ""
 	  TemplateMakefile	  "grt_default_tmf"
+	  PostCodeGenCommand	  ""
+	  Description		  ""
 	  GenerateReport	  off
 	  SaveLog		  off
 	  RTWVerbose		  on
@@ -495,13 +518,23 @@ Model {
 	  TLCAssert		  off
 	  ProcessScriptMode	  "Default"
 	  ConfigurationMode	  "Optimized"
+	  ProcessScript		  ""
+	  ConfigurationScript	  ""
 	  ConfigAtBuild		  off
 	  RTWUseLocalCustomCode	  off
 	  RTWUseSimCustomCode	  off
+	  CustomSourceCode	  ""
+	  CustomHeaderCode	  ""
+	  CustomInclude		  ""
+	  CustomSource		  ""
+	  CustomLibrary		  ""
+	  CustomInitializer	  ""
+	  CustomTerminator	  ""
+	  Toolchain		  "Automatically locate an installed toolchain"
+	  BuildConfiguration	  "Faster Builds"
 	  IncludeHyperlinkInReport off
 	  LaunchReport		  off
 	  PortableWordSizes	  off
-	  GenerateErtSFunction	  off
 	  CreateSILPILBlock	  "None"
 	  CodeExecutionProfiling  off
 	  CodeExecutionProfileVariable "executionProfile"
@@ -521,14 +554,17 @@ Model {
 	  GenerateCodeMetricsReport off
 	  GenerateCodeReplacementReport	off
 	  RTWCompilerOptimization "Off"
+	  RTWCustomCompilerOptimizations ""
 	  CheckMdlBeforeBuild	  "Off"
 	  CustomRebuildMode	  "OnUpdate"
+	  DataInitializer	  ""
+	  SharedConstantsCachingThreshold 1024
 	  Array {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
 	      $ObjectID		      16
-	      Version		      "1.13.0"
+	      Version		      "1.14.3"
 	      Array {
 		Type			"Cell"
 		Dimension		22
@@ -558,6 +594,7 @@ Model {
 	      }
 	      ForceParamTrailComments off
 	      GenerateComments	      on
+	      CommentStyle	      "Auto"
 	      IgnoreCustomStorageClasses on
 	      IgnoreTestpoints	      off
 	      IncHierarchyInIds	      off
@@ -580,6 +617,7 @@ Model {
 	      CustomSymbolStrBlkIO    "rtb_$N$M"
 	      CustomSymbolStrTmpVar   "$N$M"
 	      CustomSymbolStrMacro    "$R$N$M"
+	      CustomSymbolStrUtil     "$N$C"
 	      DefineNamingRule	      "None"
 	      ParamNamingRule	      "None"
 	      SignalNamingRule	      "None"
@@ -596,13 +634,13 @@ Model {
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
 	      $ObjectID		      17
-	      Version		      "1.13.0"
+	      Version		      "1.14.3"
 	      Array {
 		Type			"Cell"
-		Dimension		15
+		Dimension		14
 		Cell			"GeneratePreprocessorConditionals"
 		Cell			"IncludeMdlTerminateFcn"
-		Cell			"CombineOutputUpdateFcns"
+		Cell			"GenerateAllocFcn"
 		Cell			"SuppressErrorStatus"
 		Cell			"ERTCustomFileBanners"
 		Cell			"GenerateSampleERTMain"
@@ -614,12 +652,13 @@ Model {
 		Cell			"SupportComplex"
 		Cell			"SupportAbsoluteTime"
 		Cell			"SupportContinuousTime"
-		Cell			"GenerateAllocFcn"
 		PropName		"DisabledProps"
 	      }
 	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
 	      TargetLibSuffix	      ""
 	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "NOT IN USE"
+	      TargetLangStandard      "C89/C90 (ANSI)"
 	      CodeReplacementLibrary  "None"
 	      UtilityFuncGeneration   "Auto"
 	      ERTMultiwordTypeDef     "System defined"
@@ -628,7 +667,6 @@ Model {
 	      GenerateFullHeader      on
 	      GenerateSampleERTMain   off
 	      GenerateTestInterfaces  off
-	      IsPILTarget	      off
 	      ModelReferenceCompliant on
 	      ParMdlRefBuildCompliant on
 	      CompOptLevelCompliant   on
@@ -645,6 +683,7 @@ Model {
 	      LogVarNameModifier      "rt_"
 	      MatFileLogging	      on
 	      MultiInstanceERTCode    off
+	      CodeInterfacePackaging  "Nonreusable function"
 	      SupportNonFinite	      on
 	      SupportComplex	      on
 	      PurelyIntegerCode	      off
@@ -653,12 +692,14 @@ Model {
 	      SupportVariableSizeSignals off
 	      EnableShiftOperators    on
 	      ParenthesesLevel	      "Nominal"
+	      CastingMode	      "Nominal"
 	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
 	      ModelStepFunctionPrototypeControlCompliant off
 	      CPPClassGenCompliant    on
 	      AutosarCompliant	      off
 	      GRTInterface	      off
 	      GenerateAllocFcn	      off
+	      GenerateSharedConstants on
 	      UseMalloc		      off
 	      ExtMode		      off
 	      ExtModeStaticAlloc      off
@@ -672,13 +713,14 @@ Model {
 	      RTWCAPIStates	      off
 	      RTWCAPIRootIO	      off
 	      GenerateASAP2	      off
+	      MultiInstanceErrorCode  "Error"
 	    }
 	    PropName		    "Components"
 	  }
 	}
 	hdlcoderui.hdlcc {
 	  $ObjectID		  18
-	  Version		  "1.13.0"
+	  Version		  "1.14.3"
 	  Description		  "HDL Coder custom configuration component"
 	  Name			  "HDL Coder"
 	  Array {
@@ -819,11 +861,15 @@ Model {
       Permissions	      "ReadWrite"
       PermitHierarchicalResolution "All"
       TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
       CheckFcnCallInpInsideContextMsg off
       SystemSampleTime	      "-1"
+      RTWSystemCode	      "Auto"
       RTWFcnNameOpts	      "Auto"
       RTWFileNameOpts	      "Auto"
       FunctionInterfaceSpec   "void_void"
+      FunctionWithSeparateData off
       RTWMemSecFuncInitTerm   "Inherit from model"
       RTWMemSecFuncExecute    "Inherit from model"
       RTWMemSecDataConstants  "Inherit from model"
@@ -833,9 +879,12 @@ Model {
       DataTypeOverride	      "UseLocalSettings"
       DataTypeOverrideAppliesTo	"AllNumericTypes"
       MinMaxOverflowLogging   "UseLocalSettings"
+      Opaque		      off
+      MaskHideContents	      off
       SFBlockType	      "NONE"
       Variant		      off
       GeneratePreprocessorConditionals off
+      ContentPreviewEnabled   off
     }
     Block {
       BlockType		      Sum
@@ -864,7 +913,7 @@ Model {
   }
   System {
     Name		    "ctnFCS"
-    Location		    [-1920, 52, -313, 1076]
+    Location		    [10, 23, 1617, 1046]
     Open		    off
     ModelBrowserVisibility  on
     ModelBrowserWidth	    200
@@ -878,25 +927,19 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "93"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "574"
+    SIDHighWatermark	    "585"
     Block {
       BlockType		      SubSystem
       Name		      "00 FCL"
       SID		      "143"
-      Ports		      [4, 1]
-      Position		      [550, 330, 730, 555]
+      Ports		      [3, 1]
+      Position		      [625, 332, 805, 558]
       ZOrder		      52
       FontSize		      16
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
       RequestExecContextInheritance off
-      MaskHideContents	      off
       System {
 	Name			"00 FCL"
-	Location		[42, 52, 1649, 1076]
+	Location		[10, 23, 1617, 1046]
 	Open			off
 	ModelBrowserVisibility	on
 	ModelBrowserWidth	200
@@ -942,18 +985,6 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Block {
-	  BlockType		  Inport
-	  Name			  "IntensityNoise"
-	  SID			  "569"
-	  Position		  [1250, 685, 1270, 740]
-	  ZOrder		  137
-	  BlockRotation		  270
-	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
-	  FontSize		  16
-	  Port			  "4"
-	  IconDisplay		  "Port number"
-	}
-	Block {
 	  BlockType		  SubSystem
 	  Name			  "Cavity00"
 	  SID			  "427"
@@ -961,17 +992,11 @@ Model {
 	  Position		  [985, 459, 1215, 611]
 	  ZOrder		  102
 	  FontSize		  16
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
 	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
 	  System {
 	    Name		    "Cavity00"
-	    Location		    [42, 52, 1649, 1076]
-	    Open		    off
+	    Location		    [10, 23, 1617, 1046]
+	    Open		    on
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -982,7 +1007,7 @@ Model {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "263"
+	    ZoomFactor		    "214"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "LaserIN"
@@ -1028,15 +1053,36 @@ Model {
 	      SaturateOnIntegerOverflow	off
 	    }
 	    Block {
+	      BlockType		      Reference
+	      Name		      "GasNoise"
+	      SID		      "576"
+	      Tag		      "NbNoiseSource"
+	      Ports		      [0, 1]
+	      Position		      [425, 712, 450, 728]
+	      ZOrder		      91
+	      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+	      AttributesFormatString  "%<Tag>"
+	      LibraryVersion	      "1.26"
+	      SourceBlock	      "NbLibrary/NbNoiseSource"
+	      SourceType	      ""
+	      ContentPreviewEnabled   off
+	      asd		      "fcsParams.ctnNb.noiseGas"
+	      groupNest		      "2"
+	      group		      "'Gas'"
+	      subgroup		      "'00'"
+	      subsubgroup	      "''"
+	      subsubsubgroup	      "''"
+	    }
+	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum"
 	      SID		      "432"
-	      Ports		      [2, 1]
+	      Ports		      [3, 1]
 	      Position		      [780, 530, 830, 580]
 	      ZOrder		      86
 	      ShowName		      off
 	      IconShape		      "round"
-	      Inputs		      "++|"
+	      Inputs		      "+++"
 	      InputSameDT	      off
 	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
 	      SaturateOnIntegerOverflow	off
@@ -1054,6 +1100,18 @@ Model {
 	      SaturateOnIntegerOverflow	off
 	    }
 	    Block {
+	      BlockType		      Gain
+	      Name		      "m/rad"
+	      SID		      "575"
+	      Position		      [625, 681, 730, 759]
+	      ZOrder		      90
+	      FontSize		      16
+	      Gain		      "1 ./ fcsParams.OptGain.m2rad * 0"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
 	      BlockType		      Outport
 	      Name		      "Out1"
 	      SID		      "435"
@@ -1064,40 +1122,61 @@ Model {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
+	      ZOrder		      1
 	      SrcBlock		      "LengthNoise"
 	      SrcPort		      1
 	      DstBlock		      "Add1"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      2
 	      SrcBlock		      "CTN"
 	      SrcPort		      1
 	      DstBlock		      "Add1"
 	      DstPort		      2
 	    }
 	    Line {
+	      ZOrder		      3
 	      SrcBlock		      "Add1"
 	      SrcPort		      1
 	      DstBlock		      "Sum"
 	      DstPort		      2
 	    }
 	    Line {
+	      ZOrder		      4
 	      SrcBlock		      "LaserIN"
 	      SrcPort		      1
 	      DstBlock		      "m/Hz"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      5
 	      SrcBlock		      "Sum"
 	      SrcPort		      1
 	      DstBlock		      "Out1"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      6
 	      SrcBlock		      "m/Hz"
 	      SrcPort		      1
 	      Points		      [70, 0]
 	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      8
+	      SrcBlock		      "m/rad"
+	      SrcPort		      1
+	      Points		      [70, 0]
+	      DstBlock		      "Sum"
+	      DstPort		      3
+	    }
+	    Line {
+	      ZOrder		      11
+	      SrcBlock		      "GasNoise"
+	      SrcPort		      1
+	      DstBlock		      "m/rad"
 	      DstPort		      1
 	    }
 	  }
@@ -1118,20 +1197,14 @@ Model {
 	  BlockType		  SubSystem
 	  Name			  "PDH_00"
 	  SID			  "438"
-	  Ports			  [2, 1]
-	  Position		  [1305, 508, 1510, 617]
+	  Ports			  [1, 1]
+	  Position		  [1305, 480, 1510, 590]
 	  ZOrder		  103
 	  FontSize		  16
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
 	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
 	  System {
 	    Name		    "PDH_00"
-	    Location		    [42, 52, 1649, 1076]
+	    Location		    [10, 23, 1617, 1046]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -1152,27 +1225,6 @@ Model {
 	      ZOrder		      -1
 	      BackgroundColor	      "yellow"
 	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "In2"
-	      SID		      "564"
-	      Position		      [190, 215, 240, 245]
-	      ZOrder		      19
-	      BackgroundColor	      "[0.909804, 0.819608, 0.321569]"
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      " W"
-	      SID		      "565"
-	      Position		      [305, 197, 370, 263]
-	      ZOrder		      18
-	      Gain		      "0"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
 	    }
 	    Block {
 	      BlockType		      Gain
@@ -1199,6 +1251,7 @@ Model {
 	      LibraryVersion	      "1.26"
 	      SourceBlock	      "NbLibrary/NbNoiseSource"
 	      SourceType	      ""
+	      ContentPreviewEnabled   off
 	      asd		      "fcsParams.ctnNb.n00PDOut"
 	      groupNest		      "2"
 	      group		      "'PD'"
@@ -1220,6 +1273,7 @@ Model {
 	      LibraryVersion	      "1.26"
 	      SourceBlock	      "NbLibrary/NbNoiseSource"
 	      SourceType	      ""
+	      ContentPreviewEnabled   off
 	      asd		      "fcsParams.ctnNb.PDshotNoise00"
 	      groupNest		      "2"
 	      group		      "'Shot'"
@@ -1231,12 +1285,12 @@ Model {
 	      BlockType		      Sum
 	      Name		      "Sum"
 	      SID		      "443"
-	      Ports		      [3, 1]
+	      Ports		      [2, 1]
 	      Position		      [420, 205, 470, 255]
 	      ZOrder		      11
 	      ShowName		      off
 	      IconShape		      "round"
-	      Inputs		      "+|+|+"
+	      Inputs		      "+|+"
 	      InputSameDT	      off
 	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
 	      SaturateOnIntegerOverflow	off
@@ -1276,18 +1330,21 @@ Model {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
+	      ZOrder		      1
 	      SrcBlock		      "In1"
 	      SrcPort		      1
 	      DstBlock		      " W/m"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      10
 	      SrcBlock		      "ShotNoise"
 	      SrcPort		      1
 	      DstBlock		      "Sum"
-	      DstPort		      3
+	      DstPort		      2
 	    }
 	    Line {
+	      ZOrder		      3
 	      SrcBlock		      " W/m"
 	      SrcPort		      1
 	      Points		      [70, 0]
@@ -1295,58 +1352,50 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      4
 	      SrcBlock		      "Sum"
 	      SrcPort		      1
 	      DstBlock		      "V/W"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      5
 	      SrcBlock		      "V/W"
 	      SrcPort		      1
 	      DstBlock		      "Sum1"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      6
 	      SrcBlock		      "Sum1"
 	      SrcPort		      1
 	      DstBlock		      "Out1"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      7
 	      SrcBlock		      "PDdarkNoise"
 	      SrcPort		      1
 	      DstBlock		      "Sum1"
 	      DstPort		      2
 	    }
-	    Line {
-	      SrcBlock		      " W"
-	      SrcPort		      1
-	      DstBlock		      "Sum"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "In2"
-	      SrcPort		      1
-	      DstBlock		      " W"
-	      DstPort		      1
-	    }
 	    Annotation {
 	      SID		      "447"
 	      Name		      "1811"
-	      Position		      [551, 196]
+	      Position		      [551, 196, 574, 208]
+	      InternalMargins	      [0, 0, 0, 0]
+	      FixedHeight	      off
+	      FixedWidth	      off
 	      ZOrder		      -1
 	    }
 	    Annotation {
 	      SID		      "563"
 	      Name		      "PDH"
-	      Position		      [341, 76]
+	      Position		      [341, 76, 364, 88]
+	      InternalMargins	      [0, 0, 0, 0]
+	      FixedHeight	      off
+	      FixedWidth	      off
 	      ZOrder		      -3
-	    }
-	    Annotation {
-	      SID		      "566"
-	      Name		      "Intensity"
-	      Position		      [337, 191]
-	      ZOrder		      -4
 	    }
 	  }
 	}
@@ -1359,16 +1408,10 @@ Model {
 	  ZOrder		  53
 	  BlockMirror		  on
 	  FontSize		  16
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
 	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
 	  System {
 	    Name		    "Servo"
-	    Location		    [42, 22, 1649, 1046]
+	    Location		    [-1543, 52, 64, 1075]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -1380,7 +1423,7 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "169"
+	    ZoomFactor		    "220"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In1"
@@ -1425,6 +1468,7 @@ Model {
 	      LibraryVersion	      "1.26"
 	      SourceBlock	      "NbLibrary/NbNoiseSource"
 	      SourceType	      ""
+	      ContentPreviewEnabled   off
 	      asd		      "fcsParams.ctnNb.n00sServoOut"
 	      groupNest		      "2"
 	      group		      "'Servo'"
@@ -1456,30 +1500,35 @@ Model {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
+	      ZOrder		      1
 	      SrcBlock		      "Servo00"
 	      SrcPort		      1
 	      DstBlock		      "Out1"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      2
 	      SrcBlock		      "Sum"
 	      SrcPort		      1
 	      DstBlock		      "Servo00"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      3
 	      SrcBlock		      "In1"
 	      SrcPort		      1
 	      DstBlock		      "Sum"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      4
 	      SrcBlock		      "ServoNoise"
 	      SrcPort		      1
 	      DstBlock		      "1/servo(int+boost off)"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      5
 	      SrcBlock		      "1/servo(int+boost off)"
 	      SrcPort		      1
 	      DstBlock		      "Sum"
@@ -1488,7 +1537,10 @@ Model {
 	    Annotation {
 	      SID		      "173"
 	      Name		      "William LabAmp"
-	      Position		      [505, 219]
+	      Position		      [505, 219, 579, 231]
+	      InternalMargins	      [0, 0, 0, 0]
+	      FixedHeight	      off
+	      FixedWidth	      off
 	      ZOrder		      -1
 	    }
 	  }
@@ -1508,6 +1560,7 @@ Model {
 	  FontSize		  16
 	  SourceBlock		  "NbLibrary/NbNoiseCal"
 	  SourceType		  ""
+	  ContentPreviewEnabled	  off
 	  dof			  "'ServoOut_00'"
 	  unit			  "'V/rtHz'"
 	}
@@ -1526,6 +1579,7 @@ Model {
 	  FontSize		  16
 	  SourceBlock		  "NbLibrary/NbNoiseSink"
 	  SourceType		  ""
+	  ContentPreviewEnabled	  off
 	  dof			  "'ServoOut_00'"
 	}
 	Block {
@@ -1584,24 +1638,28 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Line {
+	  ZOrder		  1
 	  SrcBlock		  "Cavity00"
 	  SrcPort		  1
 	  DstBlock		  "PDH_00"
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  2
 	  SrcBlock		  "Servo"
 	  SrcPort		  1
 	  DstBlock		  "ServoOut_00 Sink"
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  3
 	  SrcBlock		  "Hz/V"
 	  SrcPort		  1
 	  DstBlock		  "Sum"
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  4
 	  SrcBlock		  "FreqNoise"
 	  SrcPort		  1
 	  Points		  [50, 0]
@@ -1609,51 +1667,60 @@ Model {
 	  DstPort		  2
 	}
 	Line {
+	  ZOrder		  5
 	  SrcBlock		  "LengthNoise"
 	  SrcPort		  1
 	  DstBlock		  "Cavity00"
 	  DstPort		  2
 	}
 	Line {
+	  ZOrder		  6
 	  SrcBlock		  "CTN1"
 	  SrcPort		  1
 	  DstBlock		  "Sum2"
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  7
 	  SrcBlock		  "Sum"
 	  SrcPort		  1
 	  Points		  [76, 0]
 	  Branch {
+	    ZOrder		    8
 	    DstBlock		    "Cavity00"
 	    DstPort		    1
 	  }
 	  Branch {
+	    ZOrder		    9
 	    Points		    [0, 280]
 	    DstBlock		    "Out2HOMs"
 	    DstPort		    1
 	  }
 	}
 	Line {
+	  ZOrder		  10
 	  SrcBlock		  "Sum1"
 	  SrcPort		  1
 	  DstBlock		  "Servo"
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  11
 	  SrcBlock		  "PDH_00"
 	  SrcPort		  1
-	  Points		  [9, 0; 0, -275]
+	  Points		  [9, 0; 0, -245]
 	  DstBlock		  "Sum1"
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  12
 	  SrcBlock		  "ServoOut_00 Cal V/rtHz"
 	  SrcPort		  1
 	  DstBlock		  "Sum2"
 	  DstPort		  2
 	}
 	Line {
+	  ZOrder		  13
 	  SrcBlock		  "ServoOut_00 Sink"
 	  SrcPort		  1
 	  Points		  [-264, 0; 0, 195]
@@ -1661,29 +1728,29 @@ Model {
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  14
 	  SrcBlock		  "Sum2"
 	  SrcPort		  1
 	  DstBlock		  "Cavity00"
 	  DstPort		  3
 	}
-	Line {
-	  SrcBlock		  "IntensityNoise"
-	  SrcPort		  1
-	  Points		  [0, -90]
-	  DstBlock		  "PDH_00"
-	  DstPort		  2
-	}
 	Annotation {
 	  SID			  "176"
 	  Name			  "Laser Controller\nFast Ch."
-	  Position		  [530, 434]
+	  Position		  [530, 434, 645, 468]
+	  InternalMargins	  [0, 0, 0, 0]
+	  FixedHeight		  off
+	  FixedWidth		  off
 	  ZOrder		  -2
 	  FontSize		  16
 	}
 	Annotation {
 	  SID			  "277"
 	  Name			  " "
-	  Position		  [724, 525]
+	  Position		  [724, 525, 736, 563]
+	  InternalMargins	  [0, 0, 0, 0]
+	  FixedHeight		  off
+	  FixedWidth		  off
 	  HorizontalAlignment	  "left"
 	  VerticalAlignment	  "top"
 	  ZOrder		  -4
@@ -1695,20 +1762,14 @@ Model {
       BlockType		      SubSystem
       Name		      "02 FCL"
       SID		      "182"
-      Ports		      [4, 1]
+      Ports		      [3, 1]
       Position		      [980, 159, 1160, 391]
       ZOrder		      55
       FontSize		      16
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
       RequestExecContextInheritance off
-      MaskHideContents	      off
       System {
 	Name			"02 FCL"
-	Location		[-1920, 52, -313, 1076]
+	Location		[10, 23, 1617, 1046]
 	Open			off
 	ModelBrowserVisibility	on
 	ModelBrowserWidth	200
@@ -1754,18 +1815,6 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Block {
-	  BlockType		  Inport
-	  Name			  "IntensityNoise"
-	  SID			  "567"
-	  Position		  [815, 730, 835, 785]
-	  ZOrder		  131
-	  BlockRotation		  270
-	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
-	  FontSize		  16
-	  Port			  "4"
-	  IconDisplay		  "Port number"
-	}
-	Block {
 	  BlockType		  SubSystem
 	  Name			  "Cavity02"
 	  SID			  "454"
@@ -1773,16 +1822,10 @@ Model {
 	  Position		  [555, 523, 785, 707]
 	  ZOrder		  105
 	  FontSize		  16
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
 	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
 	  System {
 	    Name		    "Cavity02"
-	    Location		    [-1798, 22, -191, 1046]
+	    Location		    [10, 23, 1617, 1046]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -1794,7 +1837,7 @@ Model {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "138"
+	    ZoomFactor		    "178"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "MarconiIN"
@@ -1840,15 +1883,36 @@ Model {
 	      SaturateOnIntegerOverflow	off
 	    }
 	    Block {
+	      BlockType		      Reference
+	      Name		      "GasNoise"
+	      SID		      "577"
+	      Tag		      "NbNoiseSource"
+	      Ports		      [0, 1]
+	      Position		      [290, 657, 315, 673]
+	      ZOrder		      129
+	      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+	      AttributesFormatString  "%<Tag>"
+	      LibraryVersion	      "1.26"
+	      SourceBlock	      "NbLibrary/NbNoiseSource"
+	      SourceType	      ""
+	      ContentPreviewEnabled   off
+	      asd		      "fcsParams.ctnNb.noiseGas"
+	      groupNest		      "2"
+	      group		      "'Gas'"
+	      subgroup		      "'02'"
+	      subsubgroup	      "''"
+	      subsubsubgroup	      "''"
+	    }
+	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum"
 	      SID		      "459"
-	      Ports		      [2, 1]
+	      Ports		      [3, 1]
 	      Position		      [765, 435, 815, 485]
 	      ZOrder		      86
 	      ShowName		      off
 	      IconShape		      "round"
-	      Inputs		      "++|"
+	      Inputs		      "+++"
 	      InputSameDT	      off
 	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
 	      SaturateOnIntegerOverflow	off
@@ -1896,6 +1960,7 @@ Model {
 	      FontSize		      16
 	      SourceBlock	      "NbLibrary/NbNoiseCal"
 	      SourceType	      ""
+	      ContentPreviewEnabled   off
 	      dof		      "'TF1'"
 	      unit		      "'rad/rad'"
 	    }
@@ -1913,6 +1978,7 @@ Model {
 	      FontSize		      16
 	      SourceBlock	      "NbLibrary/NbNoiseSink"
 	      SourceType	      ""
+	      ContentPreviewEnabled   off
 	      dof		      "'TF1'"
 	    }
 	    Block {
@@ -1930,6 +1996,7 @@ Model {
 	      FontSize		      16
 	      SourceBlock	      "NbLibrary/NbNoiseCal"
 	      SourceType	      ""
+	      ContentPreviewEnabled   off
 	      dof		      "'TF2'"
 	      unit		      "'rad/rad'"
 	    }
@@ -1947,6 +2014,7 @@ Model {
 	      FontSize		      16
 	      SourceBlock	      "NbLibrary/NbNoiseSink"
 	      SourceType	      ""
+	      ContentPreviewEnabled   off
 	      dof		      "'TF2'"
 	    }
 	    Block {
@@ -1962,6 +2030,18 @@ Model {
 	      SaturateOnIntegerOverflow	off
 	    }
 	    Block {
+	      BlockType		      Gain
+	      Name		      "m/rad"
+	      SID		      "578"
+	      Position		      [480, 626, 585, 704]
+	      ZOrder		      128
+	      FontSize		      16
+	      Gain		      "1 ./ fcsParams.OptGain.m2rad * 0"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
 	      BlockType		      Outport
 	      Name		      "Out"
 	      SID		      "462"
@@ -1972,54 +2052,63 @@ Model {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
+	      ZOrder		      1
 	      SrcBlock		      "LengthNoise"
 	      SrcPort		      1
 	      DstBlock		      "Add1"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      2
 	      SrcBlock		      "CTN"
 	      SrcPort		      1
 	      DstBlock		      "Add1"
 	      DstPort		      2
 	    }
 	    Line {
+	      ZOrder		      3
 	      SrcBlock		      "Add1"
 	      SrcPort		      1
 	      DstBlock		      "Sum2"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      4
 	      SrcBlock		      "Sum"
 	      SrcPort		      1
 	      DstBlock		      "Out"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      5
 	      SrcBlock		      "m/Hz"
 	      SrcPort		      1
 	      DstBlock		      "Sum1"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      6
 	      SrcBlock		      "MarconiIN"
 	      SrcPort		      1
 	      DstBlock		      "m/Hz"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      7
 	      SrcBlock		      "Sum1"
 	      SrcPort		      1
 	      DstBlock		      "TF1 Sink\n"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      8
 	      SrcBlock		      "Sum2"
 	      SrcPort		      1
 	      DstBlock		      "TF2Sink"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      9
 	      SrcBlock		      "TF1 Sink\n"
 	      SrcPort		      1
 	      Points		      [45, 0]
@@ -2027,22 +2116,40 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      10
 	      SrcBlock		      "TF2Sink"
 	      SrcPort		      1
 	      DstBlock		      "Sum"
 	      DstPort		      2
 	    }
 	    Line {
+	      ZOrder		      11
 	      SrcBlock		      "TF1 Cal"
 	      SrcPort		      1
 	      DstBlock		      "Sum1"
 	      DstPort		      2
 	    }
 	    Line {
+	      ZOrder		      12
 	      SrcBlock		      "TF2 Cal\n"
 	      SrcPort		      1
 	      DstBlock		      "Sum2"
 	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      15
+	      SrcBlock		      "m/rad"
+	      SrcPort		      1
+	      Points		      [200, 0]
+	      DstBlock		      "Sum"
+	      DstPort		      3
+	    }
+	    Line {
+	      ZOrder		      19
+	      SrcBlock		      "GasNoise"
+	      SrcPort		      1
+	      DstBlock		      "m/rad"
+	      DstPort		      1
 	    }
 	  }
 	}
@@ -2055,13 +2162,7 @@ Model {
 	  ZOrder		  51
 	  BackgroundColor	  "[0.380392, 0.741176, 0.988235]"
 	  FontSize		  16
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
 	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
 	  System {
 	    Name		    "Marconi+AOM"
 	    Location		    [-1920, 52, -313, 1076]
@@ -2124,6 +2225,7 @@ Model {
 	      LibraryVersion	      "1.26"
 	      SourceBlock	      "NbLibrary/NbNoiseSource"
 	      SourceType	      ""
+	      ContentPreviewEnabled   off
 	      asd		      "fcsParams.ctnNb.n02Marconi"
 	      groupNest		      "2"
 	      group		      "'Marconi'"
@@ -2155,30 +2257,35 @@ Model {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
+	      ZOrder		      1
 	      SrcBlock		      "MarconiNoise\nHz/rtHz"
 	      SrcPort		      1
 	      DstBlock		      "Sum"
 	      DstPort		      2
 	    }
 	    Line {
+	      ZOrder		      2
 	      SrcBlock		      "Hz/Hz\n"
 	      SrcPort		      1
 	      DstBlock		      "Out1"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      3
 	      SrcBlock		      "Hz/V"
 	      SrcPort		      1
 	      DstBlock		      "Sum"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      4
 	      SrcBlock		      "In1"
 	      SrcPort		      1
 	      DstBlock		      "Hz/V"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      5
 	      SrcBlock		      "Sum"
 	      SrcPort		      1
 	      DstBlock		      "Hz/Hz\n"
@@ -2187,13 +2294,19 @@ Model {
 	    Annotation {
 	      SID		      "233"
 	      Name		      "MarconiGain"
-	      Position		      [405, 181]
+	      Position		      [405, 181, 463, 193]
+	      InternalMargins	      [0, 0, 0, 0]
+	      FixedHeight	      off
+	      FixedWidth	      off
 	      ZOrder		      -1
 	    }
 	    Annotation {
 	      SID		      "232"
 	      Name		      "Double Pass AOM"
-	      Position		      [622, 180]
+	      Position		      [622, 180, 705, 192]
+	      InternalMargins	      [0, 0, 0, 0]
+	      FixedHeight	      off
+	      FixedWidth	      off
 	      ZOrder		      -2
 	    }
 	  }
@@ -2202,21 +2315,15 @@ Model {
 	  BlockType		  SubSystem
 	  Name			  "PDH_HOM02"
 	  SID			  "235"
-	  Ports			  [2, 1]
-	  Position		  [870, 598, 990, 667]
+	  Ports			  [1, 1]
+	  Position		  [870, 600, 990, 670]
 	  ZOrder		  52
 	  BackgroundColor	  "[0.501961, 0.501961, 0.501961]"
 	  FontSize		  16
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
 	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
 	  System {
 	    Name		    "PDH_HOM02"
-	    Location		    [-1920, 52, -313, 1076]
+	    Location		    [10, 23, 1617, 1046]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -2237,27 +2344,6 @@ Model {
 	      ZOrder		      -1
 	      BackgroundColor	      "[0.909804, 0.819608, 0.321569]"
 	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "In2"
-	      SID		      "559"
-	      Position		      [135, 155, 185, 185]
-	      ZOrder		      17
-	      BackgroundColor	      "[0.909804, 0.819608, 0.321569]"
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      " W"
-	      SID		      "557"
-	      Position		      [250, 137, 315, 203]
-	      ZOrder		      16
-	      Gain		      "fcsParams.errSig.Ptrans02m"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
 	    }
 	    Block {
 	      BlockType		      Gain
@@ -2284,6 +2370,7 @@ Model {
 	      LibraryVersion	      "1.26"
 	      SourceBlock	      "NbLibrary/NbNoiseSource"
 	      SourceType	      ""
+	      ContentPreviewEnabled   off
 	      asd		      "fcsParams.ctnNb.n02PDOut * 2"
 	      groupNest		      "2"
 	      group		      "'PD'"
@@ -2305,6 +2392,7 @@ Model {
 	      LibraryVersion	      "1.26"
 	      SourceBlock	      "NbLibrary/NbNoiseSource"
 	      SourceType	      ""
+	      ContentPreviewEnabled   off
 	      asd		      "fcsParams.ctnNb.PDshotNoise02"
 	      groupNest		      "2"
 	      group		      "'Shot'"
@@ -2316,12 +2404,12 @@ Model {
 	      BlockType		      Sum
 	      Name		      "Sum"
 	      SID		      "240"
-	      Ports		      [3, 1]
+	      Ports		      [2, 1]
 	      Position		      [345, 145, 395, 195]
 	      ZOrder		      11
 	      ShowName		      off
 	      IconShape		      "round"
-	      Inputs		      "+|+|+"
+	      Inputs		      "+|+"
 	      InputSameDT	      off
 	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
 	      SaturateOnIntegerOverflow	off
@@ -2361,18 +2449,21 @@ Model {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
+	      ZOrder		      1
 	      SrcBlock		      "In1"
 	      SrcPort		      1
 	      DstBlock		      " W/m"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      10
 	      SrcBlock		      "ShotNoise"
 	      SrcPort		      1
 	      DstBlock		      "Sum"
-	      DstPort		      3
+	      DstPort		      2
 	    }
 	    Line {
+	      ZOrder		      3
 	      SrcBlock		      " W/m"
 	      SrcPort		      1
 	      Points		      [50, 0]
@@ -2380,58 +2471,50 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      4
 	      SrcBlock		      "Sum"
 	      SrcPort		      1
 	      DstBlock		      "V/W"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      5
 	      SrcBlock		      "V/W"
 	      SrcPort		      1
 	      DstBlock		      "Sum1"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      6
 	      SrcBlock		      "Sum1"
 	      SrcPort		      1
 	      DstBlock		      "Out1"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      7
 	      SrcBlock		      "PDdarkNoise"
 	      SrcPort		      1
 	      DstBlock		      "Sum1"
 	      DstPort		      2
 	    }
-	    Line {
-	      SrcBlock		      " W"
-	      SrcPort		      1
-	      DstBlock		      "Sum"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "In2"
-	      SrcPort		      1
-	      DstBlock		      " W"
-	      DstPort		      1
-	    }
 	    Annotation {
 	      SID		      "247"
 	      Name		      "PDH"
-	      Position		      [282, 16]
+	      Position		      [282, 16, 305, 28]
+	      InternalMargins	      [0, 0, 0, 0]
+	      FixedHeight	      off
+	      FixedWidth	      off
 	      ZOrder		      -1
 	    }
 	    Annotation {
 	      SID		      "244"
 	      Name		      "QPD"
-	      Position		      [465, 131]
+	      Position		      [465, 131, 488, 143]
+	      InternalMargins	      [0, 0, 0, 0]
+	      FixedHeight	      off
+	      FixedWidth	      off
 	      ZOrder		      -4
-	    }
-	    Annotation {
-	      SID		      "558"
-	      Name		      "Intensity"
-	      Position		      [282, 131]
-	      ZOrder		      -1
 	    }
 	  }
 	}
@@ -2445,13 +2528,7 @@ Model {
 	  BlockMirror		  on
 	  BackgroundColor	  "[0.329412, 0.329412, 0.329412]"
 	  FontSize		  16
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
 	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
 	  System {
 	    Name		    "Servo"
 	    Location		    [-1920, 52, -313, 1076]
@@ -2500,6 +2577,7 @@ Model {
 	      LibraryVersion	      "1.26"
 	      SourceBlock	      "NbLibrary/NbNoiseSource"
 	      SourceType	      ""
+	      ContentPreviewEnabled   off
 	      asd		      "fcsParams.ctnNb.n02sServoOut"
 	      groupNest		      "2"
 	      group		      "'Servo'"
@@ -2531,24 +2609,28 @@ Model {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
+	      ZOrder		      1
 	      SrcBlock		      "Servo"
 	      SrcPort		      1
 	      DstBlock		      "Sum"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      2
 	      SrcBlock		      "Sum"
 	      SrcPort		      1
 	      DstBlock		      "Out1"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      3
 	      SrcBlock		      "ServoNoise"
 	      SrcPort		      1
 	      DstBlock		      "Sum"
 	      DstPort		      2
 	    }
 	    Line {
+	      ZOrder		      4
 	      SrcBlock		      "In1"
 	      SrcPort		      1
 	      DstBlock		      "Servo"
@@ -2571,6 +2653,7 @@ Model {
 	  FontSize		  16
 	  SourceBlock		  "NbLibrary/NbNoiseCal"
 	  SourceType		  ""
+	  ContentPreviewEnabled	  off
 	  dof			  "'ServoIn_02'"
 	  unit			  "'V/rtHz'"
 	}
@@ -2589,6 +2672,7 @@ Model {
 	  FontSize		  16
 	  SourceBlock		  "NbLibrary/NbNoiseSink"
 	  SourceType		  ""
+	  ContentPreviewEnabled	  off
 	  dof			  "'ServoIn_02'"
 	}
 	Block {
@@ -2606,6 +2690,7 @@ Model {
 	  FontSize		  16
 	  SourceBlock		  "NbLibrary/NbNoiseCal"
 	  SourceType		  ""
+	  ContentPreviewEnabled	  off
 	  dof			  "'ServoOut_02'"
 	  unit			  "'V/rtHz'"
 	}
@@ -2624,6 +2709,7 @@ Model {
 	  FontSize		  16
 	  SourceBlock		  "NbLibrary/NbNoiseSink"
 	  SourceType		  ""
+	  ContentPreviewEnabled	  off
 	  dof			  "'ServoOut_02'"
 	}
 	Block {
@@ -2640,21 +2726,6 @@ Model {
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
-	  Port {
-	    PortNumber		    1
-	    Array {
-	      Type		      "Struct"
-	      Dimension		      1
-	      MATStruct {
-		Type			"inout"
-		OpenLoop		"off"
-		BusElementName		""
-	      }
-	      PropName		      "LinearAnalysisIO"
-	    }
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
 	}
 	Block {
 	  BlockType		  Sum
@@ -2711,36 +2782,43 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Line {
+	  ZOrder		  1
 	  SrcBlock		  "Servo"
 	  SrcPort		  1
 	  DstBlock		  "Sum3"
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  2
 	  SrcBlock		  "Cavity02"
 	  SrcPort		  1
+	  Points		  [38, 0; 0, 20]
 	  DstBlock		  "PDH_HOM02"
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  3
 	  SrcBlock		  "CTN"
 	  SrcPort		  1
 	  DstBlock		  "Sum2"
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  4
 	  SrcBlock		  "LengthNoise"
 	  SrcPort		  1
 	  DstBlock		  "Cavity02"
 	  DstPort		  2
 	}
 	Line {
+	  ZOrder		  5
 	  SrcBlock		  "Sum"
 	  SrcPort		  1
 	  DstBlock		  "ServoIn_02 Sink"
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  6
 	  SrcBlock		  "PDH_HOM02"
 	  SrcPort		  1
 	  Points		  [6, 0; 0, -250]
@@ -2748,12 +2826,14 @@ Model {
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  7
 	  SrcBlock		  "Marconi+AOM"
 	  SrcPort		  1
 	  DstBlock		  "Sum1"
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  8
 	  SrcBlock		  "00_FCL_IN"
 	  SrcPort		  1
 	  Points		  [150, 0]
@@ -2761,26 +2841,31 @@ Model {
 	  DstPort		  2
 	}
 	Line {
+	  ZOrder		  9
 	  SrcBlock		  "Sum1"
 	  SrcPort		  1
 	  Points		  [21, 0]
 	  Branch {
+	    ZOrder		    10
 	    Points		    [0, 260]
 	    DstBlock		    "BeatNote"
 	    DstPort		    1
 	  }
 	  Branch {
+	    ZOrder		    11
 	    DstBlock		    "Cavity02"
 	    DstPort		    1
 	  }
 	}
 	Line {
+	  ZOrder		  12
 	  SrcBlock		  "Sum2"
 	  SrcPort		  1
 	  DstBlock		  "Cavity02"
 	  DstPort		  3
 	}
 	Line {
+	  ZOrder		  13
 	  SrcBlock		  "ServoOut_02 Sink"
 	  SrcPort		  1
 	  Points		  [-306, 0; 0, 170]
@@ -2788,31 +2873,28 @@ Model {
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  14
 	  SrcBlock		  "Sum3"
 	  SrcPort		  1
 	  DstBlock		  "ServoOut_02 Sink"
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  15
 	  SrcBlock		  "ServoOut_02 Cal V/rtHz"
 	  SrcPort		  1
 	  DstBlock		  "Sum3"
 	  DstPort		  2
 	}
 	Line {
-	  SrcBlock		  "IntensityNoise"
-	  SrcPort		  1
-	  Points		  [0, -75]
-	  DstBlock		  "PDH_HOM02"
-	  DstPort		  2
-	}
-	Line {
+	  ZOrder		  17
 	  SrcBlock		  "ServoIn_02 Cal V/rtHz"
 	  SrcPort		  1
 	  DstBlock		  "Sum"
 	  DstPort		  2
 	}
 	Line {
+	  ZOrder		  18
 	  SrcBlock		  "ServoIn_02 Sink"
 	  SrcPort		  1
 	  DstBlock		  "Servo"
@@ -2828,16 +2910,10 @@ Model {
       Position		      [980, 506, 1160, 744]
       ZOrder		      119
       FontSize		      16
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
       RequestExecContextInheritance off
-      MaskHideContents	      off
       System {
 	Name			"20 FCL"
-	Location		[-1920, 52, -313, 1076]
+	Location		[10, 23, 1617, 1046]
 	Open			off
 	ModelBrowserVisibility	on
 	ModelBrowserWidth	200
@@ -2849,7 +2925,7 @@ Model {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"130"
+	ZoomFactor		"120"
 	Block {
 	  BlockType		  Inport
 	  Name			  "00_FCL_IN"
@@ -2902,16 +2978,10 @@ Model {
 	  Position		  [560, 523, 790, 707]
 	  ZOrder		  105
 	  FontSize		  16
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
 	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
 	  System {
 	    Name		    "Cavity20"
-	    Location		    [42, 52, 1649, 1076]
+	    Location		    [10, 23, 1617, 1046]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -2923,7 +2993,7 @@ Model {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "164"
+	    ZoomFactor		    "191"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "MarconiIN"
@@ -2969,15 +3039,36 @@ Model {
 	      SaturateOnIntegerOverflow	off
 	    }
 	    Block {
+	      BlockType		      Reference
+	      Name		      "GasNoise"
+	      SID		      "579"
+	      Tag		      "NbNoiseSource"
+	      Ports		      [0, 1]
+	      Position		      [440, 722, 465, 738]
+	      ZOrder		      131
+	      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+	      AttributesFormatString  "%<Tag>"
+	      LibraryVersion	      "1.26"
+	      SourceBlock	      "NbLibrary/NbNoiseSource"
+	      SourceType	      ""
+	      ContentPreviewEnabled   off
+	      asd		      "fcsParams.ctnNb.noiseGas"
+	      groupNest		      "2"
+	      group		      "'Gas'"
+	      subgroup		      "'02'"
+	      subsubgroup	      "''"
+	      subsubsubgroup	      "''"
+	    }
+	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum"
 	      SID		      "481"
-	      Ports		      [2, 1]
+	      Ports		      [3, 1]
 	      Position		      [780, 530, 830, 580]
 	      ZOrder		      86
 	      ShowName		      off
 	      IconShape		      "round"
-	      Inputs		      "++|"
+	      Inputs		      "+++"
 	      InputSameDT	      off
 	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
 	      SaturateOnIntegerOverflow	off
@@ -2995,6 +3086,18 @@ Model {
 	      SaturateOnIntegerOverflow	off
 	    }
 	    Block {
+	      BlockType		      Gain
+	      Name		      "m/rad"
+	      SID		      "580"
+	      Position		      [630, 691, 735, 769]
+	      ZOrder		      130
+	      FontSize		      16
+	      Gain		      "1 ./ fcsParams.OptGain.m2rad * 0"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
 	      BlockType		      Outport
 	      Name		      "Out"
 	      SID		      "484"
@@ -3005,30 +3108,35 @@ Model {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
+	      ZOrder		      1
 	      SrcBlock		      "LengthNoise"
 	      SrcPort		      1
 	      DstBlock		      "Add1"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      2
 	      SrcBlock		      "CTN"
 	      SrcPort		      1
 	      DstBlock		      "Add1"
 	      DstPort		      2
 	    }
 	    Line {
+	      ZOrder		      3
 	      SrcBlock		      "Add1"
 	      SrcPort		      1
 	      DstBlock		      "Sum"
 	      DstPort		      2
 	    }
 	    Line {
+	      ZOrder		      4
 	      SrcBlock		      "Sum"
 	      SrcPort		      1
 	      DstBlock		      "Out"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      5
 	      SrcBlock		      "m/Hz"
 	      SrcPort		      1
 	      Points		      [65, 0]
@@ -3036,9 +3144,25 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      6
 	      SrcBlock		      "MarconiIN"
 	      SrcPort		      1
 	      DstBlock		      "m/Hz"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      9
+	      SrcBlock		      "m/rad"
+	      SrcPort		      1
+	      Points		      [65, 0]
+	      DstBlock		      "Sum"
+	      DstPort		      3
+	    }
+	    Line {
+	      ZOrder		      12
+	      SrcBlock		      "GasNoise"
+	      SrcPort		      1
+	      DstBlock		      "m/rad"
 	      DstPort		      1
 	    }
 	  }
@@ -3052,13 +3176,7 @@ Model {
 	  ZOrder		  51
 	  BackgroundColor	  "[0.380392, 0.741176, 0.988235]"
 	  FontSize		  16
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
 	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
 	  System {
 	    Name		    "Marconi+AOM"
 	    Location		    [-1920, 52, -313, 1076]
@@ -3121,6 +3239,7 @@ Model {
 	      LibraryVersion	      "1.26"
 	      SourceBlock	      "NbLibrary/NbNoiseSource"
 	      SourceType	      ""
+	      ContentPreviewEnabled   off
 	      asd		      "fcsParams.ctnNb.n20Marconi"
 	      groupNest		      "2"
 	      group		      "'Marconi'"
@@ -3152,30 +3271,35 @@ Model {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
+	      ZOrder		      1
 	      SrcBlock		      "Hz/Hz\n"
 	      SrcPort		      1
 	      DstBlock		      "Out1"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      2
 	      SrcBlock		      "Hz/V"
 	      SrcPort		      1
 	      DstBlock		      "Sum"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      3
 	      SrcBlock		      "In1"
 	      SrcPort		      1
 	      DstBlock		      "Hz/V"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      4
 	      SrcBlock		      "MarconiNoise\nHz/rtHz"
 	      SrcPort		      1
 	      DstBlock		      "Sum"
 	      DstPort		      2
 	    }
 	    Line {
+	      ZOrder		      5
 	      SrcBlock		      "Sum"
 	      SrcPort		      1
 	      DstBlock		      "Hz/Hz\n"
@@ -3184,13 +3308,19 @@ Model {
 	    Annotation {
 	      SID		      "494"
 	      Name		      "MarconiGain"
-	      Position		      [405, 181]
+	      Position		      [405, 181, 463, 193]
+	      InternalMargins	      [0, 0, 0, 0]
+	      FixedHeight	      off
+	      FixedWidth	      off
 	      ZOrder		      -1
 	    }
 	    Annotation {
 	      SID		      "493"
 	      Name		      "Double Pass AOM"
-	      Position		      [622, 180]
+	      Position		      [622, 180, 705, 192]
+	      InternalMargins	      [0, 0, 0, 0]
+	      FixedHeight	      off
+	      FixedWidth	      off
 	      ZOrder		      -2
 	    }
 	  }
@@ -3199,22 +3329,16 @@ Model {
 	  BlockType		  SubSystem
 	  Name			  "PDH_HOM20"
 	  SID			  "495"
-	  Ports			  [2, 1]
-	  Position		  [870, 598, 990, 667]
+	  Ports			  [1, 1]
+	  Position		  [870, 600, 990, 670]
 	  ZOrder		  52
 	  BackgroundColor	  "[0.501961, 0.501961, 0.501961]"
 	  FontSize		  16
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
 	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
 	  System {
 	    Name		    "PDH_HOM20"
-	    Location		    [-1920, 52, -313, 1076]
-	    Open		    on
+	    Location		    [10, 23, 1617, 1046]
+	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -3234,27 +3358,6 @@ Model {
 	      ZOrder		      -1
 	      BackgroundColor	      "yellow"
 	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "In2"
-	      SID		      "560"
-	      Position		      [80, 185, 130, 215]
-	      ZOrder		      19
-	      BackgroundColor	      "[0.909804, 0.819608, 0.321569]"
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      " W"
-	      SID		      "561"
-	      Position		      [205, 167, 270, 233]
-	      ZOrder		      18
-	      Gain		      "fcsParams.errSig.Ptrans20m"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
 	    }
 	    Block {
 	      BlockType		      Gain
@@ -3281,6 +3384,7 @@ Model {
 	      LibraryVersion	      "1.26"
 	      SourceBlock	      "NbLibrary/NbNoiseSource"
 	      SourceType	      ""
+	      ContentPreviewEnabled   off
 	      asd		      "fcsParams.ctnNb.n20PDOut * 5"
 	      groupNest		      "2"
 	      group		      "'PD'"
@@ -3302,6 +3406,7 @@ Model {
 	      LibraryVersion	      "1.26"
 	      SourceBlock	      "NbLibrary/NbNoiseSource"
 	      SourceType	      ""
+	      ContentPreviewEnabled   off
 	      asd		      "fcsParams.ctnNb.PDshotNoise20"
 	      groupNest		      "2"
 	      group		      "'Shot'"
@@ -3313,12 +3418,12 @@ Model {
 	      BlockType		      Sum
 	      Name		      "Sum"
 	      SID		      "500"
-	      Ports		      [3, 1]
+	      Ports		      [2, 1]
 	      Position		      [315, 175, 365, 225]
 	      ZOrder		      11
 	      ShowName		      off
 	      IconShape		      "round"
-	      Inputs		      "+|+|+"
+	      Inputs		      "+|+"
 	      InputSameDT	      off
 	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
 	      SaturateOnIntegerOverflow	off
@@ -3358,18 +3463,21 @@ Model {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
+	      ZOrder		      1
 	      SrcBlock		      "In1"
 	      SrcPort		      1
 	      DstBlock		      " W/m"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      10
 	      SrcBlock		      "ShotNoise"
 	      SrcPort		      1
 	      DstBlock		      "Sum"
-	      DstPort		      3
+	      DstPort		      2
 	    }
 	    Line {
+	      ZOrder		      3
 	      SrcBlock		      " W/m"
 	      SrcPort		      1
 	      Points		      [65, 0]
@@ -3377,64 +3485,50 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      4
 	      SrcBlock		      "Sum"
 	      SrcPort		      1
 	      DstBlock		      "V/W"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      5
 	      SrcBlock		      "V/W"
 	      SrcPort		      1
 	      DstBlock		      "Sum1"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      6
 	      SrcBlock		      "Sum1"
 	      SrcPort		      1
 	      DstBlock		      "Out1"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      7
 	      SrcBlock		      "PDdarkNoise"
 	      SrcPort		      1
 	      DstBlock		      "Sum1"
 	      DstPort		      2
 	    }
-	    Line {
-	      SrcBlock		      " W"
-	      SrcPort		      1
-	      DstBlock		      "Sum"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "In2"
-	      SrcPort		      1
-	      DstBlock		      " W"
-	      DstPort		      1
-	    }
 	    Annotation {
 	      SID		      "507"
 	      Name		      "PDH"
-	      Position		      [237, 31]
+	      Position		      [237, 31, 260, 43]
+	      InternalMargins	      [0, 0, 0, 0]
+	      FixedHeight	      off
+	      FixedWidth	      off
 	      ZOrder		      -1
-	    }
-	    Annotation {
-	      SID		      "506"
-	      Name		      "W"
-	      Position		      [295, 224]
-	      ZOrder		      -2
 	    }
 	    Annotation {
 	      SID		      "504"
 	      Name		      "QPD"
-	      Position		      [435, 161]
+	      Position		      [435, 161, 458, 173]
+	      InternalMargins	      [0, 0, 0, 0]
+	      FixedHeight	      off
+	      FixedWidth	      off
 	      ZOrder		      -4
-	    }
-	    Annotation {
-	      SID		      "562"
-	      Name		      "Intensity"
-	      Position		      [237, 161]
-	      ZOrder		      -2
 	    }
 	  }
 	}
@@ -3448,16 +3542,10 @@ Model {
 	  BlockMirror		  on
 	  BackgroundColor	  "[0.329412, 0.329412, 0.329412]"
 	  FontSize		  16
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
 	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
 	  System {
 	    Name		    "Servo"
-	    Location		    [-1920, 52, -313, 1076]
+	    Location		    [1748, 63, 3355, 1086]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -3469,7 +3557,7 @@ Model {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "220"
+	    ZoomFactor		    "208"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In1"
@@ -3503,6 +3591,7 @@ Model {
 	      LibraryVersion	      "1.26"
 	      SourceBlock	      "NbLibrary/NbNoiseSource"
 	      SourceType	      ""
+	      ContentPreviewEnabled   off
 	      asd		      "fcsParams.ctnNb.n02sServoOut"
 	      groupNest		      "2"
 	      group		      "'Servo'"
@@ -3534,24 +3623,28 @@ Model {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
+	      ZOrder		      1
 	      SrcBlock		      "Servo"
 	      SrcPort		      1
 	      DstBlock		      "Sum"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      2
 	      SrcBlock		      "Sum"
 	      SrcPort		      1
 	      DstBlock		      "Out1"
 	      DstPort		      1
 	    }
 	    Line {
+	      ZOrder		      3
 	      SrcBlock		      "ServoNoise"
 	      SrcPort		      1
 	      DstBlock		      "Sum"
 	      DstPort		      2
 	    }
 	    Line {
+	      ZOrder		      4
 	      SrcBlock		      "In1"
 	      SrcPort		      1
 	      DstBlock		      "Servo"
@@ -3574,6 +3667,7 @@ Model {
 	  FontSize		  16
 	  SourceBlock		  "NbLibrary/NbNoiseCal"
 	  SourceType		  ""
+	  ContentPreviewEnabled	  off
 	  dof			  "'ServoIn_20'"
 	  unit			  "'m/rtHz'"
 	}
@@ -3592,6 +3686,7 @@ Model {
 	  FontSize		  16
 	  SourceBlock		  "NbLibrary/NbNoiseSink"
 	  SourceType		  ""
+	  ContentPreviewEnabled	  off
 	  dof			  "'ServoIn_20'"
 	}
 	Block {
@@ -3609,6 +3704,7 @@ Model {
 	  FontSize		  16
 	  SourceBlock		  "NbLibrary/NbNoiseCal"
 	  SourceType		  ""
+	  ContentPreviewEnabled	  off
 	  dof			  "'ServoOut_20'"
 	  unit			  "'m/rtHz'"
 	}
@@ -3627,6 +3723,7 @@ Model {
 	  FontSize		  16
 	  SourceBlock		  "NbLibrary/NbNoiseSink"
 	  SourceType		  ""
+	  ContentPreviewEnabled	  off
 	  dof			  "'ServoOut_20'"
 	}
 	Block {
@@ -3643,6 +3740,21 @@ Model {
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Array {
+	      Type		      "Struct"
+	      Dimension		      1
+	      MATStruct {
+		Type			"outin"
+		OpenLoop		"on"
+		BusElementName		""
+	      }
+	      PropName		      "LinearAnalysisIO"
+	    }
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
 	}
 	Block {
 	  BlockType		  Sum
@@ -3698,24 +3810,29 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Line {
+	  ZOrder		  1
 	  SrcBlock		  "Servo"
 	  SrcPort		  1
 	  DstBlock		  "Sum3"
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  2
 	  SrcBlock		  "Cavity20"
 	  SrcPort		  1
+	  Points		  [35, 0; 0, 20]
 	  DstBlock		  "PDH_HOM20"
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  3
 	  SrcBlock		  "CTN"
 	  SrcPort		  1
 	  DstBlock		  "Sum2"
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  4
 	  SrcBlock		  "00_FCL_IN"
 	  SrcPort		  1
 	  Points		  [85, 0]
@@ -3723,18 +3840,21 @@ Model {
 	  DstPort		  2
 	}
 	Line {
+	  ZOrder		  5
 	  SrcBlock		  "LengthNoise"
 	  SrcPort		  1
 	  DstBlock		  "Cavity20"
 	  DstPort		  2
 	}
 	Line {
+	  ZOrder		  6
 	  SrcBlock		  "Sum"
 	  SrcPort		  1
 	  DstBlock		  "ServoIn_20 Sink"
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  7
 	  SrcBlock		  "PDH_HOM20"
 	  SrcPort		  1
 	  Points		  [9, 0; 0, -250]
@@ -3742,26 +3862,31 @@ Model {
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  8
 	  SrcBlock		  "Sum1"
 	  SrcPort		  1
 	  Points		  [31, 0]
 	  Branch {
+	    ZOrder		    9
 	    Points		    [0, 295]
 	    DstBlock		    "BeatNote"
 	    DstPort		    1
 	  }
 	  Branch {
+	    ZOrder		    10
 	    DstBlock		    "Cavity20"
 	    DstPort		    1
 	  }
 	}
 	Line {
+	  ZOrder		  11
 	  SrcBlock		  "Marconi+AOM"
 	  SrcPort		  1
 	  DstBlock		  "Sum1"
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  12
 	  SrcBlock		  "ServoOut_20 Sink"
 	  SrcPort		  1
 	  Points		  [-271, 0; 0, 170]
@@ -3769,37 +3894,41 @@ Model {
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  13
 	  SrcBlock		  "Sum2"
 	  SrcPort		  1
 	  DstBlock		  "Cavity20"
 	  DstPort		  3
 	}
 	Line {
+	  ZOrder		  14
 	  SrcBlock		  "ServoOut_20 Cal m/rtHz"
 	  SrcPort		  1
 	  DstBlock		  "Sum3"
 	  DstPort		  2
 	}
 	Line {
+	  ZOrder		  15
 	  SrcBlock		  "Sum3"
 	  SrcPort		  1
 	  DstBlock		  "ServoOut_20 Sink"
 	  DstPort		  1
 	}
 	Line {
+	  ZOrder		  16
 	  SrcBlock		  "IntensityNoise"
 	  SrcPort		  1
-	  Points		  [0, -80]
-	  DstBlock		  "PDH_HOM20"
-	  DstPort		  2
+	  Points		  [0, -80; 45, 0]
 	}
 	Line {
+	  ZOrder		  17
 	  SrcBlock		  "ServoIn_20 Cal m/rtHz"
 	  SrcPort		  1
 	  DstBlock		  "Sum"
 	  DstPort		  2
 	}
 	Line {
+	  ZOrder		  18
 	  SrcBlock		  "ServoIn_20 Sink"
 	  SrcPort		  1
 	  DstBlock		  "Servo"
@@ -3828,7 +3957,7 @@ Model {
       SID		      "543"
       Tag		      "NbNoiseCal"
       Ports		      [0, 1]
-      Position		      [862, 540, 878, 565]
+      Position		      [922, 525, 938, 550]
       ZOrder		      136
       BlockRotation	      270
       BlockMirror	      on
@@ -3839,6 +3968,7 @@ Model {
       FontSize		      16
       SourceBlock	      "NbLibrary/NbNoiseCal"
       SourceType	      ""
+      ContentPreviewEnabled   off
       dof		      "'BeatNote'"
       unit		      "'m/rtHz'"
     }
@@ -3848,7 +3978,7 @@ Model {
       SID		      "395"
       Tag		      "NbNoiseSink"
       Ports		      [1, 1]
-      Position		      [740, 867, 765, 883]
+      Position		      [955, 867, 980, 883]
       ZOrder		      132
       BlockMirror	      on
       BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
@@ -3857,6 +3987,7 @@ Model {
       FontSize		      16
       SourceBlock	      "NbLibrary/NbNoiseSink"
       SourceType	      ""
+      ContentPreviewEnabled   off
       dof		      "'BeatNote'"
     }
     Block {
@@ -3865,7 +3996,7 @@ Model {
       SID		      "268"
       Tag		      "NbNoiseSource"
       Ports		      [0, 1]
-      Position		      [460, 462, 485, 478]
+      Position		      [540, 512, 565, 528]
       ZOrder		      60
       BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
       AttributesFormatString  "%<Tag>"
@@ -3873,6 +4004,7 @@ Model {
       FontSize		      16
       SourceBlock	      "NbLibrary/NbNoiseSource"
       SourceType	      ""
+      ContentPreviewEnabled   off
       asd		      "fcsParams.ctnNb.CTN"
       groupNest		      "2"
       group		      "'Coating'"
@@ -3886,7 +4018,7 @@ Model {
       SID		      "303"
       Tag		      "NbNoiseSource"
       Ports		      [0, 1]
-      Position		      [895, 237, 920, 253]
+      Position		      [855, 267, 880, 283]
       ZOrder		      73
       BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
       AttributesFormatString  "%<Tag>"
@@ -3894,6 +4026,7 @@ Model {
       FontSize		      16
       SourceBlock	      "NbLibrary/NbNoiseSource"
       SourceType	      ""
+      ContentPreviewEnabled   off
       asd		      "fcsParams.ctnNb.CTN"
       groupNest		      "2"
       group		      "'Coating'"
@@ -3907,7 +4040,7 @@ Model {
       SID		      "385"
       Tag		      "NbNoiseSource"
       Ports		      [0, 1]
-      Position		      [790, 587, 815, 603]
+      Position		      [855, 572, 880, 588]
       ZOrder		      75
       BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
       AttributesFormatString  "%<Tag>"
@@ -3915,6 +4048,7 @@ Model {
       FontSize		      16
       SourceBlock	      "NbLibrary/NbNoiseSource"
       SourceType	      ""
+      ContentPreviewEnabled   off
       asd		      "fcsParams.ctnNb.CTN"
       groupNest		      "2"
       group		      "'Coating'"
@@ -3928,16 +4062,17 @@ Model {
       SID		      "397"
       Tag		      "NbNoiseSource"
       Ports		      [0, 1]
-      Position		      [402, 790, 418, 815]
+      Position		      [682, 790, 698, 815]
       ZOrder		      87
       BlockRotation	      270
       BlockMirror	      on
-      BackgroundColor	      "orange"
+      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
       AttributesFormatString  "%<Tag>"
       LibraryVersion	      "1.26"
       FontSize		      16
       SourceBlock	      "NbLibrary/NbNoiseSource"
       SourceType	      ""
+      ContentPreviewEnabled   off
       asd		      "0"
       groupNest		      "1"
       group		      "''"
@@ -3951,7 +4086,7 @@ Model {
       SID		      "155"
       Tag		      "NbNoiseSource"
       Ports		      [0, 1]
-      Position		      [70, 352, 95, 368]
+      Position		      [540, 362, 565, 378]
       ZOrder		      58
       BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
       AttributesFormatString  "%<Tag>"
@@ -3959,6 +4094,7 @@ Model {
       FontSize		      16
       SourceBlock	      "NbLibrary/NbNoiseSource"
       SourceType	      ""
+      ContentPreviewEnabled   off
       asd		      "fcsParams.ctnNb.LaserFreqNoise * (100 ./ fcsParams.freq)"
       groupNest		      "1"
       group		      "'Frequency'"
@@ -3970,7 +4106,7 @@ Model {
       BlockType		      Gain
       Name		      "Hz/V"
       SID		      "392"
-      Position		      [215, 840, 325, 910]
+      Position		      [495, 840, 605, 910]
       ZOrder		      82
       BlockMirror	      on
       FontSize		      16
@@ -3980,32 +4116,11 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "IntensityNoise 1/rtHz"
-      SID		      "570"
-      Tag		      "NbNoiseSource"
-      Ports		      [0, 1]
-      Position		      [70, 492, 95, 508]
-      ZOrder		      137
-      BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
-      AttributesFormatString  "%<Tag>"
-      LibraryVersion	      "1.26"
-      FontSize		      16
-      SourceBlock	      "NbLibrary/NbNoiseSource"
-      SourceType	      ""
-      asd		      "fcsParams.ctnNb.IntensityNoise"
-      groupNest		      "1"
-      group		      "'Intensity'"
-      subgroup		      "''"
-      subsubgroup	      "''"
-      subsubsubgroup	      "''"
-    }
-    Block {
-      BlockType		      Reference
       Name		      "LengthNoise  m/rtHz"
       SID		      "259"
       Tag		      "NbNoiseSource"
       Ports		      [0, 1]
-      Position		      [70, 202, 95, 218]
+      Position		      [435, 192, 460, 208]
       ZOrder		      57
       BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
       AttributesFormatString  "%<Tag>"
@@ -4013,6 +4128,7 @@ Model {
       FontSize		      16
       SourceBlock	      "NbLibrary/NbNoiseSource"
       SourceType	      ""
+      ContentPreviewEnabled   off
       asd		      "fcsParams.ctnNb.noiseLength"
       groupNest		      "1"
       group		      "'Length Noise'"
@@ -4026,14 +4142,18 @@ Model {
       SID		      "424"
       Tag		      "NbNoiseCal"
       Ports		      [0, 1]
-      Position		      [70, 272, 95, 288]
+      Position		      [542, 120, 558, 145]
       ZOrder		      96
+      BlockRotation	      270
+      BlockMirror	      on
       BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
+      NamePlacement	      "alternate"
       AttributesFormatString  "%<Tag>"
       LibraryVersion	      "1.26"
       FontSize		      16
       SourceBlock	      "NbLibrary/NbNoiseCal"
       SourceType	      ""
+      ContentPreviewEnabled   off
       dof		      "'00'"
       unit		      "'m/rtHz'"
     }
@@ -4043,7 +4163,7 @@ Model {
       SID		      "423"
       Tag		      "NbNoiseSink"
       Ports		      [1, 1]
-      Position		      [830, 437, 855, 453]
+      Position		      [855, 437, 880, 453]
       ZOrder		      118
       BackgroundColor	      "[1.000000, 0.501961, 0.000000]"
       AttributesFormatString  "%<Tag>"
@@ -4051,6 +4171,7 @@ Model {
       FontSize		      16
       SourceBlock	      "NbLibrary/NbNoiseSink"
       SourceType	      ""
+      ContentPreviewEnabled   off
       dof		      "'00'"
     }
     Block {
@@ -4058,10 +4179,10 @@ Model {
       Name		      "Sum1"
       SID		      "393"
       Ports		      [3, 1]
-      Position		      [385, 850, 435, 900]
+      Position		      [665, 850, 715, 900]
       ZOrder		      83
       BlockMirror	      on
-      BackgroundColor	      "green"
+      BackgroundColor	      "[0.000000, 0.819608, 0.000000]"
       ShowName		      off
       IconShape		      "round"
       Inputs		      "+++"
@@ -4088,8 +4209,22 @@ Model {
       Name		      "Sum3"
       SID		      "403"
       Ports		      [2, 1]
-      Position		      [845, 160, 895, 210]
+      Position		      [845, 175, 895, 225]
       ZOrder		      90
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "++|"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum4"
+      SID		      "585"
+      Ports		      [2, 1]
+      Position		      [525, 175, 575, 225]
+      ZOrder		      139
       ShowName		      off
       IconShape		      "round"
       Inputs		      "++|"
@@ -4102,7 +4237,7 @@ Model {
       Name		      "Sum6"
       SID		      "542"
       Ports		      [2, 1]
-      Position		      [860, 585, 880, 605]
+      Position		      [920, 570, 940, 590]
       ZOrder		      133
       ShowName		      off
       IconShape		      "round"
@@ -4110,102 +4245,6 @@ Model {
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "SystemNoise"
-      SID		      "293"
-      Ports		      [2, 1]
-      Position		      [185, 176, 325, 314]
-      ZOrder		      72
-      FontSize		      16
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      System {
-	Name			"SystemNoise"
-	Location		[42, 22, 1649, 1046]
-	Open			off
-	ModelBrowserVisibility	on
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"A4"
-	PaperUnits		"centimeters"
-	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"299"
-	Block {
-	  BlockType		  Inport
-	  Name			  "LengthNoise"
-	  SID			  "279"
-	  Position		  [385, 250, 440, 270]
-	  ZOrder		  73
-	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
-	  FontSize		  16
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "Calibration"
-	  SID			  "292"
-	  Position		  [385, 185, 440, 205]
-	  ZOrder		  77
-	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
-	  FontSize		  16
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Sum1"
-	  SID			  "291"
-	  Ports			  [2, 1]
-	  Position		  [480, 240, 520, 280]
-	  ZOrder		  76
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "++|"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Out2Loops"
-	  SID			  "296"
-	  Position		  [745, 248, 815, 272]
-	  ZOrder		  78
-	  BackgroundColor	  "orange"
-	  FontSize		  16
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "LengthNoise"
-	  SrcPort		  1
-	  DstBlock		  "Sum1"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Sum1"
-	  SrcPort		  1
-	  DstBlock		  "Out2Loops"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Calibration"
-	  SrcPort		  1
-	  Points		  [55, 0]
-	  DstBlock		  "Sum1"
-	  DstPort		  1
-	}
-      }
     }
     Block {
       BlockType		      Reference
@@ -4224,6 +4263,7 @@ Model {
       FontSize		      16
       SourceBlock	      "NbLibrary/NbNoiseCal"
       SourceType	      ""
+      ContentPreviewEnabled   off
       dof		      "'beat02'"
       unit		      "'m/rtHz'"
     }
@@ -4241,6 +4281,7 @@ Model {
       FontSize		      16
       SourceBlock	      "NbLibrary/NbNoiseSink"
       SourceType	      ""
+      ContentPreviewEnabled   off
       dof		      "'beat02'"
     }
     Block {
@@ -4258,6 +4299,7 @@ Model {
       FontSize		      16
       SourceBlock	      "NbLibrary/NbNoiseCal"
       SourceType	      ""
+      ContentPreviewEnabled   off
       dof		      "'beat20'"
       unit		      "'m/rtHz'"
     }
@@ -4275,13 +4317,14 @@ Model {
       FontSize		      16
       SourceBlock	      "NbLibrary/NbNoiseSink"
       SourceType	      ""
+      ContentPreviewEnabled   off
       dof		      "'beat20'"
     }
     Block {
       BlockType		      Outport
       Name		      "$100k CTN"
       SID		      "396"
-      Position		      [20, 858, 105, 892]
+      Position		      [300, 858, 385, 892]
       ZOrder		      86
       BlockMirror	      on
       BackgroundColor	      "yellow"
@@ -4289,57 +4332,60 @@ Model {
       IconDisplay	      "Port number"
     }
     Line {
+      ZOrder		      54
       SrcBlock		      "NbNoiseCal00 m/rtHz"
       SrcPort		      1
-      DstBlock		      "SystemNoise"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "LengthNoise  m/rtHz"
-      SrcPort		      1
-      DstBlock		      "SystemNoise"
+      DstBlock		      "Sum4"
       DstPort		      1
     }
     Line {
+      ZOrder		      3
       SrcBlock		      "CTN_02 m/rtHz"
       SrcPort		      1
       DstBlock		      "02 FCL"
       DstPort		      2
     }
     Line {
+      ZOrder		      4
       SrcBlock		      "CTN_20  m/rtHz"
       SrcPort		      1
       DstBlock		      "Sum6"
       DstPort		      2
     }
     Line {
+      ZOrder		      5
       SrcBlock		      "00 FCL"
       SrcPort		      1
       DstBlock		      "NbNoiseSink00"
       DstPort		      1
     }
     Line {
+      ZOrder		      6
       SrcBlock		      "NbNoiseSink00"
       SrcPort		      1
-      Points		      [92, 0]
+      Points		      [67, 0]
       Branch {
-	Points			[0, -140]
+	ZOrder			7
+	Points			[0, -95]
 	DstBlock		"02 FCL"
 	DstPort			3
       }
       Branch {
+	ZOrder			8
 	Points			[0, 90]
 	DstBlock		"20 FCL"
 	DstPort			1
       }
     }
     Line {
+      ZOrder		      9
       SrcBlock		      "02 FCL"
       SrcPort		      1
       DstBlock		      "beat02 Sink"
       DstPort		      1
     }
     Line {
+      ZOrder		      10
       SrcBlock		      "beat02 Sink"
       SrcPort		      1
       Points		      [69, 0; 0, 625]
@@ -4347,94 +4393,84 @@ Model {
       DstPort		      2
     }
     Line {
+      ZOrder		      11
       SrcBlock		      "20 FCL"
       SrcPort		      1
       DstBlock		      "beat20 Sink"
       DstPort		      1
     }
     Line {
+      ZOrder		      12
       SrcBlock		      "Sum1"
       SrcPort		      1
       DstBlock		      "Hz/V"
       DstPort		      1
     }
     Line {
+      ZOrder		      13
       SrcBlock		      "Hz/V"
       SrcPort		      1
       DstBlock		      "$100k CTN"
       DstPort		      1
     }
     Line {
+      ZOrder		      14
       SrcBlock		      "BeatNote_Sink"
       SrcPort		      1
       DstBlock		      "Sum1"
       DstPort		      2
     }
     Line {
+      ZOrder		      15
       SrcBlock		      "DelayLineNoise"
       SrcPort		      1
       DstBlock		      "Sum1"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "SystemNoise"
-      SrcPort		      1
-      Points		      [63, 0]
-      Branch {
-	Points			[0, -60]
-	DstBlock		"Sum3"
-	DstPort			2
-      }
-      Branch {
-	Points			[0, 170]
-	Branch {
-	  Points		  [0, 240]
-	  DstBlock		  "Sum2"
-	  DstPort		  1
-	}
-	Branch {
-	  DstBlock		  "00 FCL"
-	  DstPort		  2
-	}
-      }
-    }
-    Line {
+      ZOrder		      21
       SrcBlock		      "Sum2"
       SrcPort		      1
       DstBlock		      "20 FCL"
       DstPort		      3
     }
     Line {
+      ZOrder		      22
       SrcBlock		      "beat20 Cal m/rtHz"
       SrcPort		      1
       DstBlock		      "Sum2"
       DstPort		      2
     }
     Line {
+      ZOrder		      23
       SrcBlock		      "Sum3"
       SrcPort		      1
       DstBlock		      "02 FCL"
       DstPort		      1
     }
     Line {
+      ZOrder		      24
       SrcBlock		      "beat02 Cal m/rtHz"
       SrcPort		      1
       DstBlock		      "Sum3"
       DstPort		      1
     }
     Line {
+      ZOrder		      25
       SrcBlock		      "BeatNote"
       SrcPort		      1
       DstBlock		      "BeatNote_Sink"
       DstPort		      1
     }
     Line {
+      ZOrder		      26
       SrcBlock		      "FreqNoise Hz/rtHz"
       SrcPort		      1
       DstBlock		      "00 FCL"
       DstPort		      1
     }
     Line {
+      ZOrder		      27
       SrcBlock		      "beat20 Sink"
       SrcPort		      1
       Points		      [34, 0; 0, 220]
@@ -4442,42 +4478,67 @@ Model {
       DstPort		      1
     }
     Line {
+      ZOrder		      28
       SrcBlock		      "CTN_00 m/rtHz"
       SrcPort		      1
       DstBlock		      "00 FCL"
       DstPort		      3
     }
     Line {
+      ZOrder		      29
       SrcBlock		      "Sum6"
       SrcPort		      1
+      Points		      [10, 0; 0, 15]
       DstBlock		      "20 FCL"
       DstPort		      2
     }
     Line {
+      ZOrder		      30
       SrcBlock		      "BeatNote_Cal"
       SrcPort		      1
       DstBlock		      "Sum6"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "IntensityNoise 1/rtHz"
+      ZOrder		      58
+      SrcBlock		      "LengthNoise  m/rtHz"
       SrcPort		      1
-      Points		      [256, 0]
+      DstBlock		      "Sum4"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      60
+      SrcBlock		      "Sum4"
+      SrcPort		      1
+      Points		      [103, 0]
       Branch {
-	Points			[0, 215]
-	DstBlock		"20 FCL"
-	DstPort			4
+	ZOrder			70
+	Points			[0, 78; -210, 0; 0, 167]
+	Branch {
+	  ZOrder		  63
+	  DstBlock		  "00 FCL"
+	  DstPort		  2
+	}
+	Branch {
+	  ZOrder		  62
+	  Points		  [0, 210]
+	  DstBlock		  "Sum2"
+	  DstPort		  1
+	}
       }
       Branch {
-	Points			[0, -206; 471, 0; 0, 71]
-	DstBlock		"02 FCL"
-	DstPort			4
+	ZOrder			69
+	DstBlock		"Sum3"
+	DstPort			2
       }
     }
     Annotation {
       SID		      "398"
       Name		      "PhaseDetector"
-      Position		      [216, 809]
+      Position		      [496, 809, 603, 827]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
       HorizontalAlignment     "left"
       VerticalAlignment	      "top"
       ZOrder		      -2
@@ -4485,8 +4546,11 @@ Model {
     }
     Annotation {
       SID		      "38"
-      Name		      "CTN FCL"
-      Position		      [632, 79]
+      Name		      "CTN Noise Model"
+      Position		      [780, 79, 1077, 117]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
       ZOrder		      -1
       FontSize		      36
       FontWeight	      "bold"

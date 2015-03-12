@@ -82,6 +82,7 @@ n20PDServoIn = importdata([rowDataDir, '20pd.asc'], ' ', 14);               % 20
 n00PDServoIn = n00PDServoIn.data;
 n02PDServoIn = n02PDServoIn.data;
 n20PDServoIn = n20PDServoIn.data;
+plot(n02PDServoIn(:,2))
 
 %% Marconi Noise
 % units: V/rtHz
