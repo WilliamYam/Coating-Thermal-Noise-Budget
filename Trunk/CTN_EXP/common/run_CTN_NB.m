@@ -24,7 +24,7 @@ noiseCal = squeeze(noiseCal)';
 
 totalNoiseBN.asd = fcsParams.ctnNb.beatNote ./ noiseCal;
 totalNoiseBN.f = fcsParams.freq;
-totalNoiseBN.name = '~4W Cavity Power 02/20';
+totalNoiseBN.name = '~2W Cavity Power 02/20';
 
 % totalNoiseBNI.asd = fcsParams.ctnNb.beatNoteI ./ noiseCal;
 % totalNoiseBNI.f = fcsParams.freq;

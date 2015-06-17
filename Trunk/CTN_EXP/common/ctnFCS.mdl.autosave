@@ -12,7 +12,7 @@ Model {
       BusOutputAsStruct	      "off"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.387"
+    ComputedModelVersion    "1.389"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -34,7 +34,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [10.0, 23.0, 1607.0, 1023.0]
+      Location		      [1733.0, 27.0, 1607.0, 1023.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -57,10 +57,10 @@ Model {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"427"
+	LoadSaveID		"438"
 	Extents			[1383.0, 853.0]
-	ZoomFactor		[2.1393065508862379]
-	Offset			[385.0730108394834, 390.63633244926194]
+	ZoomFactor		[2.2032520325203255]
+	Offset			[183.64575645756457, 34.172509225092284]
       }
     }
   }
@@ -70,9 +70,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "yamw"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Mar 10 01:08:42 2015"
-  RTWModifiedTimeStamp	  348069495
-  ModelVersionFormat	  "1.%<AutoIncrement:387>"
+  LastModifiedDate	  "Mon Jun 15 22:15:27 2015"
+  RTWModifiedTimeStamp	  356375708
+  ModelVersionFormat	  "1.%<AutoIncrement:389>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -951,7 +951,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"125"
+	ZoomFactor		"118"
 	Block {
 	  BlockType		  Inport
 	  Name			  "FreqNoise"
@@ -996,7 +996,7 @@ Model {
 	  System {
 	    Name		    "Cavity00"
 	    Location		    [10, 23, 1617, 1046]
-	    Open		    on
+	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -1204,8 +1204,8 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "PDH_00"
-	    Location		    [10, 23, 1617, 1046]
-	    Open		    off
+	    Location		    [1733, 27, 3340, 1050]
+	    Open		    on
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -1411,7 +1411,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Servo"
-	    Location		    [-1543, 52, 64, 1075]
+	    Location		    [10, 23, 1617, 1046]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -2165,7 +2165,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Marconi+AOM"
-	    Location		    [-1920, 52, -313, 1076]
+	    Location		    [10, 23, 1617, 1046]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -2335,7 +2335,7 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "176"
+	    ZoomFactor		    "234"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In1"
@@ -2371,7 +2371,7 @@ Model {
 	      SourceBlock	      "NbLibrary/NbNoiseSource"
 	      SourceType	      ""
 	      ContentPreviewEnabled   off
-	      asd		      "fcsParams.ctnNb.n02PDOut * 2"
+	      asd		      "fcsParams.ctnNb.n02PDOut"
 	      groupNest		      "2"
 	      group		      "'PD'"
 	      subgroup		      "'02'"
@@ -2925,7 +2925,7 @@ Model {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"120"
+	ZoomFactor		"125"
 	Block {
 	  BlockType		  Inport
 	  Name			  "00_FCL_IN"
@@ -3179,7 +3179,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Marconi+AOM"
-	    Location		    [-1920, 52, -313, 1076]
+	    Location		    [10, 23, 1617, 1046]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -3385,7 +3385,7 @@ Model {
 	      SourceBlock	      "NbLibrary/NbNoiseSource"
 	      SourceType	      ""
 	      ContentPreviewEnabled   off
-	      asd		      "fcsParams.ctnNb.n20PDOut * 5"
+	      asd		      "fcsParams.ctnNb.n20PDOut"
 	      groupNest		      "2"
 	      group		      "'PD'"
 	      subgroup		      "'20'"
@@ -3545,7 +3545,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Servo"
-	    Location		    [1748, 63, 3355, 1086]
+	    Location		    [10, 23, 1617, 1046]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
