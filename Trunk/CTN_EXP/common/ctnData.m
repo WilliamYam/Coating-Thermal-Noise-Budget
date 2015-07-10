@@ -110,6 +110,7 @@ nHOMBeatNote = importdata([rowDataDir, 'bn.asc'], ' ', 14);
 nHOMBeatNoteI = importdata([rowDataDir, 'bni.asc'], ' ', 14);
 nHOMBeatNote_refl = importdata([rowDataDir, 'bn_refl.asc'], ' ', 14);
 nHOMBeatNoteC = importdata([rowDataDir, 'bnc.asc'], ' ', 14);
+nHOMBeatNote_air = importdata([rowDataDir, 'bn_air.asc'], ' ', 14);
 
 
 n00totServoIn  = n00totServoIn.data;
@@ -122,6 +123,7 @@ nHOMBeatNote  = nHOMBeatNote.data;
 nHOMBeatNoteI  = nHOMBeatNoteI.data;
 nHOMBeatNote_refl  = nHOMBeatNote_refl.data;
 nHOMBeatNoteC  = nHOMBeatNoteC.data;
+nHOMBeatNote_air  = nHOMBeatNote_air.data;
 
 
 f = n00PDServoIn(:, 1);

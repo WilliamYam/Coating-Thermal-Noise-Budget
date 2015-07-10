@@ -77,7 +77,7 @@ fcsParams.ctnNb.n20Marconi = interp1(n02Marconi(:,1), n02Marconi(:,2), fcsParams
                          
 %% Length Noise (model)
 
-fcsParams.ctnNb.noiseLength = 1e-11 ./ (1 + (fcsParams.freq / 100).^2);     % m / rtHz cavity length noise
+fcsParams.ctnNb.noiseLength = 1e-14 ./ (1 + (fcsParams.freq / 100).^2);     % m / rtHz cavity length noise
 
 %%CTN
 fcsParams.ctnNb.CTN = 7.2e-18 .* sqrt(100 ./ fcsParams.freq) * 100 /...
@@ -111,9 +111,10 @@ fcsParams.ctnNb.nTotServoOut20 = interp1(n20totServoOut(:,1), n20totServoOut(:,2
 %     2 * fcsParams.OptGain.MarconiGain02;
 fcsParams.ctnNb.beatNote = interp1(nHOMBeatNote(:,1), nHOMBeatNote(:,2), fcsParams.freq) /...
     fcsParams.OptGain.PhaseDetectorGainBN;
-fcsParams.ctnNb.beatNote_refl = interp1(nHOMBeatNote_refl(:,1), nHOMBeatNote_refl(:,2), fcsParams.freq) /...
-    fcsParams.OptGain.PhaseDetectorGainBN_refl;
-
+% fcsParams.ctnNb.beatNote_refl = interp1(nHOMBeatNote_refl(:,1), nHOMBeatNote_refl(:,2), fcsParams.freq) /...
+%     fcsParams.OptGain.PhaseDetectorGainBN_refl;
+fcsParams.ctnNb.beatNote_air = interp1(nHOMBeatNote_air(:,1), nHOMBeatNote_air(:,2), fcsParams.freq) /...
+    fcsParams.OptGain.PhaseDetectorGainBN_air;
 
 %% Output
 

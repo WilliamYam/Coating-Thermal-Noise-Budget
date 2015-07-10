@@ -50,23 +50,23 @@ nb.referenceNoises = {measuredNoiseBN, measuredNoiseBN_air};
 
 %%                  %%%%%Error signal readout 02%%%%%
 
-% [noises, sys] = nbFromSimulink('ctnFCS', fcsParams.freq, 'dof', 'ServoIn_02');
-% 
-% %%%appending measured noises
-% io=linio('ctnFCS/02 FCL/Sum',1,'sensitivity');
-% setlinio('ctnFCS',io);
-% sysmodel = linearize('ctnFCS',io);
-% noiseCal = bode(sysmodel, 2 * pi * fcsParams.freq);    %freq vector in rad/s
-% noiseCal = squeeze(noiseCal)';
-% 
-% totalNoise02.asd = fcsParams.ctnNb.nTotServoIn02 ./ noiseCal;
-% totalNoise02.f = fcsParams.freq;
-% totalNoise02.name = 'Measured Total';
-% 
-% measuredNoise02 = Noise(totalNoise02);
-% 
-% nb = nbGroupNoises('ctnFCS', noises, sys);
-% nb.referenceNoises = {measuredNoise02};
+[noises, sys] = nbFromSimulink('ctnFCS', fcsParams.freq, 'dof', 'ServoIn_02');
+
+%%%appending measured noises
+io=linio('ctnFCS/02 FCL/Sum',1,'sensitivity');
+setlinio('ctnFCS',io);
+sysmodel = linearize('ctnFCS',io);
+noiseCal = bode(sysmodel, 2 * pi * fcsParams.freq);    %freq vector in rad/s
+noiseCal = squeeze(noiseCal)';
+
+totalNoise02.asd = fcsParams.ctnNb.nTotServoIn02 ./ noiseCal;
+totalNoise02.f = fcsParams.freq;
+totalNoise02.name = 'Measured Total';
+
+measuredNoise02 = Noise(totalNoise02);
+
+nb = nbGroupNoises('ctnFCS', noises, sys);
+nb.referenceNoises = {measuredNoise02};
 
 %%                  %%%%%Error signal readout 20%%%%%
 

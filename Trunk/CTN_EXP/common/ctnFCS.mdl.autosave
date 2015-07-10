@@ -12,7 +12,7 @@ Model {
       BusOutputAsStruct	      "off"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.389"
+    ComputedModelVersion    "1.401"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -34,7 +34,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [1733.0, 27.0, 1607.0, 1023.0]
+      Location		      [73.0, 23.0, 1607.0, 1023.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -57,10 +57,10 @@ Model {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"438"
+	LoadSaveID		"248"
 	Extents			[1383.0, 853.0]
 	ZoomFactor		[2.2032520325203255]
-	Offset			[183.64575645756457, 34.172509225092284]
+	Offset			[303.64575645756457, 177.42250922509228]
       }
     }
   }
@@ -70,9 +70,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "yamw"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Jun 15 22:15:27 2015"
-  RTWModifiedTimeStamp	  356375708
-  ModelVersionFormat	  "1.%<AutoIncrement:389>"
+  LastModifiedDate	  "Sun Jun 21 20:41:09 2015"
+  RTWModifiedTimeStamp	  357049651
+  ModelVersionFormat	  "1.%<AutoIncrement:401>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -913,7 +913,7 @@ Model {
   }
   System {
     Name		    "ctnFCS"
-    Location		    [10, 23, 1617, 1046]
+    Location		    [73, 23, 1680, 1046]
     Open		    off
     ModelBrowserVisibility  on
     ModelBrowserWidth	    200
@@ -927,7 +927,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "93"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "585"
+    SIDHighWatermark	    "586"
     Block {
       BlockType		      SubSystem
       Name		      "00 FCL"
@@ -939,7 +939,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"00 FCL"
-	Location		[10, 23, 1617, 1046]
+	Location		[73, 23, 1680, 1046]
 	Open			off
 	ModelBrowserVisibility	on
 	ModelBrowserWidth	200
@@ -951,7 +951,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"118"
+	ZoomFactor		"96"
 	Block {
 	  BlockType		  Inport
 	  Name			  "FreqNoise"
@@ -995,7 +995,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Cavity00"
-	    Location		    [10, 23, 1617, 1046]
+	    Location		    [1733, 27, 3340, 1050]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -1205,7 +1205,7 @@ Model {
 	  System {
 	    Name		    "PDH_00"
 	    Location		    [1733, 27, 3340, 1050]
-	    Open		    on
+	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -1411,7 +1411,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Servo"
-	    Location		    [10, 23, 1617, 1046]
+	    Location		    [1733, 27, 3340, 1050]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -1551,7 +1551,7 @@ Model {
 	  SID			  "450"
 	  Tag			  "NbNoiseCal"
 	  Ports			  [0, 1]
-	  Position		  [917, 650, 933, 675]
+	  Position		  [877, 360, 893, 385]
 	  ZOrder		  134
 	  BlockRotation		  270
 	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
@@ -1628,6 +1628,21 @@ Model {
 	  SaturateOnIntegerOverflow off
 	}
 	Block {
+	  BlockType		  Sum
+	  Name			  "Sum3"
+	  SID			  "586"
+	  Ports			  [2, 1]
+	  Position		  [875, 280, 895, 300]
+	  ZOrder		  137
+	  BlockMirror		  on
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
 	  BlockType		  Outport
 	  Name			  "Out2HOMs"
 	  SID			  "175"
@@ -1645,10 +1660,10 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  2
+	  ZOrder		  16
 	  SrcBlock		  "Servo"
 	  SrcPort		  1
-	  DstBlock		  "ServoOut_00 Sink"
+	  DstBlock		  "Sum3"
 	  DstPort		  1
 	}
 	Line {
@@ -1713,10 +1728,10 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  12
+	  ZOrder		  18
 	  SrcBlock		  "ServoOut_00 Cal V/rtHz"
 	  SrcPort		  1
-	  DstBlock		  "Sum2"
+	  DstBlock		  "Sum3"
 	  DstPort		  2
 	}
 	Line {
@@ -1733,6 +1748,13 @@ Model {
 	  SrcPort		  1
 	  DstBlock		  "Cavity00"
 	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  19
+	  SrcBlock		  "Sum3"
+	  SrcPort		  1
+	  DstBlock		  "ServoOut_00 Sink"
+	  DstPort		  1
 	}
 	Annotation {
 	  SID			  "176"
@@ -1769,7 +1791,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"02 FCL"
-	Location		[10, 23, 1617, 1046]
+	Location		[73, 23, 1680, 1046]
 	Open			off
 	ModelBrowserVisibility	on
 	ModelBrowserWidth	200
@@ -1825,7 +1847,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Cavity02"
-	    Location		    [10, 23, 1617, 1046]
+	    Location		    [73, 23, 1680, 1046]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -2036,7 +2058,7 @@ Model {
 	      Position		      [480, 626, 585, 704]
 	      ZOrder		      128
 	      FontSize		      16
-	      Gain		      "1 ./ fcsParams.OptGain.m2rad * 0"
+	      Gain		      "1 ./ fcsParams.OptGain.m2rad"
 	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
 	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
 	      SaturateOnIntegerOverflow	off
@@ -2145,7 +2167,7 @@ Model {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      19
+	      ZOrder		      21
 	      SrcBlock		      "GasNoise"
 	      SrcPort		      1
 	      DstBlock		      "m/rad"
@@ -2165,7 +2187,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Marconi+AOM"
-	    Location		    [10, 23, 1617, 1046]
+	    Location		    [1733, 27, 3340, 1050]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -2323,7 +2345,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "PDH_HOM02"
-	    Location		    [10, 23, 1617, 1046]
+	    Location		    [73, 23, 1680, 1046]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -2531,8 +2553,8 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Servo"
-	    Location		    [-1920, 52, -313, 1076]
-	    Open		    off
+	    Location		    [73, 23, 1680, 1046]
+	    Open		    on
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -2578,7 +2600,7 @@ Model {
 	      SourceBlock	      "NbLibrary/NbNoiseSource"
 	      SourceType	      ""
 	      ContentPreviewEnabled   off
-	      asd		      "fcsParams.ctnNb.n02sServoOut"
+	      asd		      "fcsParams.ctnNb.n02sServoOut*50"
 	      groupNest		      "2"
 	      group		      "'Servo'"
 	      subgroup		      "'02'"
@@ -2726,6 +2748,21 @@ Model {
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Array {
+	      Type		      "Struct"
+	      Dimension		      1
+	      MATStruct {
+		Type			"inout"
+		OpenLoop		"off"
+		BusElementName		""
+	      }
+	      PropName		      "LinearAnalysisIO"
+	    }
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
 	}
 	Block {
 	  BlockType		  Sum
@@ -2913,7 +2950,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"20 FCL"
-	Location		[10, 23, 1617, 1046]
+	Location		[73, 23, 1680, 1046]
 	Open			off
 	ModelBrowserVisibility	on
 	ModelBrowserWidth	200
@@ -2925,7 +2962,7 @@ Model {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"125"
+	ZoomFactor		"133"
 	Block {
 	  BlockType		  Inport
 	  Name			  "00_FCL_IN"
@@ -2981,7 +3018,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Cavity20"
-	    Location		    [10, 23, 1617, 1046]
+	    Location		    [73, 23, 1680, 1046]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -3092,7 +3129,7 @@ Model {
 	      Position		      [630, 691, 735, 769]
 	      ZOrder		      130
 	      FontSize		      16
-	      Gain		      "1 ./ fcsParams.OptGain.m2rad * 0"
+	      Gain		      "1 ./ fcsParams.OptGain.m2rad"
 	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
 	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
 	      SaturateOnIntegerOverflow	off
@@ -3179,7 +3216,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Marconi+AOM"
-	    Location		    [10, 23, 1617, 1046]
+	    Location		    [73, 23, 1680, 1046]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -3337,7 +3374,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "PDH_HOM20"
-	    Location		    [10, 23, 1617, 1046]
+	    Location		    [73, 23, 1680, 1046]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -3545,7 +3582,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Servo"
-	    Location		    [10, 23, 1617, 1046]
+	    Location		    [73, 23, 1680, 1046]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -3557,7 +3594,7 @@ Model {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "208"
+	    ZoomFactor		    "220"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In1"
@@ -3592,7 +3629,7 @@ Model {
 	      SourceBlock	      "NbLibrary/NbNoiseSource"
 	      SourceType	      ""
 	      ContentPreviewEnabled   off
-	      asd		      "fcsParams.ctnNb.n02sServoOut"
+	      asd		      "fcsParams.ctnNb.n02sServoOut*20"
 	      groupNest		      "2"
 	      group		      "'Servo'"
 	      subgroup		      "'20'"
@@ -3740,21 +3777,6 @@ Model {
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
-	  Port {
-	    PortNumber		    1
-	    Array {
-	      Type		      "Struct"
-	      Dimension		      1
-	      MATStruct {
-		Type			"outin"
-		OpenLoop		"on"
-		BusElementName		""
-	      }
-	      PropName		      "LinearAnalysisIO"
-	    }
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
 	}
 	Block {
 	  BlockType		  Sum

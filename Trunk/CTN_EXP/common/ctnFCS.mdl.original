@@ -12,7 +12,7 @@ Model {
       BusOutputAsStruct	      "off"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.405"
+    ComputedModelVersion    "1.395"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -34,7 +34,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [1996.0, 101.0, 1034.0, 873.0]
+      Location		      [1733.0, 27.0, 1607.0, 1023.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -57,10 +57,10 @@ Model {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"167"
-	Extents			[810.0, 703.0]
-	ZoomFactor		[1.2715447154471546]
-	Offset			[171.40664961636836, 109.13746803069063]
+	LoadSaveID		"454"
+	Extents			[1383.0, 853.0]
+	ZoomFactor		[1.7818574514038876]
+	Offset			[245.23041193181822, 253.14303030303032]
       }
     }
   }
@@ -70,9 +70,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "yamw"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jul 08 17:42:44 2015"
-  RTWModifiedTimeStamp	  358278162
-  ModelVersionFormat	  "1.%<AutoIncrement:405>"
+  LastModifiedDate	  "Fri Jun 19 18:05:09 2015"
+  RTWModifiedTimeStamp	  356637800
+  ModelVersionFormat	  "1.%<AutoIncrement:395>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -913,7 +913,7 @@ Model {
   }
   System {
     Name		    "ctnFCS"
-    Location		    [1996, 101, 3030, 974]
+    Location		    [1733, 27, 3340, 1050]
     Open		    off
     ModelBrowserVisibility  on
     ModelBrowserWidth	    200
@@ -925,7 +925,7 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "69"
+    ZoomFactor		    "93"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "586"
     Block {
@@ -939,7 +939,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"00 FCL"
-	Location		[1996, 101, 3030, 974]
+	Location		[1733, 27, 3340, 1050]
 	Open			off
 	ModelBrowserVisibility	on
 	ModelBrowserWidth	200
@@ -951,7 +951,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"65"
+	ZoomFactor		"118"
 	Block {
 	  BlockType		  Inport
 	  Name			  "FreqNoise"
@@ -995,7 +995,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Cavity00"
-	    Location		    [1733, 27, 3340, 1050]
+	    Location		    [10, 23, 1617, 1046]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -1411,8 +1411,8 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Servo"
-	    Location		    [1996, 101, 3030, 974]
-	    Open		    on
+	    Location		    [10, 23, 1617, 1046]
+	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -1423,7 +1423,7 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "127"
+	    ZoomFactor		    "220"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In1"
@@ -1791,7 +1791,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"02 FCL"
-	Location		[1996, 101, 3030, 974]
+	Location		[1733, 27, 3340, 1050]
 	Open			off
 	ModelBrowserVisibility	on
 	ModelBrowserWidth	200
@@ -1803,7 +1803,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"79"
+	ZoomFactor		"137"
 	Block {
 	  BlockType		  Inport
 	  Name			  "LengthNoise"
@@ -1847,8 +1847,8 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Cavity02"
-	    Location		    [1996, 101, 3030, 974]
-	    Open		    off
+	    Location		    [1733, 27, 3340, 1050]
+	    Open		    on
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -1859,7 +1859,7 @@ Model {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "104"
+	    ZoomFactor		    "178"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "MarconiIN"
@@ -2058,7 +2058,7 @@ Model {
 	      Position		      [480, 626, 585, 704]
 	      ZOrder		      128
 	      FontSize		      16
-	      Gain		      "1 ./ fcsParams.OptGain.m2rad"
+	      Gain		      "1 ./ fcsParams.OptGain.m2rad*0"
 	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
 	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
 	      SaturateOnIntegerOverflow	off
@@ -2187,7 +2187,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Marconi+AOM"
-	    Location		    [1996, 101, 3030, 974]
+	    Location		    [10, 23, 1617, 1046]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -2345,7 +2345,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "PDH_HOM02"
-	    Location		    [73, 23, 1680, 1046]
+	    Location		    [10, 23, 1617, 1046]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -2553,7 +2553,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Servo"
-	    Location		    [1996, 101, 3030, 974]
+	    Location		    [-1920, 52, -313, 1076]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -2565,7 +2565,7 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "127"
+	    ZoomFactor		    "220"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In1"
@@ -2748,21 +2748,6 @@ Model {
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
-	  Port {
-	    PortNumber		    1
-	    Array {
-	      Type		      "Struct"
-	      Dimension		      1
-	      MATStruct {
-		Type			"inout"
-		OpenLoop		"off"
-		BusElementName		""
-	      }
-	      PropName		      "LinearAnalysisIO"
-	    }
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
 	}
 	Block {
 	  BlockType		  Sum
@@ -2950,7 +2935,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"20 FCL"
-	Location		[73, 23, 1680, 1046]
+	Location		[10, 23, 1617, 1046]
 	Open			off
 	ModelBrowserVisibility	on
 	ModelBrowserWidth	200
@@ -2962,7 +2947,7 @@ Model {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"133"
+	ZoomFactor		"125"
 	Block {
 	  BlockType		  Inport
 	  Name			  "00_FCL_IN"
@@ -3018,7 +3003,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Cavity20"
-	    Location		    [73, 23, 1680, 1046]
+	    Location		    [1733, 27, 3340, 1050]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -3129,7 +3114,7 @@ Model {
 	      Position		      [630, 691, 735, 769]
 	      ZOrder		      130
 	      FontSize		      16
-	      Gain		      "1 ./ fcsParams.OptGain.m2rad"
+	      Gain		      "1 ./ fcsParams.OptGain.m2rad*0"
 	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
 	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
 	      SaturateOnIntegerOverflow	off
@@ -3216,7 +3201,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Marconi+AOM"
-	    Location		    [73, 23, 1680, 1046]
+	    Location		    [10, 23, 1617, 1046]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -3374,7 +3359,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "PDH_HOM20"
-	    Location		    [73, 23, 1680, 1046]
+	    Location		    [10, 23, 1617, 1046]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -3582,7 +3567,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Servo"
-	    Location		    [73, 23, 1107, 896]
+	    Location		    [10, 23, 1617, 1046]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -3594,7 +3579,7 @@ Model {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "220"
+	    ZoomFactor		    "208"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In1"
@@ -3777,6 +3762,21 @@ Model {
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Array {
+	      Type		      "Struct"
+	      Dimension		      1
+	      MATStruct {
+		Type			"outin"
+		OpenLoop		"on"
+		BusElementName		""
+	      }
+	      PropName		      "LinearAnalysisIO"
+	    }
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
 	}
 	Block {
 	  BlockType		  Sum
